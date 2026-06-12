@@ -179,6 +179,19 @@ svg.sim{width:100%;height:auto;background:#0d1b3a;border:1px solid var(--border)
   .ctrl label .nm{min-width:5.2em}
 }
 
+/* ===== Preset & tabella dati ===== */
+.preset-row{display:flex;align-items:center;gap:.5rem;margin:0 0 .7rem}
+.preset-row .nm{color:var(--muted);font-size:.85em;white-space:nowrap}
+.preset-row select{flex:1;min-width:0;padding:.42rem .55rem;border:1px solid var(--border);
+  border-radius:8px;font-size:.86em;background:var(--surface);color:var(--text);font-family:inherit}
+table.pdata{width:100%;border-collapse:collapse;font-size:.82em;margin:.3rem 0 .1rem;
+  display:block;overflow-x:auto;white-space:nowrap}
+table.pdata th,table.pdata td{padding:.34rem .55rem;text-align:right;border-bottom:1px solid var(--border);
+  font-variant-numeric:tabular-nums}
+table.pdata th:first-child,table.pdata td:first-child{text-align:left;position:sticky;left:0;background:var(--surface)}
+table.pdata thead th{color:var(--muted);font-weight:600;border-bottom:1.5px solid var(--border)}
+table.pdata tbody tr:hover td{background:var(--surface2)}
+
 /* ===== PRINT MODE ===== */
 .print-only{display:none}
 @media print{
@@ -241,6 +254,25 @@ svg.sim{width:100%;height:auto;background:#0d1b3a;border:1px solid var(--border)
       <div class="it"><span class="l">g superficie</span><span class="v">9,81</span> m/s²</div>
     </div>
   </div>
+  <p class="sec-label">Dati reali dei pianeti</p>
+  <div class="card">
+    <h3>I pianeti del Sistema Solare</h3>
+    <p class="lead">Carica questi valori nelle simulazioni con il menu “Carica” presente in ogni sezione. a = semiasse orbitale, e = eccentricità, T = periodo di rivoluzione.</p>
+    <table class="pdata">
+      <thead><tr><th>Pianeta</th><th>a (UA)</th><th>e</th><th>T (anni)</th><th>Massa (M⊕)</th><th>Raggio (R⊕)</th><th>g (m/s²)</th></tr></thead>
+      <tbody>
+        <tr><td>Mercurio</td><td>0,39</td><td>0,206</td><td>0,24</td><td>0,055</td><td>0,38</td><td>3,7</td></tr>
+        <tr><td>Venere</td><td>0,72</td><td>0,007</td><td>0,62</td><td>0,815</td><td>0,95</td><td>8,9</td></tr>
+        <tr><td>Terra</td><td>1,00</td><td>0,017</td><td>1,00</td><td>1,000</td><td>1,00</td><td>9,8</td></tr>
+        <tr><td>Marte</td><td>1,52</td><td>0,093</td><td>1,88</td><td>0,107</td><td>0,53</td><td>3,7</td></tr>
+        <tr><td>Giove</td><td>5,20</td><td>0,048</td><td>11,86</td><td>317,8</td><td>11,21</td><td>24,8</td></tr>
+        <tr><td>Saturno</td><td>9,54</td><td>0,054</td><td>29,4</td><td>95,2</td><td>9,45</td><td>10,4</td></tr>
+        <tr><td>Urano</td><td>19,2</td><td>0,047</td><td>84,0</td><td>14,5</td><td>4,01</td><td>8,7</td></tr>
+        <tr><td>Nettuno</td><td>30,1</td><td>0,009</td><td>164,8</td><td>17,1</td><td>3,88</td><td>11,0</td></tr>
+      </tbody>
+    </table>
+    <p class="lead" style="margin-top:.5rem">Verifica la 3ª legge di Keplero: per ogni pianeta T² ≈ a³ (con T in anni e a in UA).</p>
+  </div>
 </section>
 
 <!-- ============ KEPLERO ============ -->
@@ -282,8 +314,20 @@ svg.sim{width:100%;height:auto;background:#0d1b3a;border:1px solid var(--border)
         </div>
       </div>
       <div class="ctrl-pane">
+        <div class="preset-row"><span class="nm">🪐 Carica</span>
+          <select id="kepPreset" onchange="applyPreset('kepler',this.value)">
+            <option value="">— pianeta reale —</option>
+            <option value="mercurio">Mercurio (a 0,39 · e 0,21)</option>
+            <option value="venere">Venere (a 0,72 · e 0,01)</option>
+            <option value="terra">Terra (a 1,00 · e 0,02)</option>
+            <option value="marte">Marte (a 1,52 · e 0,09)</option>
+            <option value="giove">Giove (a 5,20 · e 0,05)</option>
+            <option value="saturno">Saturno (a 9,54 · e 0,05)</option>
+            <option value="cometa">Cometa (orbita molto eccentrica)</option>
+          </select>
+        </div>
         <div class="ctrl">
-          <label><span class="nm">Semiasse a</span><input type="range" id="kepA" min="0.4" max="5" step="0.1" value="1.5"><span class="v" id="kepAv">1,5 UA</span></label>
+          <label><span class="nm">Semiasse a</span><input type="range" id="kepA" min="0.4" max="10" step="0.01" value="1.5"><span class="v" id="kepAv">1,5 UA</span></label>
           <label><span class="nm">Eccentricità e</span><input type="range" id="kepE" min="0" max="0.8" step="0.01" value="0.4"><span class="v" id="kepEv">0,40</span></label>
         </div>
         <div class="read">
@@ -389,9 +433,20 @@ svg.sim{width:100%;height:auto;background:#0d1b3a;border:1px solid var(--border)
         </div>
       </div>
       <div class="ctrl-pane">
+        <div class="preset-row"><span class="nm">🌍 Carica</span>
+          <select id="cmpPreset" onchange="applyPreset('campo',this.value)">
+            <option value="">— corpo reale —</option>
+            <option value="terra">Terra (g ≈ 9,8)</option>
+            <option value="luna">Luna (g ≈ 1,6)</option>
+            <option value="mercurio">Mercurio (g ≈ 3,7)</option>
+            <option value="venere">Venere (g ≈ 8,9)</option>
+            <option value="marte">Marte (g ≈ 3,7)</option>
+            <option value="giove">Giove (g ≈ 24,8)</option>
+          </select>
+        </div>
         <div class="ctrl">
-          <label><span class="nm">Massa</span><input type="range" id="cmpM" min="0.1" max="300" step="0.1" value="1"><span class="v" id="cmpMv">1,0 M⊕</span></label>
-          <label><span class="nm">Raggio</span><input type="range" id="cmpR" min="0.2" max="12" step="0.1" value="1"><span class="v" id="cmpRv">1,0 R⊕</span></label>
+          <label><span class="nm">Massa</span><input type="range" id="cmpM" min="0.01" max="350" step="0.001" value="1"><span class="v" id="cmpMv">1,0 M⊕</span></label>
+          <label><span class="nm">Raggio</span><input type="range" id="cmpR" min="0.2" max="12" step="0.01" value="1"><span class="v" id="cmpRv">1,0 R⊕</span></label>
           <label><span class="nm">Quota h</span><input type="range" id="cmpH" min="0" max="4" step="0.05" value="1"><span class="v" id="cmpHv">1,00 R</span></label>
         </div>
         <div class="read">
@@ -446,9 +501,20 @@ svg.sim{width:100%;height:auto;background:#0d1b3a;border:1px solid var(--border)
         </div>
       </div>
       <div class="ctrl-pane">
+        <div class="preset-row"><span class="nm">🚀 Carica</span>
+          <select id="enPreset" onchange="applyPreset('energia',this.value)">
+            <option value="">— corpo reale —</option>
+            <option value="terra">Terra (v_fuga ≈ 11,2 km/s)</option>
+            <option value="luna">Luna (v_fuga ≈ 2,4 km/s)</option>
+            <option value="mercurio">Mercurio (v_fuga ≈ 4,3 km/s)</option>
+            <option value="venere">Venere (v_fuga ≈ 10,4 km/s)</option>
+            <option value="marte">Marte (v_fuga ≈ 5,0 km/s)</option>
+            <option value="giove">Giove (v_fuga ≈ 60 km/s)</option>
+          </select>
+        </div>
         <div class="ctrl">
-          <label><span class="nm">Massa pianeta</span><input type="range" id="enM" min="0.1" max="300" step="0.1" value="1"><span class="v" id="enMv">1,0 M⊕</span></label>
-          <label><span class="nm">Raggio</span><input type="range" id="enR" min="0.2" max="12" step="0.1" value="1"><span class="v" id="enRv">1,0 R⊕</span></label>
+          <label><span class="nm">Massa pianeta</span><input type="range" id="enM" min="0.01" max="350" step="0.001" value="1"><span class="v" id="enMv">1,0 M⊕</span></label>
+          <label><span class="nm">Raggio</span><input type="range" id="enR" min="0.2" max="12" step="0.01" value="1"><span class="v" id="enRv">1,0 R⊕</span></label>
           <label><span class="nm">v lancio</span><input type="range" id="enV" min="1" max="30" step="0.1" value="9"><span class="v" id="enVv">9,0 km/s</span></label>
         </div>
         <div class="read">
@@ -498,8 +564,17 @@ svg.sim{width:100%;height:auto;background:#0d1b3a;border:1px solid var(--border)
         </div>
       </div>
       <div class="ctrl-pane">
+        <div class="preset-row"><span class="nm">🛰️ Carica</span>
+          <select id="satPreset" onchange="applyPreset('satelliti',this.value)">
+            <option value="">— satellite reale —</option>
+            <option value="iss">ISS (≈ 400 km)</option>
+            <option value="hubble">Telescopio Hubble (≈ 540 km)</option>
+            <option value="gps">GPS (≈ 20 200 km)</option>
+            <option value="geo">Geostazionario (≈ 35 786 km)</option>
+          </select>
+        </div>
         <div class="ctrl">
-          <label><span class="nm">Quota h</span><input type="range" id="satH" min="200" max="42000" step="100" value="400"><span class="v" id="satHv">400 km</span></label>
+          <label><span class="nm">Quota h</span><input type="range" id="satH" min="200" max="42000" step="10" value="400"><span class="v" id="satHv">400 km</span></label>
         </div>
         <div class="read">
           <div class="it"><span class="l">Raggio orbita</span><span class="v" id="satR">—</span> km</div>
@@ -590,6 +665,40 @@ function togglePlay(name,btn){
 }
 
 /* ============ KEPLERO ============ */
+/* ===== Effetti: scia a cometa, pulsazione, helper trail ===== */
+function trail(pts,color,wmax){
+  let s='';
+  for(let i=1;i<pts.length;i++){
+    const o=(i/pts.length*0.55).toFixed(2);
+    const w=(0.6+i/pts.length*(wmax||2.4)).toFixed(1);
+    s+=`<line x1="${pts[i-1].x.toFixed(1)}" y1="${pts[i-1].y.toFixed(1)}" x2="${pts[i].x.toFixed(1)}" y2="${pts[i].y.toFixed(1)}" stroke="${color}" stroke-width="${w}" stroke-opacity="${o}" stroke-linecap="round"/>`;
+  }
+  return s;
+}
+function pulse(f,amp){ return 1+(amp||0.12)*Math.sin(performance.now()/1000*(f||3)); }
+function pushTrail(arr,p,max){ arr.push(p); if(arr.length>(max||14)) arr.shift(); }
+
+/* ===== Preset con dati reali del Sistema Solare ===== */
+const PRESETS={
+  kepler:{ // [semiasse a (UA), eccentricità e]
+    mercurio:[0.39,0.206], venere:[0.72,0.007], terra:[1.00,0.017], marte:[1.52,0.093],
+    giove:[5.20,0.048], saturno:[9.54,0.054], cometa:[4.0,0.80]
+  },
+  bodies:{ // [massa (M⊕), raggio (R⊕)] — per Campo ed Energia
+    terra:[1,1], luna:[0.0123,0.273], mercurio:[0.0553,0.383], venere:[0.815,0.949],
+    marte:[0.107,0.532], giove:[317.8,11.21]
+  },
+  satelliti:{ iss:[400], hubble:[540], gps:[20200], geo:[35786] } // quota (km)
+};
+function setSlider(id,v){ const el=document.getElementById(id); if(!el) return; el.value=v; el.dispatchEvent(new Event('input')); }
+function applyPreset(sec,key){
+  if(!key) return;
+  if(sec==='kepler'){ const p=PRESETS.kepler[key]; if(!p) return; setSlider('kepA',p[0]); setSlider('kepE',p[1]); kep.trail=[]; kepDraw(); }
+  else if(sec==='campo'){ const p=PRESETS.bodies[key]; if(!p) return; setSlider('cmpM',p[0]); setSlider('cmpR',p[1]); cmp.d=0; cmp.trail=[]; cmpDraw(); }
+  else if(sec==='energia'){ const p=PRESETS.bodies[key]; if(!p) return; setSlider('enM',p[0]); setSlider('enR',p[1]); en.r=0; en.trail=[]; enDraw(); }
+  else if(sec==='satelliti'){ const p=PRESETS.satelliti[key]; if(!p) return; setSlider('satH',p[0]); sat.trail=[]; satDraw(); }
+}
+
 const kep={theta:0,trail:[]};
 function kepData(){
   const a=+document.getElementById('kepA').value, e=+document.getElementById('kepE').value;
@@ -609,7 +718,7 @@ function kepStep(dt){
   if(kep.theta>1e6) kep.theta-=1e6;
   kep.trail.push({th:kep.theta,age:0});
   for(const p of kep.trail) p.age+=dt;
-  while(kep.trail.length&&kep.trail[0].age>0.5) kep.trail.shift();
+  while(kep.trail.length&&kep.trail[0].age>1.3) kep.trail.shift();
 }
 function kepPos(th,a,e,A,cx,cy){
   const r=(1-e*e)/(1+e*Math.cos(th));            // unità a
@@ -628,13 +737,21 @@ function kepDraw(){
     const th=i/120*Math.PI*2, p=kepPos(th,d.a,e,A,cx,cy);
     path+=(i?'L':'M')+p.x.toFixed(1)+' '+p.y.toFixed(1)+' ';
   }
-  // area spazzata (settore dal Sole sui punti del trail)
+  // scia a cometa (intera finestra) + settore area (ultimi 0,45 s) → 2ª legge
+  const tailPts=kep.trail.map(tp=>kepPos(tp.th,d.a,e,A,cx,cy));
+  const comet=trail(tailPts,'#64b5f6',2.6);
   let sweep='';
-  if(kep.trail.length>1){
+  const swp=kep.trail.filter(tp=>tp.age<0.45);
+  if(swp.length>1){
     let pts=`${cx},${cy} `;
-    for(const tp of kep.trail){ const p=kepPos(tp.th,d.a,e,A,cx,cy); pts+=`${p.x.toFixed(1)},${p.y.toFixed(1)} `; }
-    sweep=`<polygon points="${pts}" fill="#64b5f6" fill-opacity="0.35" stroke="none"/>`;
+    for(const tp of swp){ const p=kepPos(tp.th,d.a,e,A,cx,cy); pts+=`${p.x.toFixed(1)},${p.y.toFixed(1)} `; }
+    sweep=`<polygon points="${pts}" fill="#64b5f6" fill-opacity="0.40" stroke="none"/>`;
   }
+  // marcatori perielio (θ=0) e afelio (θ=π)
+  const pP=kepPos(0,d.a,e,A,cx,cy), pA=kepPos(Math.PI,d.a,e,A,cx,cy);
+  const marks=dot(pP.x,pP.y,2.6,'#ffab91')+`<text x="${(pP.x+8).toFixed(1)}" y="${(pP.y+4).toFixed(1)}" fill="#ffab91" font-size="10">P</text>`
+    +dot(pA.x,pA.y,2.6,'#80cbc4')+`<text x="${(pA.x-14).toFixed(1)}" y="${(pA.y+4).toFixed(1)}" fill="#80cbc4" font-size="10">A</text>`;
+  const gl=14*pulse(2.2,0.18);
   const planet=kepPos(kep.theta,d.a,e,A,cx,cy);
   // velocità tangente (numerica)
   const ahead=kepPos(kep.theta+0.05,d.a,e,A,cx,cy);
@@ -644,12 +761,14 @@ function kepDraw(){
   const stars=bgStars(svg);
   svg.innerHTML=stars
     +`<path d="${path}Z" fill="none" stroke="${COL.orbit}" stroke-width="1.4" stroke-dasharray="3 4"/>`
+    +marks
     +sweep
+    +comet
+    +`<circle cx="${cx}" cy="${cy}" r="${gl.toFixed(1)}" fill="${COL.star}" fill-opacity="0.25"/>`
     +dot(cx,cy,9,COL.star,'#ffe082')
-    +`<circle cx="${cx}" cy="${cy}" r="14" fill="${COL.star}" fill-opacity="0.25"/>`
     +vArr
     +dot(planet.x,planet.y,6,COL.planet,'#bbdefb')
-    +`<text x="${cx}" y="${cy+24}" fill="#ffe082" font-size="11" text-anchor="middle">Sole</text>`;
+    +`<text x="${cx}" y="${cy+26}" fill="#ffe082" font-size="11" text-anchor="middle">Sole</text>`;
   document.getElementById('kepRp').textContent=fmt(d.rp,2);
   document.getElementById('kepRa').textContent=fmt(d.ra,2);
   document.getElementById('kepT').textContent=fmt(d.T,2);
@@ -659,7 +778,7 @@ function kepDraw(){
 }
 
 /* ============ NEWTON ============ */
-const nw={d:0,v:0};
+const nw={d:0,v:0,trail:[]};
 function newData(){
   const M1=(+document.getElementById('newM1').value)*1e24;
   const M2=(+document.getElementById('newM2').value);
@@ -677,7 +796,7 @@ function newStep(dt){
     const a=G*M1/(dd*dd);
     nw.v+=a*(dt/sub)*900;            // accelerazione temporale per visibilità
     nw.d-=nw.v*(dt/sub)*900;
-    if(nw.d<=rmin){ nw.d=r; nw.v=0; break; }
+    if(nw.d<=rmin){ nw.d=r; nw.v=0; nw.trail.length=0; break; }
   }
 }
 function newDraw(){
@@ -689,15 +808,19 @@ function newDraw(){
   const px=x1+r1+ (x2-x1-r1-18)*frac;
   // lunghezza freccia forza ∝ log(F) per stare in scala
   const Fl=Math.max(8,Math.min(70,14*Math.log10(1+d.F)));
+  pushTrail(nw.trail,{x:px,y:y},12);
+  const tl=trail(nw.trail,'#90caf9',2.2);
   const stars=bgStars(svg);
   const probe=dot(px,y,r2,COL.probe,'#e3f2fd');
   const fA1=arrow(px,y,px-Fl-r2,y,COL.F,'F',2.5);                 // su m2 verso M1
   const fA2=arrow(x1+r1,y,x1+r1+Fl,y,COL.F,'',2.5);              // reazione su M1
+  const gl=pulse(2.5,0.10);
   svg.innerHTML=stars
     +`<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="${COL.grid}" stroke-width="1" stroke-dasharray="2 5"/>`
+    +`<circle cx="${x1}" cy="${y}" r="${(r1*gl).toFixed(1)}" fill="#ef5350" fill-opacity="0.18"/>`
     +`<circle cx="${x1}" cy="${y}" r="${r1}" fill="#ef9a9a" stroke="#ffcdd2" stroke-width="1.5"/>`
     +`<text x="${x1}" y="${y+r1+15}" fill="#ffcdd2" font-size="11" text-anchor="middle">M₁</text>`
-    +fA2+fA1+probe
+    +tl+fA2+fA1+probe
     +`<text x="${px}" y="${y-r2-8}" fill="#e3f2fd" font-size="11" text-anchor="middle">m₂</text>`;
   document.getElementById('newF').textContent=p3(d.F);
   document.getElementById('newA').textContent=p3(d.a);
@@ -706,7 +829,7 @@ function newDraw(){
 }
 
 /* ============ CAMPO g ============ */
-const cmp={d:0,v:0};
+const cmp={d:0,v:0,trail:[]};
 function cmpData(){
   const M=(+document.getElementById('cmpM').value)*Mearth;
   const R=(+document.getElementById('cmpR').value)*Rearth;
@@ -719,7 +842,7 @@ function cmpStep(dt){
   const {h}=cmpData();
   if(cmp.d<=0||cmp.d>h){ cmp.d=h; cmp.v=0; }
   cmp.v+=0.9*dt; cmp.d-=cmp.v*dt;
-  if(cmp.d<=0){ cmp.d=h; cmp.v=0; }
+  if(cmp.d<=0){ cmp.d=h; cmp.v=0; cmp.trail.length=0; }
 }
 function cmpDraw(){
   const d=cmpData(), svg=document.getElementById('svgCmp');
@@ -744,9 +867,13 @@ function cmpDraw(){
     const xx=colX+ (g/d.gs)*70;
     gpath+=(i?'L':'M')+xx.toFixed(1)+' '+yy.toFixed(1)+' ';
   }
+  pushTrail(cmp.trail,{x:colX,y:py},12);
+  const tl=trail(cmp.trail,'#90caf9',2.2);
+  const gl=pulse(2.4,0.12);
   const stars=bgStars(svg);
   svg.innerHTML=stars
     +field
+    +`<circle cx="${cx}" cy="${cy}" r="${(Rpx*gl).toFixed(1)}" fill="#43a047" fill-opacity="0.18"/>`
     +`<circle cx="${cx}" cy="${cy}" r="${Rpx}" fill="#2e7d32" fill-opacity="0.85" stroke="#a5d6a7" stroke-width="1.5"/>`
     +`<text x="${cx}" y="${cy+4}" fill="#fff" font-size="11" text-anchor="middle">M, R</text>`
     +`<line x1="${colX}" y1="${yTop}" x2="${colX}" y2="${yBase}" stroke="${COL.axis}" stroke-width="1.5"/>`
@@ -754,6 +881,7 @@ function cmpDraw(){
     +`<text x="${colX+78}" y="${yBase+14}" fill="${COL.axis}" font-size="10" text-anchor="end">g →</text>`
     +`<text x="${colX-9}" y="${yTop+4}" fill="${COL.axis}" font-size="10" text-anchor="end">r</text>`
     +`<path d="${gpath}" fill="none" stroke="${COL.g}" stroke-width="2"/>`
+    +tl
     +arrow(colX,py,colX-22,py,COL.g,'',2)
     +dot(colX,py,6,COL.probe,'#e3f2fd')
     +`<text x="${colX+6}" y="${py-8}" fill="#e3f2fd" font-size="10">quota</text>`;
@@ -764,7 +892,7 @@ function cmpDraw(){
 }
 
 /* ============ ENERGIA / FUGA ============ */
-const en={r:0,dir:1};
+const en={r:0,dir:1,trail:[]};
 function enData(){
   const M=(+document.getElementById('enM').value)*Mearth;
   const R=(+document.getElementById('enR').value)*Rearth;
@@ -783,10 +911,10 @@ function enStep(dt){
   let v2=d.v0*d.v0-2*d.M*G*(1/d.R-1/en.r);
   let v=Math.sqrt(Math.max(0,v2));
   en.r+=en.dir*v*dt*1.1;
-  if(d.escape){ if(en.r>rmaxScreen){ en.r=d.R; en.dir=1; } }
+  if(d.escape){ if(en.r>rmaxScreen){ en.r=d.R; en.dir=1; en.trail.length=0; } }
   else{
     if(en.dir>0 && (v<=20 || en.r>=d.rmax)){ en.dir=-1; }
-    if(en.dir<0 && en.r<=d.R){ en.r=d.R; en.dir=1; }
+    if(en.dir<0 && en.r<=d.R){ en.r=d.R; en.dir=1; en.trail.length=0; }
   }
 }
 function enDraw(){
@@ -805,6 +933,9 @@ function enDraw(){
   const colX=360, yBase=210, yTop=30;
   const frac=Math.min(1,(en.r-d.R)/(rMax-d.R));
   const py=yBase-(yBase-yTop)*frac;
+  pushTrail(en.trail,{x:colX,y:py},14);
+  const tl=trail(en.trail,'#90caf9',2.2);
+  const gl=pulse(2.4,0.12);
   const stars=bgStars(svg);
   const eY=Y(Math.min(d.e,emax));
   svg.innerHTML=stars
@@ -818,7 +949,9 @@ function enDraw(){
     +`<line x1="${x0}" y1="${eY}" x2="${x1}" y2="${eY}" stroke="${COL.v}" stroke-width="2" stroke-dasharray="6 3"/>`
     +`<text x="${x0+4}" y="${eY-4}" fill="${COL.v}" font-size="9">E tot</text>`
     +`<line x1="${colX}" y1="${yTop}" x2="${colX}" y2="${yBase}" stroke="${COL.axis}" stroke-width="1.4"/>`
+    +`<circle cx="${colX}" cy="${yBase}" r="${(14*gl).toFixed(1)}" fill="#43a047" fill-opacity="0.18"/>`
     +`<circle cx="${colX}" cy="${yBase}" r="14" fill="#2e7d32" stroke="#a5d6a7" stroke-width="1.3"/>`
+    +tl
     +dot(colX,py,6,COL.probe,'#e3f2fd')
     +`<text x="${colX}" y="${yBase+26}" fill="#a5d6a7" font-size="10" text-anchor="middle">pianeta</text>`;
   document.getElementById('enVesc').textContent=fmt(d.vesc/1000,2);
@@ -831,7 +964,7 @@ function enDraw(){
 }
 
 /* ============ SATELLITI ============ */
-const sat={ang:0};
+const sat={ang:0,trail:[]};
 function satData(){
   const h=(+document.getElementById('satH').value)*1000;
   const r=Rearth+h;
@@ -850,6 +983,10 @@ function satDraw(){
   // raggio orbita su schermo: mappa r (Rearth..Rearth+42000km) su (Rpx+10 .. 130)
   const rmin=Rearth+200e3, rmax=Rearth+42000e3;
   const orbPx=(Rpx+12)+ (d.r-rmin)/(rmax-rmin)*(132-(Rpx+12));
+  pushTrail(sat.trail,sat.ang,26);
+  const tlPts=sat.trail.map(a=>({x:cx+orbPx*Math.cos(a),y:cy-orbPx*Math.sin(a)}));
+  const tl=trail(tlPts,'#ce93d8',2.4);
+  const gl=pulse(2.3,0.10);
   const sx=cx+orbPx*Math.cos(sat.ang), sy=cy-orbPx*Math.sin(sat.ang);
   // velocità tangente
   const tx=-Math.sin(sat.ang), ty=-Math.cos(sat.ang);
@@ -858,6 +995,8 @@ function satDraw(){
   const stars=bgStars(svg);
   svg.innerHTML=stars
     +`<circle cx="${cx}" cy="${cy}" r="${orbPx}" fill="none" stroke="${geo?'#ffd54f':COL.orbit}" stroke-width="1.4" stroke-dasharray="${geo?'1 0':'3 4'}"/>`
+    +tl
+    +`<circle cx="${cx}" cy="${cy}" r="${(Rpx*gl).toFixed(1)}" fill="#42a5f5" fill-opacity="0.18"/>`
     +`<circle cx="${cx}" cy="${cy}" r="${Rpx}" fill="#1565c0" stroke="#90caf9" stroke-width="1.5"/>`
     +`<circle cx="${cx-7}" cy="${cy-6}" r="6" fill="#2e7d32" fill-opacity="0.8"/>`
     +`<circle cx="${cx+9}" cy="${cy+7}" r="5" fill="#2e7d32" fill-opacity="0.8"/>`
@@ -1115,16 +1254,16 @@ document.getElementById('btnCmp').addEventListener('click',e=>togglePlay('campo'
 document.getElementById('btnEn').addEventListener('click',e=>togglePlay('energia',e.target));
 document.getElementById('btnSat').addEventListener('click',e=>togglePlay('satelliti',e.target));
 
-bindRange('kepA','kepAv',v=>v.toFixed(1).replace('.',',')+' UA');
+bindRange('kepA','kepAv',v=>(+v).toFixed(2).replace('.',',')+' UA');
 bindRange('kepE','kepEv',v=>v.toFixed(2).replace('.',','));
 bindRange('newM1','newM1v',v=>v+'·10²⁴ kg');
 bindRange('newM2','newM2v',v=>v+' kg');
 bindRange('newR','newRv',v=>v+'·10³ km');
-bindRange('cmpM','cmpMv',v=>v.toFixed(1).replace('.',',')+' M⊕');
-bindRange('cmpR','cmpRv',v=>v.toFixed(1).replace('.',',')+' R⊕');
+bindRange('cmpM','cmpMv',v=>(v<1?(+v).toFixed(3):(+v).toFixed(1)).replace('.',',')+' M⊕');
+bindRange('cmpR','cmpRv',v=>(v<1?(+v).toFixed(2):(+v).toFixed(1)).replace('.',',')+' R⊕');
 bindRange('cmpH','cmpHv',v=>v.toFixed(2).replace('.',',')+' R');
-bindRange('enM','enMv',v=>v.toFixed(1).replace('.',',')+' M⊕');
-bindRange('enR','enRv',v=>v.toFixed(1).replace('.',',')+' R⊕');
+bindRange('enM','enMv',v=>(v<1?(+v).toFixed(3):(+v).toFixed(1)).replace('.',',')+' M⊕');
+bindRange('enR','enRv',v=>(v<1?(+v).toFixed(2):(+v).toFixed(1)).replace('.',',')+' R⊕');
 bindRange('enV','enVv',v=>v.toFixed(1).replace('.',',')+' km/s');
 bindRange('satH','satHv',v=>(+v).toLocaleString('it-IT')+' km');
 
