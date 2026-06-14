@@ -7,6 +7,7 @@
 <title>Gravitazione · Fisica</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <style>
 :root{
   --bg:#f7f8fa;--surface:#fff;--surface2:#f9fafc;
@@ -242,7 +243,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
   <p class="sec-label">Percorso</p>
   <div class="home-grid">
     <button class="home-card" data-go="kepler"><span class="ico">🔭</span><strong>Le leggi di Keplero</strong><span>Orbite, aree, periodi</span></button>
-    <button class="home-card" data-go="newton"><span class="ico">🍎</span><strong>Legge di Newton</strong><span>F = G m₁m₂ / r²</span></button>
+    <button class="home-card" data-go="newton"><span class="ico">🍎</span><strong>Legge di Newton</strong><span>F = G \(m_{1}m_{2} / r^{2}\)</span></button>
     <button class="home-card" data-go="campo"><span class="ico">🌍</span><strong>Campo gravitazionale</strong><span>g e il suo andamento</span></button>
     <button class="home-card" data-go="energia"><span class="ico">🚀</span><strong>Energia e velocità di fuga</strong><span>U = −GMm/r</span></button>
     <button class="home-card" data-go="satelliti"><span class="ico">🛰️</span><strong>Satelliti e orbite</strong><span>Velocità orbitale e periodo</span></button>
@@ -250,12 +251,12 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
   <div class="card">
     <h3>Costanti utili</h3>
     <div class="read">
-      <div class="it"><span class="l">Costante G</span><span class="v">6,674·10⁻¹¹</span> N·m²/kg²</div>
-      <div class="it"><span class="l">Massa Sole</span><span class="v">1,99·10³⁰</span> kg</div>
-      <div class="it"><span class="l">Massa Terra</span><span class="v">5,97·10²⁴</span> kg</div>
-      <div class="it"><span class="l">Raggio Terra</span><span class="v">6,37·10⁶</span> m</div>
-      <div class="it"><span class="l">1 UA</span><span class="v">1,50·10¹¹</span> m</div>
-      <div class="it"><span class="l">g superficie</span><span class="v">9,81</span> m/s²</div>
+      <div class="it"><span class="l">Costante G</span><span class="v">\(6{,}674\cdot 10^{-11}\)</span> N·\(m^{2}/kg^{2}\)</div>
+      <div class="it"><span class="l">Massa Sole</span><span class="v">\(1{,}99\cdot 10^{30}\)</span> kg</div>
+      <div class="it"><span class="l">Massa Terra</span><span class="v">\(5{,}97\cdot 10^{24}\)</span> kg</div>
+      <div class="it"><span class="l">Raggio Terra</span><span class="v">\(6{,}37\cdot 10^{6}\)</span> m</div>
+      <div class="it"><span class="l">1 UA</span><span class="v">\(1{,}50\cdot 10^{11}\)</span> m</div>
+      <div class="it"><span class="l">g superficie</span><span class="v">9,81</span> m/\(s^{2}\)</div>
     </div>
   </div>
   <p class="sec-label">Dati reali dei pianeti</p>
@@ -263,7 +264,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
     <h3>I pianeti del Sistema Solare</h3>
     <p class="lead">Carica questi valori nelle simulazioni con il menu “Carica” presente in ogni sezione. a = semiasse orbitale, e = eccentricità, T = periodo di rivoluzione.</p>
     <table class="pdata">
-      <thead><tr><th>Pianeta</th><th>a (UA)</th><th>e</th><th>T (anni)</th><th>Massa (M⊕)</th><th>Raggio (R⊕)</th><th>g (m/s²)</th></tr></thead>
+      <thead><tr><th>Pianeta</th><th>a (UA)</th><th>e</th><th>T (anni)</th><th>Massa (M⊕)</th><th>Raggio (R⊕)</th><th>g (m/\(s^{2}\))</th></tr></thead>
       <tbody>
         <tr><td>Mercurio</td><td>0,39</td><td>0,206</td><td>0,24</td><td>0,055</td><td>0,38</td><td>3,7</td></tr>
         <tr><td>Venere</td><td>0,72</td><td>0,007</td><td>0,62</td><td>0,815</td><td>0,95</td><td>8,9</td></tr>
@@ -275,7 +276,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
         <tr><td>Nettuno</td><td>30,1</td><td>0,009</td><td>164,8</td><td>17,1</td><td>3,88</td><td>11,0</td></tr>
       </tbody>
     </table>
-    <p class="lead" style="margin-top:.5rem">Verifica la 3ª legge di Keplero: per ogni pianeta T² ≈ a³ (con T in anni e a in UA).</p>
+    <p class="lead" style="margin-top:.5rem">Verifica la 3ª legge di Keplero: per ogni pianeta \(T^{2}\) ≈ \(a^{3}\) (con T in anni e a in UA).</p>
   </div>
 </section>
 
@@ -297,13 +298,13 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
     <h3>3ª legge — legge dei periodi (1619)</h3>
     <p>Il <strong>quadrato del periodo</strong> di rivoluzione è proporzionale al <strong>cubo del semiasse maggiore</strong>. Per tutti i pianeti dello stesso sistema il rapporto è costante:</p>
     <div class="formula" data-tex="\dfrac{T^2}{a^3} = \text{costante} \quad\Rightarrow\quad T^2 = \dfrac{4\pi^2}{G\,M}\,a^3">T² / a³ = costante &nbsp;⇒&nbsp; T² = (4π² / G M) · a³</div>
-    <div class="tip">📐 Con <b>a</b> in unità astronomiche (UA) e <b>T</b> in anni, per il Sistema Solare vale la forma semplice <b>T² = a³</b>. Es.: Marte ha a = 1,52 UA ⇒ T = √(1,52³) ≈ 1,88 anni.</div>
+    <div class="tip">📐 Con <b>a</b> in unità astronomiche (UA) e <b>T</b> in anni, per il Sistema Solare vale la forma semplice <b>\(T^{2} = a^{3}\)</b>. Es.: Marte ha a = 1,52 UA \(\Rightarrow \) T = \(\sqrt{1{,}52^{3}}\) ≈ 1,88 anni.</div>
   </div>
 
   <p class="sec-label">Prova tu</p>
   <div class="card sim-block">
     <h3>🪐 Un pianeta in orbita ellittica</h3>
-    <p class="lead">Cambia il semiasse e l'eccentricità: osserva la forma dell'orbita e nota come il pianeta acceleri al perielio (settore azzurro = area spazzata in un tempo fisso, sempre uguale → 2ª legge).</p>
+    <p class="lead">Cambia il semiasse e l'eccentricità: osserva la forma dell'orbita e nota come il pianeta acceleri al perielio (settore azzurro = area spazzata in un tempo fisso, sempre uguale \(\to \) 2ª legge).</p>
     <div class="sim-layout">
       <div class="sim-pane">
         <svg class="sim" id="svgKep" viewBox="0 0 440 300" preserveAspectRatio="xMidYMid meet"></svg>
@@ -342,7 +343,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
           <div class="it"><span class="l">v afelio</span><span class="v" id="kepVa">—</span> km/s</div>
           <div class="it"><span class="l">v<sub>p</sub>/v<sub>a</sub></span><span class="v" id="kepRatio">—</span></div>
         </div>
-        <div class="eqs ok">✓ T² = a³ (con a in UA, T in anni)</div>
+        <div class="eqs ok">✓ \(T^{2} = a^{3}\) (con a in UA, T in anni)</div>
       </div>
     </div>
   </div>
@@ -354,7 +355,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
   <p class="sec-label">Teoria</p>
   <div class="card">
     <h2>🍎 La legge di gravitazione universale</h2>
-    <p>Newton (1687) capì che la forza che fa cadere una mela è la stessa che tiene la Luna in orbita. Due corpi qualsiasi di massa <em>m₁</em> e <em>m₂</em> si attraggono con una forza diretta lungo la loro congiungente:</p>
+    <p>Newton (1687) capì che la forza che fa cadere una mela è la stessa che tiene la Luna in orbita. Due corpi qualsiasi di massa <em>\(m_{1}\)</em> e <em>\(m_{2}\)</em> si attraggono con una forza diretta lungo la loro congiungente:</p>
     <div class="formula" data-tex="F = G\,\dfrac{m_1 \cdot m_2}{r^2}">F = G · (m₁ · m₂) / r²</div>
     <p>dove <b>r</b> è la distanza fra i centri e <b>G</b> la <strong>costante di gravitazione universale</strong>:</p>
     <div class="formula" data-tex="G = 6{,}674 \cdot 10^{-11}\ \mathrm{N\cdot m^2/kg^2}">G = 6,674 · 10⁻¹¹ N·m² / kg²</div>
@@ -365,14 +366,14 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
       <li><strong>Inversamente proporzionale al quadrato</strong> della distanza: se <em>r</em> raddoppia, F diventa <em>un quarto</em>.</li>
       <li>Obbedisce al <strong>3° principio</strong>: i due corpi si attraggono con forze uguali e opposte (anche Terra–mela!).</li>
     </ul>
-    <div class="tip">🌗 <strong>Il test della Luna.</strong> Newton verificò che l'accelerazione della Luna verso la Terra è circa 1/3600 di g. Poiché la Luna dista ≈ 60 raggi terrestri e 60² = 3600, l'andamento 1/r² tornava: la prova che era la stessa forza.</div>
+    <div class="tip">🌗 <strong>Il test della Luna.</strong> Newton verificò che l'accelerazione della Luna verso la Terra è circa 1/3600 di g. Poiché la Luna dista ≈ 60 raggi terrestri e \(60^{2}\) = 3600, l'andamento 1/\(r^{2}\) tornava: la prova che era la stessa forza.</div>
     <div class="warn">⚠️ La formula vale per masse puntiformi o per corpi a simmetria sferica (come stelle e pianeti), considerando la massa concentrata nel centro.</div>
   </div>
 
   <p class="sec-label">Prova tu</p>
   <div class="card sim-block">
     <h3>⚖️ Due masse che si attraggono</h3>
-    <p class="lead">Imposta le masse e la distanza iniziale, poi guarda il corpo piccolo cadere verso quello grande: più si avvicina, più la forza (e quindi l'accelerazione) cresce — è l'effetto 1/r².</p>
+    <p class="lead">Imposta le masse e la distanza iniziale, poi guarda il corpo piccolo cadere verso quello grande: più si avvicina, più la forza (e quindi l'accelerazione) cresce — è l'effetto 1/\(r^{2}\).</p>
     <div class="sim-layout">
       <div class="sim-pane">
         <svg class="sim" id="svgNew" viewBox="0 0 440 240" preserveAspectRatio="xMidYMid meet"></svg>
@@ -387,17 +388,17 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
       </div>
       <div class="ctrl-pane">
         <div class="ctrl">
-          <label><span class="nm">Massa M₁</span><input type="range" id="newM1" min="1" max="200" step="1" value="60"><span class="v" id="newM1v">60·10²⁴ kg</span></label>
-          <label><span class="nm">Massa m₂</span><input type="range" id="newM2" min="10" max="2000" step="10" value="500"><span class="v" id="newM2v">500 kg</span></label>
-          <label><span class="nm">Distanza r</span><input type="range" id="newR" min="8" max="60" step="1" value="20"><span class="v" id="newRv">20·10³ km</span></label>
+          <label><span class="nm">Massa \(M_{1}\)</span><input type="range" id="newM1" min="1" max="200" step="1" value="60"><span class="v" id="newM1v">\(60\cdot 10^{24}\) kg</span></label>
+          <label><span class="nm">Massa \(m_{2}\)</span><input type="range" id="newM2" min="10" max="2000" step="10" value="500"><span class="v" id="newM2v">500 kg</span></label>
+          <label><span class="nm">Distanza r</span><input type="range" id="newR" min="8" max="60" step="1" value="20"><span class="v" id="newRv">\(20\cdot 10^{3}\) km</span></label>
         </div>
         <div class="read">
           <div class="it"><span class="l">Forza F</span><span class="v" id="newF">—</span> N</div>
-          <div class="it"><span class="l">a su m₂</span><span class="v" id="newA">—</span> m/s²</div>
+          <div class="it"><span class="l">a su \(m_{2}\)</span><span class="v" id="newA">—</span> m/\(s^{2}\)</div>
           <div class="it"><span class="l">F a 2r</span><span class="v" id="newF2">—</span> N</div>
           <div class="it"><span class="l">F a r/2</span><span class="v" id="newFh">—</span> N</div>
         </div>
-        <div class="eqs ok" id="newNote">F = G·M₁·m₂ / r²</div>
+        <div class="eqs ok" id="newNote">F = G·\(M_{1}\cdot m_{2} / r^{2}\)</div>
       </div>
     </div>
   </div>
@@ -411,19 +412,19 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
     <h2>🌍 Il campo gravitazionale e g</h2>
     <p>Invece di pensare a una forza "a distanza", possiamo dire che una massa <em>M</em> crea attorno a sé un <strong>campo gravitazionale</strong>: ogni punto dello spazio acquista una proprietà, l'<strong>intensità del campo</strong> <b>g</b>, cioè la forza per unità di massa che vi sentirebbe un corpo:</p>
     <div class="formula" data-tex="g = \dfrac{F}{m} = G\,\dfrac{M}{r^2}">g = F / m = G · M / r²</div>
-    <p><b>g</b> si misura in N/kg (= m/s²): è anche l'<strong>accelerazione di gravità</strong> che subisce un corpo lasciato libero. Sulla <strong>superficie</strong> di un pianeta di raggio R:</p>
+    <p><b>g</b> si misura in N/kg (= m/\(s^{2}\)): è anche l'<strong>accelerazione di gravità</strong> che subisce un corpo lasciato libero. Sulla <strong>superficie</strong> di un pianeta di raggio R:</p>
     <div class="formula" data-tex="g_{\text{sup}} = G\,\dfrac{M}{R^2}">g<sub>sup</sub> = G · M / R²</div>
-    <p>Per la Terra: g = G·M<sub>T</sub>/R<sub>T</sub>² ≈ 9,81 m/s². Notiamo che <strong>non dipende dalla massa del corpo</strong> che cade: per questo tutti i corpi cadono con la stessa accelerazione (Galileo).</p>
+    <p>Per la Terra: g = G·M<sub>T</sub>/R<sub>T</sub>² ≈ 9,81 m/\(s^{2}\). Notiamo che <strong>non dipende dalla massa del corpo</strong> che cade: per questo tutti i corpi cadono con la stessa accelerazione (Galileo).</p>
     <h3>Variazione con la quota</h3>
-    <p>Salendo a quota <em>h</em>, la distanza dal centro diventa R + h e il campo diminuisce con 1/r²:</p>
+    <p>Salendo a quota <em>h</em>, la distanza dal centro diventa R + h e il campo diminuisce con 1/\(r^{2}\):</p>
     <div class="formula" data-tex="g(h) = G\,\dfrac{M}{(R + h)^2}">g(h) = G · M / (R + h)²</div>
-    <div class="tip">🛰️ Sulla ISS (h ≈ 400 km) g vale ancora ≈ 8,7 m/s², circa l'89% del valore al suolo! Gli astronauti non sono "senza gravità": sono in <em>caduta libera</em> continua attorno alla Terra.</div>
+    <div class="tip">🛰️ Sulla ISS (h ≈ 400 km) g vale ancora ≈ 8,7 m/\(s^{2}\), circa l'89% del valore al suolo! Gli astronauti non sono "senza gravità": sono in <em>caduta libera</em> continua attorno alla Terra.</div>
   </div>
 
   <p class="sec-label">Prova tu</p>
   <div class="card sim-block">
     <h3>📉 Come varia g</h3>
-    <p class="lead">Costruisci un pianeta cambiandone massa e raggio, poi solleva il punto di prova: leggi g in superficie e in quota e osserva la curva g(r) decrescere come 1/r². Il puntino blu cade con l'accelerazione locale.</p>
+    <p class="lead">Costruisci un pianeta cambiandone massa e raggio, poi solleva il punto di prova: leggi g in superficie e in quota e osserva la curva g(r) decrescere come 1/\(r^{2}\). Il puntino blu cade con l'accelerazione locale.</p>
     <div class="sim-layout">
       <div class="sim-pane">
         <svg class="sim" id="svgCmp" viewBox="0 0 440 260" preserveAspectRatio="xMidYMid meet"></svg>
@@ -454,12 +455,12 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
           <label><span class="nm">Quota h</span><input type="range" id="cmpH" min="0" max="4" step="0.05" value="1"><span class="v" id="cmpHv">1,00 R</span></label>
         </div>
         <div class="read">
-          <div class="it"><span class="l">g superficie</span><span class="v" id="cmpGs">—</span> m/s²</div>
-          <div class="it"><span class="l">g a quota h</span><span class="v" id="cmpGq">—</span> m/s²</div>
+          <div class="it"><span class="l">g superficie</span><span class="v" id="cmpGs">—</span> m/\(s^{2}\)</div>
+          <div class="it"><span class="l">g a quota h</span><span class="v" id="cmpGq">—</span> m/\(s^{2}\)</div>
           <div class="it"><span class="l">g/g superf.</span><span class="v" id="cmpGr">—</span></div>
           <div class="it"><span class="l">peso di 1 kg</span><span class="v" id="cmpW">—</span> N</div>
         </div>
-        <div class="eqs ok">✓ g = G·M / r²</div>
+        <div class="eqs ok">✓ g = G·M / \(r^{2}\)</div>
       </div>
     </div>
   </div>
@@ -473,16 +474,16 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
     <h2>🚀 Energia potenziale gravitazionale e velocità di fuga</h2>
     <p>Sollevare un corpo costa energia. Vicino al suolo usiamo <em>U = mgh</em>, ma è solo un'<strong>approssimazione</strong> valida per piccole quote. La formula generale, ponendo lo zero all'infinito, è:</p>
     <div class="formula" data-tex="U = -\,G\,\dfrac{M\,m}{r}">U = − G · M · m / r</div>
-    <p>L'energia potenziale è <strong>negativa</strong>: il corpo è "legato" al pianeta in una buca di potenziale e per liberarlo (portarlo a r → ∞, dove U = 0) bisogna <em>fornire</em> energia.</p>
+    <p>L'energia potenziale è <strong>negativa</strong>: il corpo è "legato" al pianeta in una buca di potenziale e per liberarlo (portarlo a r \(\to  \infty \), dove U = 0) bisogna <em>fornire</em> energia.</p>
     <h3>Energia meccanica totale</h3>
     <div class="formula" data-tex="E = K + U = \tfrac{1}{2}\,m\,v^2 - \dfrac{G\,M\,m}{r}">E = K + U = ½ m v² − G M m / r</div>
     <ul class="cl">
-      <li><b>E &lt; 0</b> → orbita <strong>legata</strong> (ellittica/circolare): il corpo non sfugge.</li>
-      <li><b>E = 0</b> → traiettoria <strong>parabolica</strong>: caso limite di fuga.</li>
-      <li><b>E &gt; 0</b> → traiettoria <strong>iperbolica</strong>: il corpo sfugge con velocità residua.</li>
+      <li><b>E &lt; 0</b> \(\to \) orbita <strong>legata</strong> (ellittica/circolare): il corpo non sfugge.</li>
+      <li><b>E = 0</b> \(\to \) traiettoria <strong>parabolica</strong>: caso limite di fuga.</li>
+      <li><b>E &gt; 0</b> \(\to \) traiettoria <strong>iperbolica</strong>: il corpo sfugge con velocità residua.</li>
     </ul>
     <h3>Velocità di fuga</h3>
-    <p>È la velocità minima per allontanarsi indefinitamente (E = 0) partendo dalla superficie. Da ½ m v² = G M m / R:</p>
+    <p>È la velocità minima per allontanarsi indefinitamente (E = 0) partendo dalla superficie. Da \(\tfrac12 \) m \(v^{2}\) = G M m / R:</p>
     <div class="formula" data-tex="v_{\text{fuga}} = \sqrt{\dfrac{2\,G\,M}{R}}">v<sub>fuga</sub> = √( 2 G M / R )</div>
     <div class="tip">🌍 Per la Terra v<sub>fuga</sub> ≈ 11,2 km/s; per la Luna solo ≈ 2,4 km/s (per questo non trattiene un'atmosfera). Notare: <strong>non dipende dalla massa del corpo</strong> lanciato.</div>
   </div>
@@ -543,9 +544,9 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
     <div class="formula" data-tex="\dfrac{G\,M\,m}{r^2} = \dfrac{m\,v^2}{r}">G · M · m / r² = m · v² / r</div>
     <p>La massa <em>m</em> del satellite si semplifica e si ricava la <strong>velocità orbitale</strong>:</p>
     <div class="formula" data-tex="v_{\text{orb}} = \sqrt{\dfrac{G\,M}{r}}">v<sub>orb</sub> = √( G M / r )</div>
-    <p>Più l'orbita è bassa (r piccolo), più il satellite deve andare veloce. Il <strong>periodo</strong> di rivoluzione si ottiene da v = 2πr/T:</p>
+    <p>Più l'orbita è bassa (r piccolo), più il satellite deve andare veloce. Il <strong>periodo</strong> di rivoluzione si ottiene da v = \(2\pi \)r/T:</p>
     <div class="formula" data-tex="T = 2\pi\,\sqrt{\dfrac{r^3}{G\,M}}">T = 2π · √( r³ / G M )</div>
-    <p>che è esattamente la <strong>3ª legge di Keplero</strong> (T² ∝ r³): la dinamica di Newton <em>spiega</em> le leggi empiriche di Keplero!</p>
+    <p>che è esattamente la <strong>3ª legge di Keplero</strong> (\(T^{2} \propto  r^{3}\)): la dinamica di Newton <em>spiega</em> le leggi empiriche di Keplero!</p>
     <h3>Energia di un'orbita circolare</h3>
     <div class="formula" data-tex="E = K + U = -\,\dfrac{G\,M\,m}{2\,r}">E = K + U = − G M m / (2 r)</div>
     <div class="tip">📡 L'<strong>orbita geostazionaria</strong> ha periodo T = 24 h: il satellite resta sopra lo stesso punto dell'equatore. Si trova a r ≈ 42 200 km dal centro (quota ≈ 35 800 km). La ISS, molto più bassa (≈ 400 km), orbita in ≈ 92 minuti a ≈ 7,7 km/s.</div>
@@ -1035,119 +1036,119 @@ function bgStars(svg){
 /* ============ MOTORE QUIZ ============ */
 const QUIZ = {
   kepler: { teoria:[
-   {q:"Cosa afferma la 1ª legge di Keplero sulla forma delle orbite dei pianeti?",opts:["Sono circonferenze perfette","Sono ellissi con il Sole in un fuoco","Sono parabole","Sono spirali che si stringono"],ans:1,exp:"1ª legge: ogni pianeta percorre un'orbita ellittica e il Sole occupa uno dei due fuochi."},
-   {q:"Dove si trova il Sole rispetto all'orbita ellittica di un pianeta?",opts:["Al centro dell'ellisse","In uno dei due fuochi","In un vertice dell'ellisse","Fuori dall'orbita"],ans:1,exp:"Il Sole sta in uno dei due fuochi, non al centro: per questo perielio e afelio sono a distanze diverse."},
-   {q:"La 2ª legge (delle aree) implica che un pianeta si muove più velocemente:",opts:["All'afelio","Quando è più lontano dal Sole","Al perielio","Sempre alla stessa velocità"],ans:2,exp:"Spazzando aree uguali in tempi uguali, vicino al Sole (perielio) l'arco percorso è maggiore: il pianeta va più veloce."},
-   {q:"Secondo la 2ª legge di Keplero, la velocità areolare di un pianeta è:",opts:["Costante","Crescente nel tempo","Massima all'afelio","Proporzionale al raggio"],ans:0,exp:"La velocità areolare (area spazzata al secondo) è costante lungo tutta l'orbita."},
-   {q:"La 3ª legge di Keplero mette in relazione il periodo T con:",opts:["Il raggio al quadrato","Il cubo del semiasse maggiore","La massa del pianeta","L'eccentricità dell'orbita"],ans:1,exp:"3ª legge: T² è proporzionale ad a³, il cubo del semiasse maggiore."},
-   {q:"Per due pianeti dello stesso sistema solare, il rapporto T²/a³ è:",opts:["Diverso per ogni pianeta","Uguale per tutti","Proporzionale alla massa del pianeta","Sempre nullo"],ans:1,exp:"T²/a³ = 4π²/(GM) dipende solo dalla massa M dell'astro centrale: è uguale per tutti i pianeti che gli orbitano attorno."},
-   {q:"Che cosa indica l'eccentricità e di un'orbita?",opts:["La velocità del pianeta","Quanto l'ellisse è schiacciata","La massa del pianeta","Il periodo orbitale"],ans:1,exp:"e misura lo schiacciamento: e=0 è una circonferenza, valori vicini a 1 danno ellissi molto allungate."},
-   {q:"Il perielio è il punto dell'orbita in cui il pianeta è:",opts:["Più vicino al Sole","Più lontano dal Sole","Più lento","Fermo"],ans:0,exp:"Perielio = punto più vicino al Sole, r=a(1−e); afelio = più lontano, r=a(1+e)."},
-   {q:"La 2ª legge di Keplero è equivalente alla conservazione di quale grandezza fisica?",opts:["Energia cinetica","Quantità di moto","Momento angolare","Massa del pianeta"],ans:2,exp:"L'area spazzata costante equivale alla conservazione del momento angolare del pianeta."},
-   {q:"Le tre leggi di Keplero sono leggi:",opts:["Empiriche, che descrivono il moto senza spiegarne la causa","Che spiegano la causa fisica della gravità","Valide solo per la Terra","Dedotte dalla teoria di Einstein"],ans:0,exp:"Keplero le ricavò dalle osservazioni: descrivono come si muovono i pianeti. La causa, la gravità, la spiegherà Newton."}
+   {"q":"Cosa afferma la 1ª legge di Keplero sulla forma delle orbite dei pianeti?","opts":["Sono circonferenze perfette","Sono ellissi con il Sole in un fuoco","Sono parabole","Sono spirali che si stringono"],"ans":1,"exp":"1ª legge: ogni pianeta percorre un'orbita ellittica e il Sole occupa uno dei due fuochi."},
+   {"q":"Dove si trova il Sole rispetto all'orbita ellittica di un pianeta?","opts":["Al centro dell'ellisse","In uno dei due fuochi","In un vertice dell'ellisse","Fuori dall'orbita"],"ans":1,"exp":"Il Sole sta in uno dei due fuochi, non al centro: per questo perielio e afelio sono a distanze diverse."},
+   {"q":"La 2ª legge (delle aree) implica che un pianeta si muove più velocemente:","opts":["All'afelio","Quando è più lontano dal Sole","Al perielio","Sempre alla stessa velocità"],"ans":2,"exp":"Spazzando aree uguali in tempi uguali, vicino al Sole (perielio) l'arco percorso è maggiore: il pianeta va più veloce."},
+   {"q":"Secondo la 2ª legge di Keplero, la velocità areolare di un pianeta è:","opts":["Costante","Crescente nel tempo","Massima all'afelio","Proporzionale al raggio"],"ans":0,"exp":"La velocità areolare (area spazzata al secondo) è costante lungo tutta l'orbita."},
+   {"q":"La 3ª legge di Keplero mette in relazione il periodo T con:","opts":["Il raggio al quadrato","Il cubo del semiasse maggiore","La massa del pianeta","L'eccentricità dell'orbita"],"ans":1,"exp":"3ª legge: \\(T^{2}\\) è proporzionale ad \\(a^{3}\\), il cubo del semiasse maggiore."},
+   {"q":"Per due pianeti dello stesso sistema solare, il rapporto \\(T^{2}/a^{3}\\) è:","opts":["Diverso per ogni pianeta","Uguale per tutti","Proporzionale alla massa del pianeta","Sempre nullo"],"ans":1,"exp":"\\(T^{2}/a^{3} = 4\\pi ^{2}\\)/(GM) dipende solo dalla massa M dell'astro centrale: è uguale per tutti i pianeti che gli orbitano attorno."},
+   {"q":"Che cosa indica l'eccentricità e di un'orbita?","opts":["La velocità del pianeta","Quanto l'ellisse è schiacciata","La massa del pianeta","Il periodo orbitale"],"ans":1,"exp":"e misura lo schiacciamento: e=0 è una circonferenza, valori vicini a 1 danno ellissi molto allungate."},
+   {"q":"Il perielio è il punto dell'orbita in cui il pianeta è:","opts":["Più vicino al Sole","Più lontano dal Sole","Più lento","Fermo"],"ans":0,"exp":"Perielio = punto più vicino al Sole, r=a(1−e); afelio = più lontano, r=a(1+e)."},
+   {"q":"La 2ª legge di Keplero è equivalente alla conservazione di quale grandezza fisica?","opts":["Energia cinetica","Quantità di moto","Momento angolare","Massa del pianeta"],"ans":2,"exp":"L'area spazzata costante equivale alla conservazione del momento angolare del pianeta."},
+   {"q":"Le tre leggi di Keplero sono leggi:","opts":["Empiriche, che descrivono il moto senza spiegarne la causa","Che spiegano la causa fisica della gravità","Valide solo per la Terra","Dedotte dalla teoria di Einstein"],"ans":0,"exp":"Keplero le ricavò dalle osservazioni: descrivono come si muovono i pianeti. La causa, la gravità, la spiegherà Newton."}
   ], calcolo:[
-   {q:"Un pianeta ha semiasse maggiore a = 4 UA. Periodo di rivoluzione? (T² = a³, T in anni)",opts:["4 anni","8 anni","16 anni","64 anni"],ans:1,exp:"T = √(a³) = √(4³) = √64 = 8 anni."},
-   {q:"Un pianeta orbita con a = 9 UA. Periodo T? (T² = a³)",opts:["3 anni","9 anni","27 anni","81 anni"],ans:2,exp:"T = √(9³) = √729 = 27 anni."},
-   {q:"Un corpo ha periodo T = 8 anni attorno al Sole. Semiasse maggiore? (T² = a³)",opts:["2 UA","4 UA","8 UA","16 UA"],ans:1,exp:"a = ∛(T²) = ∛(8²) = ∛64 = 4 UA."},
-   {q:"Orbita con a = 2 UA ed e = 0,5. Distanza al perielio?",opts:["0,5 UA","1 UA","1,5 UA","3 UA"],ans:1,exp:"r_perielio = a(1−e) = 2×(1−0,5) = 1 UA."},
-   {q:"Stessa orbita (a = 2 UA, e = 0,5). Distanza all'afelio?",opts:["1 UA","2 UA","3 UA","4 UA"],ans:2,exp:"r_afelio = a(1+e) = 2×1,5 = 3 UA."},
-   {q:"Un pianeta ha a = 10 UA ed e = 0,2. Distanza all'afelio?",opts:["8 UA","10 UA","12 UA","20 UA"],ans:2,exp:"r_afelio = a(1+e) = 10×1,2 = 12 UA."},
-   {q:"Un'orbita ha perielio 2 UA e afelio 4 UA. Semiasse maggiore a?",opts:["2 UA","3 UA","4 UA","6 UA"],ans:1,exp:"a = (perielio + afelio)/2 = (2+4)/2 = 3 UA."},
-   {q:"Perielio 1 UA, afelio 3 UA. Eccentricità e?",opts:["0,25","0,33","0,5","0,75"],ans:2,exp:"e = (afelio − perielio)/(afelio + perielio) = (3−1)/(3+1) = 2/4 = 0,5."},
-   {q:"Al perielio (1 UA) un pianeta va a 60 km/s. Velocità all'afelio (3 UA)? (v_p·r_p = v_a·r_a)",opts:["10 km/s","20 km/s","30 km/s","60 km/s"],ans:1,exp:"v_a = v_p·r_p/r_a = 60×1/3 = 20 km/s."},
-   {q:"La Terra (a = 1 UA) ha periodo 1 anno. Un asteroide con a = 4 UA ha periodo:",opts:["2 anni","4 anni","8 anni","16 anni"],ans:2,exp:"T = √(a³) = √64 = 8 anni: il suo anno dura 8 volte quello terrestre."}
+   {"q":"Un pianeta ha semiasse maggiore a = 4 UA. Periodo di rivoluzione? (\\(T^{2} = a^{3}\\), T in anni)","opts":["4 anni","8 anni","16 anni","64 anni"],"ans":1,"exp":"T = \\(\\sqrt{a^{3}} = \\sqrt{4^{3}} = \\sqrt{64}\\) = 8 anni."},
+   {"q":"Un pianeta orbita con a = 9 UA. Periodo T? (\\(T^{2} = a^{3}\\))","opts":["3 anni","9 anni","27 anni","81 anni"],"ans":2,"exp":"T = \\(\\sqrt{9^{3}} = \\sqrt{729}\\) = 27 anni."},
+   {"q":"Un corpo ha periodo T = 8 anni attorno al Sole. Semiasse maggiore? (\\(T^{2} = a^{3}\\))","opts":["2 UA","4 UA","8 UA","16 UA"],"ans":1,"exp":"a = \\(\\sqrt[3]{T^{2}} = \\sqrt[3]{8^{2}} = \\sqrt[3]{64}\\) = 4 UA."},
+   {"q":"Orbita con a = 2 UA ed e = 0,5. Distanza al perielio?","opts":["0,5 UA","1 UA","1,5 UA","3 UA"],"ans":1,"exp":"\\(r_{\\text{perielio}}\\) = a(1−e) = 2×(1−0,5) = 1 UA."},
+   {"q":"Stessa orbita (a = 2 UA, e = 0,5). Distanza all'afelio?","opts":["1 UA","2 UA","3 UA","4 UA"],"ans":2,"exp":"\\(r_{\\text{afelio}}\\) = a(1+e) = 2×1,5 = 3 UA."},
+   {"q":"Un pianeta ha a = 10 UA ed e = 0,2. Distanza all'afelio?","opts":["8 UA","10 UA","12 UA","20 UA"],"ans":2,"exp":"\\(r_{\\text{afelio}}\\) = a(1+e) = 10×1,2 = 12 UA."},
+   {"q":"Un'orbita ha perielio 2 UA e afelio 4 UA. Semiasse maggiore a?","opts":["2 UA","3 UA","4 UA","6 UA"],"ans":1,"exp":"a = (perielio + afelio)/2 = (2+4)/2 = 3 UA."},
+   {"q":"Perielio 1 UA, afelio 3 UA. Eccentricità e?","opts":["0,25","0,33","0,5","0,75"],"ans":2,"exp":"e = (afelio − perielio)/(afelio + perielio) = (3−1)/(3+1) = 2/4 = 0,5."},
+   {"q":"Al perielio (1 UA) un pianeta va a 60 km/s. Velocità all'afelio (3 UA)? (\\(v_{\\text{p}}\\cdot r_{\\text{p}} = v_{\\text{a}}\\cdot r_{\\text{a}}\\))","opts":["10 km/s","20 km/s","30 km/s","60 km/s"],"ans":1,"exp":"\\(v_{\\text{a}} = v_{\\text{p}}\\cdot r_{\\text{p}}/r_{\\text{a}}\\) = 60×1/3 = 20 km/s."},
+   {"q":"La Terra (a = 1 UA) ha periodo 1 anno. Un asteroide con a = 4 UA ha periodo:","opts":["2 anni","4 anni","8 anni","16 anni"],"ans":2,"exp":"T = \\(\\sqrt{a^{3}} = \\sqrt{64}\\) = 8 anni: il suo anno dura 8 volte quello terrestre."}
   ] },
   newton: { teoria:[
-   {q:"La forza gravitazionale tra due masse è:",opts:["Sempre attrattiva","Sempre repulsiva","Attrattiva o repulsiva secondo le masse","Nulla a grande distanza"],ans:0,exp:"La gravità è sempre attrattiva e diretta lungo la congiungente dei due centri."},
-   {q:"Nella legge F = G m₁m₂/r², se la distanza r raddoppia (masse ferme), la forza:",opts:["Raddoppia","Si dimezza","Diventa 1/4","Diventa 1/8"],ans:2,exp:"F è inversamente proporzionale a r²: raddoppiando r, F diventa 1/2² = 1/4."},
-   {q:"La forza gravitazionale è proporzionale:",opts:["Alla somma delle masse","Al prodotto delle masse","Alla differenza delle masse","Solo alla massa maggiore"],ans:1,exp:"F ∝ m₁·m₂: dipende dal prodotto delle due masse."},
-   {q:"Quanto vale circa la costante di gravitazione universale G?",opts:["9,8 N/kg","6,67×10⁻¹¹ N·m²/kg²","3×10⁸ m/s","1,6×10⁻¹⁹ C"],ans:1,exp:"G ≈ 6,674×10⁻¹¹ N·m²/kg², la stessa in tutto l'Universo."},
-   {q:"La Terra attira una mela con forza F. La mela attira la Terra con forza:",opts:["Molto più piccola","Nulla","Uguale e opposta a F","Molto più grande"],ans:2,exp:"Per il 3° principio le due forze sono uguali in modulo e opposte."},
-   {q:"Se una delle due masse raddoppia (distanza invariata), la forza:",opts:["Resta uguale","Raddoppia","Si dimezza","Diventa 1/4"],ans:1,exp:"F ∝ m₁: raddoppiando una massa, la forza raddoppia."},
-   {q:"La legge di Newton si applica ai pianeti perché, avendo simmetria sferica, la loro massa si può considerare:",opts:["Distribuita sulla superficie","Concentrata nel centro","Nulla","Variabile"],ans:1,exp:"Per corpi a simmetria sferica la massa si può concentrare nel centro, e r è la distanza fra i centri."},
-   {q:"Il 'test della Luna' di Newton: l'accelerazione della Luna verso la Terra è circa:",opts:["Uguale a g","1/60 di g","1/3600 di g","Il doppio di g"],ans:2,exp:"La Luna dista ≈60 raggi terrestri: con la legge 1/r², l'accelerazione è g/60² = g/3600."},
-   {q:"Rispetto alle leggi di Keplero, la legge di Newton:",opts:["Le contraddice","Ne spiega la causa fisica","È meno generale","Vale solo per la Luna"],ans:1,exp:"Newton spiega perché valgono le leggi di Keplero: sono conseguenze della gravitazione universale."},
-   {q:"Se si raddoppiano contemporaneamente entrambe le masse E la distanza, la forza:",opts:["Resta invariata","Raddoppia","Quadruplica","Si dimezza"],ans:0,exp:"F = G(2m₁)(2m₂)/(2r)² = G·4m₁m₂/(4r²): il fattore 4 sopra e sotto si elide, F resta uguale."}
+   {"q":"La forza gravitazionale tra due masse è:","opts":["Sempre attrattiva","Sempre repulsiva","Attrattiva o repulsiva secondo le masse","Nulla a grande distanza"],"ans":0,"exp":"La gravità è sempre attrattiva e diretta lungo la congiungente dei due centri."},
+   {"q":"Nella legge F = G \\(m_{1}m_{2}/r^{2}\\), se la distanza r raddoppia (masse ferme), la forza:","opts":["Raddoppia","Si dimezza","Diventa 1/4","Diventa 1/8"],"ans":2,"exp":"F è inversamente proporzionale a \\(r^{2}\\): raddoppiando r, F diventa 1/\\(2^{2}\\) = 1/4."},
+   {"q":"La forza gravitazionale è proporzionale:","opts":["Alla somma delle masse","Al prodotto delle masse","Alla differenza delle masse","Solo alla massa maggiore"],"ans":1,"exp":"F \\(\\propto  m_{1}\\cdot m_{2}\\): dipende dal prodotto delle due masse."},
+   {"q":"Quanto vale circa la costante di gravitazione universale G?","opts":["9,8 N/kg","\\(6{,}67\\times 10^{-11}\\) N·\\(m^{2}/kg^{2}\\)","\\(3\\times 10^{8}\\) m/s","\\(1{,}6\\times 10^{-19}\\) C"],"ans":1,"exp":"G ≈ \\(6{,}674\\times 10^{-11}\\) N·\\(m^{2}/kg^{2}\\), la stessa in tutto l'Universo."},
+   {"q":"La Terra attira una mela con forza F. La mela attira la Terra con forza:","opts":["Molto più piccola","Nulla","Uguale e opposta a F","Molto più grande"],"ans":2,"exp":"Per il 3° principio le due forze sono uguali in modulo e opposte."},
+   {"q":"Se una delle due masse raddoppia (distanza invariata), la forza:","opts":["Resta uguale","Raddoppia","Si dimezza","Diventa 1/4"],"ans":1,"exp":"F \\(\\propto  m_{1}\\): raddoppiando una massa, la forza raddoppia."},
+   {"q":"La legge di Newton si applica ai pianeti perché, avendo simmetria sferica, la loro massa si può considerare:","opts":["Distribuita sulla superficie","Concentrata nel centro","Nulla","Variabile"],"ans":1,"exp":"Per corpi a simmetria sferica la massa si può concentrare nel centro, e r è la distanza fra i centri."},
+   {"q":"Il 'test della Luna' di Newton: l'accelerazione della Luna verso la Terra è circa:","opts":["Uguale a g","1/60 di g","1/3600 di g","Il doppio di g"],"ans":2,"exp":"La Luna dista ≈60 raggi terrestri: con la legge 1/\\(r^{2}\\), l'accelerazione è g/\\(60^{2}\\) = g/3600."},
+   {"q":"Rispetto alle leggi di Keplero, la legge di Newton:","opts":["Le contraddice","Ne spiega la causa fisica","È meno generale","Vale solo per la Luna"],"ans":1,"exp":"Newton spiega perché valgono le leggi di Keplero: sono conseguenze della gravitazione universale."},
+   {"q":"Se si raddoppiano contemporaneamente entrambe le masse E la distanza, la forza:","opts":["Resta invariata","Raddoppia","Quadruplica","Si dimezza"],"ans":0,"exp":"F = G(\\(2m_{1})(2m_{2})/(2r)^{2}\\) = G·\\(4m_{1}m_{2}/(4r^{2}\\)): il fattore 4 sopra e sotto si elide, F resta uguale."}
   ], calcolo:[
-   {q:"Due masse di 2 kg e 3 kg distano 1 m. Forza gravitazionale? (G = 6,67×10⁻¹¹)",opts:["4,0×10⁻¹⁰ N","6,0×10⁻¹¹ N","2,0×10⁻¹⁰ N","1,3×10⁻⁹ N"],ans:0,exp:"F = G·m₁m₂/r² = 6,67×10⁻¹¹×6/1² = 4,0×10⁻¹⁰ N."},
-   {q:"La forza tra due corpi è 8 N. Se raddoppiano la distanza, diventa:",opts:["16 N","4 N","2 N","1 N"],ans:2,exp:"F → F/4 = 8/4 = 2 N (legge dell'inverso del quadrato)."},
-   {q:"La forza tra due corpi è 36 N. Triplicando la distanza diventa:",opts:["12 N","9 N","4 N","108 N"],ans:2,exp:"F → F/3² = 36/9 = 4 N."},
-   {q:"Una massa di 1 kg sulla superficie terrestre (M = 6×10²⁴ kg, r = 6,4×10⁶ m). Forza? (G = 6,67×10⁻¹¹)",opts:["1,6 N","9,8 N","98 N","19,6 N"],ans:1,exp:"F = 6,67×10⁻¹¹×6×10²⁴×1/(6,4×10⁶)² ≈ 9,8 N: è il peso del corpo."},
-   {q:"Due masse di 10 kg distano 0,5 m. Forza? (G = 6,67×10⁻¹¹)",opts:["2,7×10⁻⁸ N","6,7×10⁻⁹ N","1,3×10⁻⁷ N","5,3×10⁻⁸ N"],ans:0,exp:"F = 6,67×10⁻¹¹×100/0,25 = 6,67×10⁻¹¹×400 = 2,7×10⁻⁸ N."},
-   {q:"La forza tra due corpi a distanza r è 10 N. Avvicinandoli a r/2 diventa:",opts:["20 N","40 N","5 N","2,5 N"],ans:1,exp:"Dimezzando r, F → F×2² = 10×4 = 40 N."},
-   {q:"Se una massa raddoppia e l'altra triplica (distanza invariata), la forza:",opts:["Aumenta di 5 volte","Aumenta di 6 volte","Resta uguale","Aumenta di 9 volte"],ans:1,exp:"F ∝ m₁m₂ → fattore 2×3 = 6: la forza diventa 6 volte."},
-   {q:"Forza Sole–Terra: M_S = 2×10³⁰, M_T = 6×10²⁴, r = 1,5×10¹¹ m. Ordine di grandezza? (G = 6,67×10⁻¹¹)",opts:["≈ 3,5×10²² N","≈ 3,5×10¹⁵ N","≈ 9,8 N","≈ 3,5×10³⁰ N"],ans:0,exp:"F = 6,67×10⁻¹¹×(2×10³⁰)(6×10²⁴)/(1,5×10¹¹)² ≈ 3,5×10²² N."},
-   {q:"Due masse identiche a distanza r si attraggono con 12 N. Raddoppiando UNA massa, la forza:",opts:["6 N","12 N","24 N","48 N"],ans:2,exp:"F ∝ m₁: raddoppiando una massa la forza raddoppia → 24 N."},
-   {q:"Due masse di 100 kg distano 1 m. Forza? (G = 6,67×10⁻¹¹)",opts:["6,7×10⁻⁷ N","6,7×10⁻⁵ N","6,7×10⁻⁹ N","1,0×10⁻⁶ N"],ans:0,exp:"F = 6,67×10⁻¹¹×100×100/1² = 6,67×10⁻¹¹×10⁴ = 6,7×10⁻⁷ N."}
+   {"q":"Due masse di 2 kg e 3 kg distano 1 m. Forza gravitazionale? (G = \\(6{,}67\\times 10^{-11}\\))","opts":["\\(4{,}0\\times 10^{-10}\\) N","\\(6{,}0\\times 10^{-11}\\) N","\\(2{,}0\\times 10^{-10}\\) N","\\(1{,}3\\times 10^{-9}\\) N"],"ans":0,"exp":"F = G·\\(m_{1}m_{2}/r^{2} = 6{,}67\\times 10^{-11}\\times 6/1^{2} = 4{,}0\\times 10^{-10}\\) N."},
+   {"q":"La forza tra due corpi è 8 N. Se raddoppiano la distanza, diventa:","opts":["16 N","4 N","2 N","1 N"],"ans":2,"exp":"F \\(\\to \\) F/4 = 8/4 = 2 N (legge dell'inverso del quadrato)."},
+   {"q":"La forza tra due corpi è 36 N. Triplicando la distanza diventa:","opts":["12 N","9 N","4 N","108 N"],"ans":2,"exp":"F \\(\\to \\) F/\\(3^{2}\\) = 36/9 = 4 N."},
+   {"q":"Una massa di 1 kg sulla superficie terrestre (M = \\(6\\times 10^{24}\\) kg, r = \\(6{,}4\\times 10^{6}\\) m). Forza? (G = \\(6{,}67\\times 10^{-11}\\))","opts":["1,6 N","9,8 N","98 N","19,6 N"],"ans":1,"exp":"F = \\(6{,}67\\times 10^{-11}\\times 6\\times 10^{24}\\times 1/(6{,}4\\times 10^{6})^{2}\\) ≈ 9,8 N: è il peso del corpo."},
+   {"q":"Due masse di 10 kg distano 0,5 m. Forza? (G = \\(6{,}67\\times 10^{-11}\\))","opts":["\\(2{,}7\\times 10^{-8}\\) N","\\(6{,}7\\times 10^{-9}\\) N","\\(1{,}3\\times 10^{-7}\\) N","\\(5{,}3\\times 10^{-8}\\) N"],"ans":0,"exp":"F = \\(6{,}67\\times 10^{-11}\\times 100/0{,}25 = 6{,}67\\times 10^{-11}\\times 400 = 2{,}7\\times 10^{-8}\\) N."},
+   {"q":"La forza tra due corpi a distanza r è 10 N. Avvicinandoli a r/2 diventa:","opts":["20 N","40 N","5 N","2,5 N"],"ans":1,"exp":"Dimezzando r, F \\(\\to \\) F×\\(2^{2}\\) = 10×4 = 40 N."},
+   {"q":"Se una massa raddoppia e l'altra triplica (distanza invariata), la forza:","opts":["Aumenta di 5 volte","Aumenta di 6 volte","Resta uguale","Aumenta di 9 volte"],"ans":1,"exp":"F \\(\\propto  m_{1}m_{2} \\to \\) fattore 2×3 = 6: la forza diventa 6 volte."},
+   {"q":"Forza Sole–Terra: \\(M_{\\text{S}} = 2\\times 10^{30}, M_{\\text{T}} = 6\\times 10^{24}\\), r = \\(1{,}5\\times 10^{11}\\) m. Ordine di grandezza? (G = \\(6{,}67\\times 10^{-11}\\))","opts":["≈ \\(3{,}5\\times 10^{22}\\) N","≈ \\(3{,}5\\times 10^{15}\\) N","≈ 9,8 N","≈ \\(3{,}5\\times 10^{30}\\) N"],"ans":0,"exp":"F = \\(6{,}67\\times 10^{-11}\\times (2\\times 10^{30})(6\\times 10^{24})/(1{,}5\\times 10^{11})^{2}\\) ≈ \\(3{,}5\\times 10^{22}\\) N."},
+   {"q":"Due masse identiche a distanza r si attraggono con 12 N. Raddoppiando UNA massa, la forza:","opts":["6 N","12 N","24 N","48 N"],"ans":2,"exp":"F \\(\\propto  m_{1}\\): raddoppiando una massa la forza raddoppia \\(\\to \\) 24 N."},
+   {"q":"Due masse di 100 kg distano 1 m. Forza? (G = \\(6{,}67\\times 10^{-11}\\))","opts":["\\(6{,}7\\times 10^{-7}\\) N","\\(6{,}7\\times 10^{-5}\\) N","\\(6{,}7\\times 10^{-9}\\) N","\\(1{,}0\\times 10^{-6}\\) N"],"ans":0,"exp":"F = \\(6{,}67\\times 10^{-11}\\times 100\\times 100/1^{2} = 6{,}67\\times 10^{-11}\\times 10^{4} = 6{,}7\\times 10^{-7}\\) N."}
   ] },
   campo: { teoria:[
-   {q:"In quali unità si misura l'intensità del campo gravitazionale g?",opts:["In newton (N)","In N/kg, equivalenti a m/s²","In joule (J)","In kg/m²"],ans:1,exp:"g = F/m si misura in N/kg, che equivalgono a m/s²: è anche l'accelerazione di gravità."},
-   {q:"Sulla superficie di un pianeta di massa M e raggio R, il campo vale:",opts:["G M R²","G M / R²","G M / R","M / (G R²)"],ans:1,exp:"g_sup = G M / R²."},
-   {q:"Il valore di g in un punto dipende dalla massa del corpo che vi si trova?",opts:["Sì, è proporzionale ad essa","No, dipende solo dalla massa sorgente e dalla distanza","Solo se il corpo è grande","Sì, al quadrato"],ans:1,exp:"g dipende solo dalla massa che genera il campo e da r: per questo tutti i corpi cadono con la stessa accelerazione."},
-   {q:"Salendo a quota elevata, l'intensità g del campo terrestre:",opts:["Aumenta","Resta costante","Diminuisce come 1/r²","Si annulla bruscamente"],ans:2,exp:"g(h) = GM/(R+h)²: crescendo r, g diminuisce secondo l'inverso del quadrato."},
-   {q:"Due corpi di massa diversa cadono nel vuoto vicino alla Terra. Le loro accelerazioni:",opts:["Sono uguali (= g)","Sono proporzionali alle masse","Il più pesante accelera di più","Dipendono dalla forma"],ans:0,exp:"a = F/m = g per entrambi: la massa si semplifica, tutti cadono con la stessa accelerazione (Galileo)."},
-   {q:"A parità di massa, un pianeta con raggio minore ha un g superficiale:",opts:["Minore","Uguale","Maggiore","Nullo"],ans:2,exp:"g = GM/R²: con R più piccolo (al denominatore al quadrato) g è maggiore."},
-   {q:"Il vettore campo gravitazionale generato da una massa punta:",opts:["Verso la massa (radialmente entrante)","Lontano dalla massa","Tangente alle orbite","Verso l'alto"],ans:0,exp:"Le linee di campo gravitazionale sono radiali ed entranti, dirette verso la massa che le genera."},
-   {q:"Gli astronauti sulla ISS (quota ≈ 400 km) 'fluttuano' perché:",opts:["Lassù non c'è gravità","Sono in caduta libera continua attorno alla Terra","La Terra non li attrae più","Sono troppo leggeri"],ans:1,exp:"A 400 km g vale ancora ≈ 8,7 m/s²: la 'assenza di peso' è dovuta alla caduta libera, non all'assenza di gravità."},
-   {q:"Raddoppiando la massa di un pianeta (stesso raggio), il g superficiale:",opts:["Si dimezza","Raddoppia","Quadruplica","Resta uguale"],ans:1,exp:"g = GM/R² ∝ M: raddoppiando M, anche g raddoppia."},
-   {q:"Perché g coincide numericamente con l'accelerazione di caduta libera?",opts:["Per pura coincidenza","Perché a = F/m = (mg)/m = g","Solo sulla Terra","Non coincidono"],ans:1,exp:"La forza peso è F = mg; l'accelerazione è a = F/m = g, indipendente dalla massa del corpo."}
+   {"q":"In quali unità si misura l'intensità del campo gravitazionale g?","opts":["In newton (N)","In N/kg, equivalenti a m/\\(s^{2}\\)","In joule (J)","In kg/\\(m^{2}\\)"],"ans":1,"exp":"g = F/m si misura in N/kg, che equivalgono a m/\\(s^{2}\\): è anche l'accelerazione di gravità."},
+   {"q":"Sulla superficie di un pianeta di massa M e raggio R, il campo vale:","opts":["G M \\(R^{2}\\)","G M / \\(R^{2}\\)","G M / R","M / (G \\(R^{2}\\))"],"ans":1,"exp":"\\(g_{\\text{sup}}\\) = G M / \\(R^{2}\\)."},
+   {"q":"Il valore di g in un punto dipende dalla massa del corpo che vi si trova?","opts":["Sì, è proporzionale ad essa","No, dipende solo dalla massa sorgente e dalla distanza","Solo se il corpo è grande","Sì, al quadrato"],"ans":1,"exp":"g dipende solo dalla massa che genera il campo e da r: per questo tutti i corpi cadono con la stessa accelerazione."},
+   {"q":"Salendo a quota elevata, l'intensità g del campo terrestre:","opts":["Aumenta","Resta costante","Diminuisce come 1/\\(r^{2}\\)","Si annulla bruscamente"],"ans":2,"exp":"g(h) = GM/(R+h)²: crescendo r, g diminuisce secondo l'inverso del quadrato."},
+   {"q":"Due corpi di massa diversa cadono nel vuoto vicino alla Terra. Le loro accelerazioni:","opts":["Sono uguali (= g)","Sono proporzionali alle masse","Il più pesante accelera di più","Dipendono dalla forma"],"ans":0,"exp":"a = F/m = g per entrambi: la massa si semplifica, tutti cadono con la stessa accelerazione (Galileo)."},
+   {"q":"A parità di massa, un pianeta con raggio minore ha un g superficiale:","opts":["Minore","Uguale","Maggiore","Nullo"],"ans":2,"exp":"g = GM/\\(R^{2}\\): con R più piccolo (al denominatore al quadrato) g è maggiore."},
+   {"q":"Il vettore campo gravitazionale generato da una massa punta:","opts":["Verso la massa (radialmente entrante)","Lontano dalla massa","Tangente alle orbite","Verso l'alto"],"ans":0,"exp":"Le linee di campo gravitazionale sono radiali ed entranti, dirette verso la massa che le genera."},
+   {"q":"Gli astronauti sulla ISS (quota ≈ 400 km) 'fluttuano' perché:","opts":["Lassù non c'è gravità","Sono in caduta libera continua attorno alla Terra","La Terra non li attrae più","Sono troppo leggeri"],"ans":1,"exp":"A 400 km g vale ancora ≈ 8,7 m/\\(s^{2}\\): la 'assenza di peso' è dovuta alla caduta libera, non all'assenza di gravità."},
+   {"q":"Raddoppiando la massa di un pianeta (stesso raggio), il g superficiale:","opts":["Si dimezza","Raddoppia","Quadruplica","Resta uguale"],"ans":1,"exp":"g = GM/\\(R^{2} \\propto \\) M: raddoppiando M, anche g raddoppia."},
+   {"q":"Perché g coincide numericamente con l'accelerazione di caduta libera?","opts":["Per pura coincidenza","Perché a = F/m = (mg)/m = g","Solo sulla Terra","Non coincidono"],"ans":1,"exp":"La forza peso è F = mg; l'accelerazione è a = F/m = g, indipendente dalla massa del corpo."}
   ], calcolo:[
-   {q:"Un pianeta ha la massa della Terra ma raggio doppio. Quanto vale g in superficie? (g_Terra = 9,8)",opts:["19,6 m/s²","9,8 m/s²","4,9 m/s²","2,45 m/s²"],ans:3,exp:"g = GM/R²: raddoppiando R, g → g/4 = 9,8/4 ≈ 2,45 m/s²."},
-   {q:"Pianeta con massa 4 volte la Terra e stesso raggio. g superficiale? (g_Terra = 9,8)",opts:["2,45 m/s²","9,8 m/s²","19,6 m/s²","39,2 m/s²"],ans:3,exp:"g ∝ M: g = 4×9,8 = 39,2 m/s²."},
-   {q:"Pianeta con massa doppia e raggio doppio della Terra. g superficiale? (g_Terra = 9,8)",opts:["4,9 m/s²","9,8 m/s²","19,6 m/s²","2,45 m/s²"],ans:0,exp:"g = G(2M)/(2R)² = 2/4·g_Terra = 0,5×9,8 = 4,9 m/s²."},
-   {q:"A quota h = R (distanza dal centro r = 2R), il campo terrestre vale: (g_sup = 9,8)",opts:["9,8 m/s²","4,9 m/s²","2,45 m/s²","1,1 m/s²"],ans:2,exp:"g(2R) = GM/(2R)² = g_sup/4 = 9,8/4 ≈ 2,45 m/s²."},
-   {q:"A distanza r = 3R dal centro della Terra, g vale circa: (g_sup = 9,8)",opts:["3,3 m/s²","1,1 m/s²","0,5 m/s²","9,8 m/s²"],ans:1,exp:"g(3R) = g_sup/3² = 9,8/9 ≈ 1,1 m/s²."},
-   {q:"Luna: M = 7,3×10²² kg, R = 1,7×10⁶ m. g superficiale? (G = 6,67×10⁻¹¹)",opts:["≈ 1,6 m/s²","≈ 9,8 m/s²","≈ 3,7 m/s²","≈ 0,3 m/s²"],ans:0,exp:"g = 6,67×10⁻¹¹×7,3×10²²/(1,7×10⁶)² ≈ 1,6 m/s², circa 1/6 di quello terrestre."},
-   {q:"Su un pianeta g = 20 m/s². Quanto pesa un corpo di 5 kg?",opts:["25 N","100 N","4 N","200 N"],ans:1,exp:"P = m·g = 5×20 = 100 N."},
-   {q:"Sulla Terra (g = 9,8 m/s²) un corpo pesa 49 N. La sua massa è:",opts:["49 kg","5 kg","0,2 kg","480 kg"],ans:1,exp:"m = P/g = 49/9,8 = 5 kg."},
-   {q:"Marte: M = 6,4×10²³ kg, R = 3,4×10⁶ m. g superficiale? (G = 6,67×10⁻¹¹)",opts:["≈ 1,6 m/s²","≈ 3,7 m/s²","≈ 9,8 m/s²","≈ 6,2 m/s²"],ans:1,exp:"g = 6,67×10⁻¹¹×6,4×10²³/(3,4×10⁶)² ≈ 3,7 m/s²."},
-   {q:"Su un pianeta con g doppio della Terra, un astronauta che sulla Terra pesa 700 N pesa:",opts:["350 N","700 N","1400 N","70 N"],ans:2,exp:"Il peso è proporzionale a g: P = 2×700 = 1400 N (la massa non cambia)."}
+   {"q":"Un pianeta ha la massa della Terra ma raggio doppio. Quanto vale g in superficie? (\\(g_{\\text{Terra}}\\) = 9,8)","opts":["19,6 m/\\(s^{2}\\)","9,8 m/\\(s^{2}\\)","4,9 m/\\(s^{2}\\)","2,45 m/\\(s^{2}\\)"],"ans":3,"exp":"g = GM/\\(R^{2}\\): raddoppiando R, g \\(\\to \\) g/4 = 9,8/4 ≈ 2,45 m/\\(s^{2}\\)."},
+   {"q":"Pianeta con massa 4 volte la Terra e stesso raggio. g superficiale? (\\(g_{\\text{Terra}}\\) = 9,8)","opts":["2,45 m/\\(s^{2}\\)","9,8 m/\\(s^{2}\\)","19,6 m/\\(s^{2}\\)","39,2 m/\\(s^{2}\\)"],"ans":3,"exp":"g \\(\\propto \\) M: g = 4×9,8 = 39,2 m/\\(s^{2}\\)."},
+   {"q":"Pianeta con massa doppia e raggio doppio della Terra. g superficiale? (\\(g_{\\text{Terra}}\\) = 9,8)","opts":["4,9 m/\\(s^{2}\\)","9,8 m/\\(s^{2}\\)","19,6 m/\\(s^{2}\\)","2,45 m/\\(s^{2}\\)"],"ans":0,"exp":"g = G(2M)/\\((2R)^{2} = 2/4\\cdot g_{\\text{Terra}}\\) = 0,5×9,8 = 4,9 m/\\(s^{2}\\)."},
+   {"q":"A quota h = R (distanza dal centro r = 2R), il campo terrestre vale: (\\(g_{\\text{sup}}\\) = 9,8)","opts":["9,8 m/\\(s^{2}\\)","4,9 m/\\(s^{2}\\)","2,45 m/\\(s^{2}\\)","1,1 m/\\(s^{2}\\)"],"ans":2,"exp":"g(2R) = GM/\\((2R)^{2} = g_{\\text{sup}}\\)/4 = 9,8/4 ≈ 2,45 m/\\(s^{2}\\)."},
+   {"q":"A distanza r = 3R dal centro della Terra, g vale circa: (\\(g_{\\text{sup}}\\) = 9,8)","opts":["3,3 m/\\(s^{2}\\)","1,1 m/\\(s^{2}\\)","0,5 m/\\(s^{2}\\)","9,8 m/\\(s^{2}\\)"],"ans":1,"exp":"g(3R) = \\(g_{\\text{sup}}/3^{2}\\) = 9,8/9 ≈ 1,1 m/\\(s^{2}\\)."},
+   {"q":"Luna: M = \\(7{,}3\\times 10^{22}\\) kg, R = \\(1{,}7\\times 10^{6}\\) m. g superficiale? (G = \\(6{,}67\\times 10^{-11}\\))","opts":["≈ 1,6 m/\\(s^{2}\\)","≈ 9,8 m/\\(s^{2}\\)","≈ 3,7 m/\\(s^{2}\\)","≈ 0,3 m/\\(s^{2}\\)"],"ans":0,"exp":"g = \\(6{,}67\\times 10^{-11}\\times 7{,}3\\times 10^{22}/(1{,}7\\times 10^{6})^{2}\\) ≈ 1,6 m/\\(s^{2}\\), circa 1/6 di quello terrestre."},
+   {"q":"Su un pianeta g = 20 m/\\(s^{2}\\). Quanto pesa un corpo di 5 kg?","opts":["25 N","100 N","4 N","200 N"],"ans":1,"exp":"P = m·g = 5×20 = 100 N."},
+   {"q":"Sulla Terra (g = 9,8 m/\\(s^{2}\\)) un corpo pesa 49 N. La sua massa è:","opts":["49 kg","5 kg","0,2 kg","480 kg"],"ans":1,"exp":"m = P/g = 49/9,8 = 5 kg."},
+   {"q":"Marte: M = \\(6{,}4\\times 10^{23}\\) kg, R = \\(3{,}4\\times 10^{6}\\) m. g superficiale? (G = \\(6{,}67\\times 10^{-11}\\))","opts":["≈ 1,6 m/\\(s^{2}\\)","≈ 3,7 m/\\(s^{2}\\)","≈ 9,8 m/\\(s^{2}\\)","≈ 6,2 m/\\(s^{2}\\)"],"ans":1,"exp":"g = \\(6{,}67\\times 10^{-11}\\times 6{,}4\\times 10^{23}/(3{,}4\\times 10^{6})^{2}\\) ≈ 3,7 m/\\(s^{2}\\)."},
+   {"q":"Su un pianeta con g doppio della Terra, un astronauta che sulla Terra pesa 700 N pesa:","opts":["350 N","700 N","1400 N","70 N"],"ans":2,"exp":"Il peso è proporzionale a g: P = 2×700 = 1400 N (la massa non cambia)."}
   ] },
   energia: { teoria:[
-   {q:"L'energia potenziale gravitazionale U = −GMm/r è:",opts:["Sempre positiva","Sempre negativa (con zero all'infinito)","Sempre nulla","Positiva vicino al pianeta"],ans:1,exp:"Con lo zero posto all'infinito, U è negativa: il corpo è 'legato' in una buca di potenziale."},
-   {q:"In questa convenzione, dove si pone lo zero dell'energia potenziale?",opts:["Al centro del pianeta","Sulla superficie","All'infinito (r → ∞)","Non esiste uno zero"],ans:2,exp:"Si pone U = 0 a distanza infinita, dove l'attrazione è trascurabile."},
-   {q:"Per un corpo in orbita legata (chiusa), l'energia meccanica totale E è:",opts:["Positiva","Nulla","Negativa","Infinita"],ans:2,exp:"Orbita legata ⇒ E = K + U < 0: il corpo non ha energia sufficiente per sfuggire."},
-   {q:"La velocità di fuga da un pianeta dipende dalla massa del corpo lanciato?",opts:["Sì, è proporzionale ad essa","No, non dipende dal corpo","Solo per corpi pesanti","Sì, al quadrato"],ans:1,exp:"v_fuga = √(2GM/R): dipende solo dal pianeta, non dalla massa lanciata."},
-   {q:"La velocità di fuga dalla superficie di un pianeta vale:",opts:["√(GM/R)","√(2GM/R)","2GM/R","GM/R²"],ans:1,exp:"Da ½mv² = GMm/R si ottiene v_fuga = √(2GM/R)."},
-   {q:"Se un corpo è lanciato con energia totale E = 0, la sua traiettoria è:",opts:["Circolare","Ellittica","Parabolica (caso limite di fuga)","Rimane fermo"],ans:2,exp:"E = 0 è il confine tra orbite legate (E<0) e di fuga (E>0): corrisponde alla parabola."},
-   {q:"Per portare un corpo dalla superficie all'infinito occorre:",opts:["Estrarre energia","Fornire energia per vincere l'attrazione","Energia nulla","Solo cambiare direzione"],ans:1,exp:"Bisogna fornire energia: si passa da U = −GMm/R (negativa) a U = 0 all'infinito."},
-   {q:"La formula U = mgh (energia potenziale 'di Galileo') è:",opts:["Sempre esatta","Un'approssimazione valida solo per piccole quote","Valida solo nello spazio","Equivalente a −GMm/r"],ans:1,exp:"U = mgh vale finché g è ≈ costante, cioè per quote piccole rispetto al raggio del pianeta."},
-   {q:"La Luna ha velocità di fuga molto bassa (≈ 2,4 km/s). Una conseguenza è che:",opts:["Non trattiene un'atmosfera","Ruota più velocemente","È più calda","Ha molti satelliti"],ans:0,exp:"Le molecole di gas superano facilmente i 2,4 km/s e sfuggono: la Luna non trattiene un'atmosfera."},
-   {q:"A parità di quota R, come si confrontano velocità di fuga e velocità orbitale circolare?",opts:["Sono uguali","v_fuga = √2 × v_orbitale","v_fuga = 2 × v_orbitale","v_fuga è minore"],ans:1,exp:"v_orb = √(GM/R) e v_fuga = √(2GM/R): quindi v_fuga = √2 · v_orb."}
+   {"q":"L'energia potenziale gravitazionale U = −GMm/r è:","opts":["Sempre positiva","Sempre negativa (con zero all'infinito)","Sempre nulla","Positiva vicino al pianeta"],"ans":1,"exp":"Con lo zero posto all'infinito, U è negativa: il corpo è 'legato' in una buca di potenziale."},
+   {"q":"In questa convenzione, dove si pone lo zero dell'energia potenziale?","opts":["Al centro del pianeta","Sulla superficie","All'infinito (r \\(\\to  \\infty \\))","Non esiste uno zero"],"ans":2,"exp":"Si pone U = 0 a distanza infinita, dove l'attrazione è trascurabile."},
+   {"q":"Per un corpo in orbita legata (chiusa), l'energia meccanica totale E è:","opts":["Positiva","Nulla","Negativa","Infinita"],"ans":2,"exp":"Orbita legata \\(\\Rightarrow \\) E = K + U < 0: il corpo non ha energia sufficiente per sfuggire."},
+   {"q":"La velocità di fuga da un pianeta dipende dalla massa del corpo lanciato?","opts":["Sì, è proporzionale ad essa","No, non dipende dal corpo","Solo per corpi pesanti","Sì, al quadrato"],"ans":1,"exp":"\\(v_{\\text{fuga}} = \\sqrt{2GM/R}\\): dipende solo dal pianeta, non dalla massa lanciata."},
+   {"q":"La velocità di fuga dalla superficie di un pianeta vale:","opts":["\\(\\sqrt{GM/R}\\)","\\(\\sqrt{2GM/R}\\)","2GM/R","GM/\\(R^{2}\\)"],"ans":1,"exp":"Da \\(\\tfrac12 mv^{2}\\) = GMm/R si ottiene \\(v_{\\text{fuga}} = \\sqrt{2GM/R}\\)."},
+   {"q":"Se un corpo è lanciato con energia totale E = 0, la sua traiettoria è:","opts":["Circolare","Ellittica","Parabolica (caso limite di fuga)","Rimane fermo"],"ans":2,"exp":"E = 0 è il confine tra orbite legate (E<0) e di fuga (E>0): corrisponde alla parabola."},
+   {"q":"Per portare un corpo dalla superficie all'infinito occorre:","opts":["Estrarre energia","Fornire energia per vincere l'attrazione","Energia nulla","Solo cambiare direzione"],"ans":1,"exp":"Bisogna fornire energia: si passa da U = −GMm/R (negativa) a U = 0 all'infinito."},
+   {"q":"La formula U = mgh (energia potenziale 'di Galileo') è:","opts":["Sempre esatta","Un'approssimazione valida solo per piccole quote","Valida solo nello spazio","Equivalente a −GMm/r"],"ans":1,"exp":"U = mgh vale finché g è ≈ costante, cioè per quote piccole rispetto al raggio del pianeta."},
+   {"q":"La Luna ha velocità di fuga molto bassa (≈ 2,4 km/s). Una conseguenza è che:","opts":["Non trattiene un'atmosfera","Ruota più velocemente","È più calda","Ha molti satelliti"],"ans":0,"exp":"Le molecole di gas superano facilmente i 2,4 km/s e sfuggono: la Luna non trattiene un'atmosfera."},
+   {"q":"A parità di quota R, come si confrontano velocità di fuga e velocità orbitale circolare?","opts":["Sono uguali","\\(v_{\\text{fuga}} = \\sqrt{2} \\times  v_{\\text{orbitale}}\\)","\\(v_{\\text{fuga}} = 2 \\times  v_{\\text{orbitale}}\\)","\\(v_{\\text{fuga}}\\) è minore"],"ans":1,"exp":"\\(v_{\\text{orb}} = \\sqrt{GM/R}\\) e \\(v_{\\text{fuga}} = \\sqrt{2GM/R}\\): quindi \\(v_{\\text{fuga}} = \\sqrt{2} \\cdot  v_{\\text{orb}}\\)."}
   ], calcolo:[
-   {q:"La velocità di fuga dalla Terra vale circa:",opts:["7,9 km/s","11,2 km/s","2,4 km/s","30 km/s"],ans:1,exp:"v_fuga = √(2GM_T/R_T) ≈ 11,2 km/s."},
-   {q:"Un pianeta ha la stessa massa della Terra ma raggio dimezzato. v_fuga? (Terra: 11,2 km/s)",opts:["5,6 km/s","11,2 km/s","15,8 km/s","22,4 km/s"],ans:2,exp:"v_fuga ∝ √(M/R): dimezzando R, v → 11,2×√2 ≈ 15,8 km/s."},
-   {q:"Pianeta con massa 4 volte la Terra e stesso raggio. v_fuga? (Terra: 11,2 km/s)",opts:["11,2 km/s","22,4 km/s","44,8 km/s","5,6 km/s"],ans:1,exp:"v_fuga ∝ √M: ×√4 = ×2 → 22,4 km/s."},
-   {q:"Pianeta con massa doppia e raggio doppio della Terra. v_fuga? (Terra: 11,2 km/s)",opts:["5,6 km/s","11,2 km/s","22,4 km/s","16 km/s"],ans:1,exp:"v_fuga ∝ √(M/R): il rapporto M/R è invariato (2/2), quindi resta ≈ 11,2 km/s."},
-   {q:"La velocità orbitale 'rasente' il suolo è 7,9 km/s. La velocità di fuga è:",opts:["3,9 km/s","7,9 km/s","11,2 km/s","15,8 km/s"],ans:2,exp:"v_fuga = √2 × v_orb = 1,41×7,9 ≈ 11,2 km/s."},
-   {q:"Luna: M = 7,3×10²² kg, R = 1,7×10⁶ m. v_fuga? (G = 6,67×10⁻¹¹)",opts:["≈ 2,4 km/s","≈ 11,2 km/s","≈ 0,6 km/s","≈ 5,0 km/s"],ans:0,exp:"v_fuga = √(2×6,67×10⁻¹¹×7,3×10²²/1,7×10⁶) ≈ 2,4 km/s."},
-   {q:"Un corpo lanciato esattamente alla velocità di fuga ha energia meccanica totale:",opts:["E > 0","E = 0","E < 0","Indeterminata"],ans:1,exp:"La velocità di fuga corrisponde proprio alla condizione E = K + U = 0."},
-   {q:"Energia potenziale di 1 kg sulla superficie terrestre (M = 6×10²⁴, R = 6,4×10⁶)?",opts:["≈ −6,3×10⁷ J","≈ −9,8 J","≈ +6,3×10⁷ J","≈ −6,3×10³ J"],ans:0,exp:"U = −GM/R = −6,67×10⁻¹¹×6×10²⁴/6,4×10⁶ ≈ −6,3×10⁷ J per kg."},
-   {q:"Per far sfuggire 1 kg dalla Terra (v_fuga = 11,2 km/s) serve un'energia cinetica di circa:",opts:["≈ 6,3×10⁷ J","≈ 1,1×10⁴ J","≈ 11 J","≈ 6,3×10³ J"],ans:0,exp:"K = ½v² = ½×(11200)² ≈ 6,3×10⁷ J, pari in modulo a |U| in superficie."},
-   {q:"Su un pianeta con v_fuga 20 km/s, lanciando un corpo a 20 km/s esso:",opts:["Ricade subito","Sfugge (raggiunge l'infinito)","Entra in orbita circolare","Resta fermo"],ans:1,exp:"v = v_fuga ⇒ E = 0: il corpo sfugge, arrivando 'all'infinito' con velocità che tende a zero."}
+   {"q":"La velocità di fuga dalla Terra vale circa:","opts":["7,9 km/s","11,2 km/s","2,4 km/s","30 km/s"],"ans":1,"exp":"\\(v_{\\text{fuga}} = \\sqrt{2GM_{\\text{T}}/R_{\\text{T}}}\\) ≈ 11,2 km/s."},
+   {"q":"Un pianeta ha la stessa massa della Terra ma raggio dimezzato. \\(v_{\\text{fuga}}\\)? (Terra: 11,2 km/s)","opts":["5,6 km/s","11,2 km/s","15,8 km/s","22,4 km/s"],"ans":2,"exp":"\\(v_{\\text{fuga}} \\propto  \\sqrt{M/R}\\): dimezzando R, v \\(\\to  11{,}2\\times \\sqrt{2}\\) ≈ 15,8 km/s."},
+   {"q":"Pianeta con massa 4 volte la Terra e stesso raggio. \\(v_{\\text{fuga}}\\)? (Terra: 11,2 km/s)","opts":["11,2 km/s","22,4 km/s","44,8 km/s","5,6 km/s"],"ans":1,"exp":"\\(v_{\\text{fuga}} \\propto  \\sqrt{M}\\): ×\\(\\sqrt{4} = \\times 2 \\to \\) 22,4 km/s."},
+   {"q":"Pianeta con massa doppia e raggio doppio della Terra. \\(v_{\\text{fuga}}\\)? (Terra: 11,2 km/s)","opts":["5,6 km/s","11,2 km/s","22,4 km/s","16 km/s"],"ans":1,"exp":"\\(v_{\\text{fuga}} \\propto  \\sqrt{M/R}\\): il rapporto M/R è invariato (2/2), quindi resta ≈ 11,2 km/s."},
+   {"q":"La velocità orbitale 'rasente' il suolo è 7,9 km/s. La velocità di fuga è:","opts":["3,9 km/s","7,9 km/s","11,2 km/s","15,8 km/s"],"ans":2,"exp":"\\(v_{\\text{fuga}} = \\sqrt{2} \\times  v_{\\text{orb}}\\) = 1,41×7,9 ≈ 11,2 km/s."},
+   {"q":"Luna: M = \\(7{,}3\\times 10^{22}\\) kg, R = \\(1{,}7\\times 10^{6}\\) m. \\(v_{\\text{fuga}}\\)? (G = \\(6{,}67\\times 10^{-11}\\))","opts":["≈ 2,4 km/s","≈ 11,2 km/s","≈ 0,6 km/s","≈ 5,0 km/s"],"ans":0,"exp":"\\(v_{\\text{fuga}} = \\sqrt{2\\times 6{,}67\\times 10^{-11}\\times 7{,}3\\times 10^{22}/1{,}7\\times 10^{6}}\\) ≈ 2,4 km/s."},
+   {"q":"Un corpo lanciato esattamente alla velocità di fuga ha energia meccanica totale:","opts":["E > 0","E = 0","E < 0","Indeterminata"],"ans":1,"exp":"La velocità di fuga corrisponde proprio alla condizione E = K + U = 0."},
+   {"q":"Energia potenziale di 1 kg sulla superficie terrestre (M = \\(6\\times 10^{24}\\), R = \\(6{,}4\\times 10^{6}\\))?","opts":["≈ −\\(6{,}3\\times 10^{7}\\) J","≈ −9,8 J","≈ +\\(6{,}3\\times 10^{7}\\) J","≈ −\\(6{,}3\\times 10^{3}\\) J"],"ans":0,"exp":"U = −GM/R = −\\(6{,}67\\times 10^{-11}\\times 6\\times 10^{24}/6{,}4\\times 10^{6}\\) ≈ −\\(6{,}3\\times 10^{7}\\) J per kg."},
+   {"q":"Per far sfuggire 1 kg dalla Terra (\\(v_{\\text{fuga}}\\) = 11,2 km/s) serve un'energia cinetica di circa:","opts":["≈ \\(6{,}3\\times 10^{7}\\) J","≈ \\(1{,}1\\times 10^{4}\\) J","≈ 11 J","≈ \\(6{,}3\\times 10^{3}\\) J"],"ans":0,"exp":"K = \\(\\tfrac12 v^{2} = \\tfrac12 \\times (11200)^{2}\\) ≈ \\(6{,}3\\times 10^{7}\\) J, pari in modulo a |U| in superficie."},
+   {"q":"Su un pianeta con \\(v_{\\text{fuga}}\\) 20 km/s, lanciando un corpo a 20 km/s esso:","opts":["Ricade subito","Sfugge (raggiunge l'infinito)","Entra in orbita circolare","Resta fermo"],"ans":1,"exp":"v = \\(v_{\\text{fuga}} \\Rightarrow \\) E = 0: il corpo sfugge, arrivando 'all'infinito' con velocità che tende a zero."}
   ] },
   satelliti: { teoria:[
-   {q:"Per un satellite in orbita circolare, quale forza fa da forza centripeta?",opts:["L'attrito","La forza di gravità","La spinta dei motori","La forza centrifuga"],ans:1,exp:"La gravità fornisce la forza centripeta: GMm/r² = mv²/r."},
-   {q:"Secondo v = √(GM/r), le orbite più basse (r piccolo) sono percorse a velocità:",opts:["Minore","Maggiore","Uguale per tutte","Nulla"],ans:1,exp:"v ∝ 1/√r: più bassa è l'orbita, maggiore la velocità orbitale."},
-   {q:"Nel ricavare la velocità orbitale, la massa m del satellite:",opts:["Compare al quadrato","Si semplifica e non conta","Va moltiplicata per G","Determina il raggio"],ans:1,exp:"Da GMm/r² = mv²/r la massa m si semplifica: v non dipende dal satellite."},
-   {q:"Il periodo di rivoluzione di un satellite è dato da:",opts:["2π√(r³/GM)","2π√(GM/r³)","2πr/G","GM/r²"],ans:0,exp:"T = 2π√(r³/GM), che porta direttamente a T² ∝ r³."},
-   {q:"La relazione T² ∝ r³ per i satelliti coincide con:",opts:["La 1ª legge di Keplero","La 2ª legge di Keplero","La 3ª legge di Keplero","Il principio di inerzia"],ans:2,exp:"È la 3ª legge di Keplero, qui ricavata dalla dinamica di Newton."},
-   {q:"Un'orbita geostazionaria ha periodo di:",opts:["90 minuti","24 ore","1 anno","12 ore"],ans:1,exp:"Periodo 24 ore (≈ giorno terrestre): il satellite resta sopra lo stesso punto dell'equatore."},
-   {q:"Un satellite geostazionario, visto da Terra, appare:",opts:["Fermo nel cielo","Sorgere e tramontare","Muoversi velocemente","Cadere"],ans:0,exp:"Avendo lo stesso periodo di rotazione terrestre, resta fisso sopra lo stesso punto: ideale per le telecomunicazioni."},
-   {q:"Un astronauta in orbita è in 'assenza di peso' perché:",opts:["Non c'è gravità","È in caduta libera insieme alla stazione","È troppo lontano dalla Terra","Gira troppo veloce"],ans:1,exp:"Stazione e astronauta cadono insieme con la stessa accelerazione: l'astronauta non 'preme' sul pavimento."},
-   {q:"L'energia meccanica totale di un satellite in orbita circolare è:",opts:["Positiva","Nulla","Negativa, pari a −GMm/2r","Uguale a U"],ans:2,exp:"Per un'orbita circolare E = K + U = −GMm/(2r), negativa: l'orbita è legata."},
-   {q:"Aumentando il raggio dell'orbita, la velocità orbitale del satellite:",opts:["Aumenta","Diminuisce","Resta uguale","Si annulla"],ans:1,exp:"v = √(GM/r) diminuisce al crescere di r: i satelliti più alti sono più lenti."}
+   {"q":"Per un satellite in orbita circolare, quale forza fa da forza centripeta?","opts":["L'attrito","La forza di gravità","La spinta dei motori","La forza centrifuga"],"ans":1,"exp":"La gravità fornisce la forza centripeta: GMm/\\(r^{2} = mv^{2}\\)/r."},
+   {"q":"Secondo v = \\(\\sqrt{GM/r}\\), le orbite più basse (r piccolo) sono percorse a velocità:","opts":["Minore","Maggiore","Uguale per tutte","Nulla"],"ans":1,"exp":"v \\(\\propto  1/\\sqrt{r}\\): più bassa è l'orbita, maggiore la velocità orbitale."},
+   {"q":"Nel ricavare la velocità orbitale, la massa m del satellite:","opts":["Compare al quadrato","Si semplifica e non conta","Va moltiplicata per G","Determina il raggio"],"ans":1,"exp":"Da GMm/\\(r^{2} = mv^{2}\\)/r la massa m si semplifica: v non dipende dal satellite."},
+   {"q":"Il periodo di rivoluzione di un satellite è dato da:","opts":["\\(2\\pi \\sqrt{r^{3}/GM}\\)","\\(2\\pi \\sqrt{GM/r^{3}}\\)","\\(2\\pi \\)r/G","GM/\\(r^{2}\\)"],"ans":0,"exp":"T = \\(2\\pi \\sqrt{r^{3}/GM}\\), che porta direttamente a \\(T^{2} \\propto  r^{3}\\)."},
+   {"q":"La relazione \\(T^{2} \\propto  r^{3}\\) per i satelliti coincide con:","opts":["La 1ª legge di Keplero","La 2ª legge di Keplero","La 3ª legge di Keplero","Il principio di inerzia"],"ans":2,"exp":"È la 3ª legge di Keplero, qui ricavata dalla dinamica di Newton."},
+   {"q":"Un'orbita geostazionaria ha periodo di:","opts":["90 minuti","24 ore","1 anno","12 ore"],"ans":1,"exp":"Periodo 24 ore (≈ giorno terrestre): il satellite resta sopra lo stesso punto dell'equatore."},
+   {"q":"Un satellite geostazionario, visto da Terra, appare:","opts":["Fermo nel cielo","Sorgere e tramontare","Muoversi velocemente","Cadere"],"ans":0,"exp":"Avendo lo stesso periodo di rotazione terrestre, resta fisso sopra lo stesso punto: ideale per le telecomunicazioni."},
+   {"q":"Un astronauta in orbita è in 'assenza di peso' perché:","opts":["Non c'è gravità","È in caduta libera insieme alla stazione","È troppo lontano dalla Terra","Gira troppo veloce"],"ans":1,"exp":"Stazione e astronauta cadono insieme con la stessa accelerazione: l'astronauta non 'preme' sul pavimento."},
+   {"q":"L'energia meccanica totale di un satellite in orbita circolare è:","opts":["Positiva","Nulla","Negativa, pari a −GMm/2r","Uguale a U"],"ans":2,"exp":"Per un'orbita circolare E = K + U = −GMm/(2r), negativa: l'orbita è legata."},
+   {"q":"Aumentando il raggio dell'orbita, la velocità orbitale del satellite:","opts":["Aumenta","Diminuisce","Resta uguale","Si annulla"],"ans":1,"exp":"v = \\(\\sqrt{GM/r}\\) diminuisce al crescere di r: i satelliti più alti sono più lenti."}
   ], calcolo:[
-   {q:"La ISS orbita a r ≈ 6,8×10⁶ m. Velocità orbitale? (GM = 3,99×10¹⁴)",opts:["≈ 7,7 km/s","≈ 3,1 km/s","≈ 11,2 km/s","≈ 1,0 km/s"],ans:0,exp:"v = √(GM/r) = √(3,99×10¹⁴/6,8×10⁶) ≈ 7,7 km/s."},
-   {q:"Se il raggio dell'orbita quadruplica, la velocità orbitale:",opts:["Raddoppia","Si dimezza","Quadruplica","Resta uguale"],ans:1,exp:"v ∝ 1/√r: con r×4, v → v/√4 = v/2 (si dimezza)."},
-   {q:"Se il raggio dell'orbita quadruplica, il periodo diventa:",opts:["×2","×4","×8","×16"],ans:2,exp:"T ∝ r^(3/2): con r×4, T → 4^1,5 = 8 volte."},
-   {q:"Satellite geostazionario a r ≈ 4,2×10⁷ m. Velocità orbitale? (GM = 3,99×10¹⁴)",opts:["≈ 7,7 km/s","≈ 3,1 km/s","≈ 1,0 km/s","≈ 11 km/s"],ans:1,exp:"v = √(3,99×10¹⁴/4,2×10⁷) ≈ 3,1 km/s."},
-   {q:"Due satelliti hanno raggi orbitali r e 9r. Il rapporto tra i periodi T(9r)/T(r) è:",opts:["3","9","27","81"],ans:2,exp:"T ∝ r^(3/2): 9^1,5 = 27."},
-   {q:"Periodo di un satellite a r = 7×10⁶ m? (GM = 3,99×10¹⁴, T = 2π√(r³/GM))",opts:["≈ 24 h","≈ 97 min","≈ 12 h","≈ 6 min"],ans:1,exp:"T = 2π√((7×10⁶)³/3,99×10¹⁴) ≈ 5,8×10³ s ≈ 97 minuti."},
-   {q:"Due satelliti terrestri con raggi r e 2r. Rapporto delle velocità v(r)/v(2r)?",opts:["2","√2 ≈ 1,41","4","0,5"],ans:1,exp:"v ∝ 1/√r: v(r)/v(2r) = √(2r/r) = √2 ≈ 1,41."},
-   {q:"Velocità orbitale a r = 1,0×10⁷ m attorno alla Terra? (GM = 3,99×10¹⁴)",opts:["≈ 6,3 km/s","≈ 7,7 km/s","≈ 3,1 km/s","≈ 12 km/s"],ans:0,exp:"v = √(3,99×10¹⁴/1,0×10⁷) ≈ 6,3 km/s."},
-   {q:"Un satellite raddoppia il raggio dell'orbita. Il modulo della sua energia totale |−GMm/2r|:",opts:["Raddoppia","Si dimezza","Resta uguale","Quadruplica"],ans:1,exp:"|E| = GMm/(2r) ∝ 1/r: raddoppiando r, |E| si dimezza (l'energia aumenta, diventa meno negativa)."},
-   {q:"La velocità orbitale 'rasente' la Terra (r ≈ R) è circa:",opts:["≈ 7,9 km/s","≈ 11,2 km/s","≈ 3,1 km/s","≈ 30 km/s"],ans:0,exp:"v = √(GM/R) ≈ √(3,99×10¹⁴/6,37×10⁶) ≈ 7,9 km/s (prima velocità cosmica)."}
+   {"q":"La ISS orbita a r ≈ \\(6{,}8\\times 10^{6}\\) m. Velocità orbitale? (GM = \\(3{,}99\\times 10^{14}\\))","opts":["≈ 7,7 km/s","≈ 3,1 km/s","≈ 11,2 km/s","≈ 1,0 km/s"],"ans":0,"exp":"v = \\(\\sqrt{GM/r} = \\sqrt{3{,}99\\times 10^{14}/6{,}8\\times 10^{6}}\\) ≈ 7,7 km/s."},
+   {"q":"Se il raggio dell'orbita quadruplica, la velocità orbitale:","opts":["Raddoppia","Si dimezza","Quadruplica","Resta uguale"],"ans":1,"exp":"v \\(\\propto  1/\\sqrt{r}\\): con r×4, v \\(\\to \\) v/\\(\\sqrt{4}\\) = v/2 (si dimezza)."},
+   {"q":"Se il raggio dell'orbita quadruplica, il periodo diventa:","opts":["×2","×4","×8","×16"],"ans":2,"exp":"T \\(\\propto \\) r^(3/2): con r×4, T \\(\\to \\) 4^1,5 = 8 volte."},
+   {"q":"Satellite geostazionario a r ≈ \\(4{,}2\\times 10^{7}\\) m. Velocità orbitale? (GM = \\(3{,}99\\times 10^{14}\\))","opts":["≈ 7,7 km/s","≈ 3,1 km/s","≈ 1,0 km/s","≈ 11 km/s"],"ans":1,"exp":"v = \\(\\sqrt{3{,}99\\times 10^{14}/4{,}2\\times 10^{7}}\\) ≈ 3,1 km/s."},
+   {"q":"Due satelliti hanno raggi orbitali r e 9r. Il rapporto tra i periodi T(9r)/T(r) è:","opts":["3","9","27","81"],"ans":2,"exp":"T \\(\\propto \\) r^(3/2): 9^1,5 = 27."},
+   {"q":"Periodo di un satellite a r = \\(7\\times 10^{6}\\) m? (GM = \\(3{,}99\\times 10^{14}\\), T = \\(2\\pi \\sqrt{r^{3}/GM}\\))","opts":["≈ 24 h","≈ 97 min","≈ 12 h","≈ 6 min"],"ans":1,"exp":"T = \\(2\\pi \\sqrt{(7\\times 10^{6})^{3}/3{,}99\\times 10^{14}}\\) ≈ \\(5{,}8\\times 10^{3}\\) s ≈ 97 minuti."},
+   {"q":"Due satelliti terrestri con raggi r e 2r. Rapporto delle velocità v(r)/v(2r)?","opts":["2","\\(\\sqrt{2}\\) ≈ 1,41","4","0,5"],"ans":1,"exp":"v \\(\\propto  1/\\sqrt{r}\\): v(r)/v(2r) = \\(\\sqrt{2r/r} = \\sqrt{2}\\) ≈ 1,41."},
+   {"q":"Velocità orbitale a r = \\(1{,}0\\times 10^{7}\\) m attorno alla Terra? (GM = \\(3{,}99\\times 10^{14}\\))","opts":["≈ 6,3 km/s","≈ 7,7 km/s","≈ 3,1 km/s","≈ 12 km/s"],"ans":0,"exp":"v = \\(\\sqrt{3{,}99\\times 10^{14}/1{,}0\\times 10^{7}}\\) ≈ 6,3 km/s."},
+   {"q":"Un satellite raddoppia il raggio dell'orbita. Il modulo della sua energia totale |−GMm/2r|:","opts":["Raddoppia","Si dimezza","Resta uguale","Quadruplica"],"ans":1,"exp":"|E| = GMm/(2r) \\(\\propto \\) 1/r: raddoppiando r, |E| si dimezza (l'energia aumenta, diventa meno negativa)."},
+   {"q":"La velocità orbitale 'rasente' la Terra (r ≈ R) è circa:","opts":["≈ 7,9 km/s","≈ 11,2 km/s","≈ 3,1 km/s","≈ 30 km/s"],"ans":0,"exp":"v = \\(\\sqrt{GM/R}\\) ≈ \\(\\sqrt{3{,}99\\times 10^{14}/6{,}37\\times 10^{6}}\\) ≈ 7,9 km/s (prima velocità cosmica)."}
   ] }
 };
 const QSECS=['kepler','newton','campo','energia','satelliti'];
@@ -1173,6 +1174,7 @@ function renderQuiz(sec){
     <button class="${t==='calcolo'?'active':''}" onclick="setQTab('${sec}','calcolo')">🔢 Quiz di calcolo</button>
   </div>`;
   el.innerHTML=`<div class="card"><h2>🧩 Verifica</h2>${seg}${quizBody(sec,t)}</div>`;
+  typeset(el);
 }
 function quizBody(sec,t){
   const key=qKey(sec,t), st=qState[key], qs=QUIZ[sec][t]||[], total=qs.length;
@@ -1281,7 +1283,7 @@ initQuiz();
 QSECS.forEach(renderQuiz);
 [kepDraw,newDraw,cmpDraw,enDraw,satDraw].forEach(f=>f());
 
-/* ===== KaTeX: rende le formule display (con fallback Unicode se non carica) ===== */
+/* ===== KaTeX: formule display (data-tex) + matematica inline \(...\) (auto-render) ===== */
 function renderFormulas(){
   if(!window.katex) return;
   document.querySelectorAll('.formula[data-tex]').forEach(el=>{
@@ -1289,8 +1291,14 @@ function renderFormulas(){
     catch(e){}
   });
 }
-if(window.katex) renderFormulas();
-else window.addEventListener('load', renderFormulas);
+function typeset(el){
+  if(!window.renderMathInElement||!el) return;
+  try{ renderMathInElement(el,{delimiters:[{left:'\\(',right:'\\)',display:false}],throwOnError:false}); }
+  catch(e){}
+}
+function renderMath(){ renderFormulas(); typeset(document.body); }
+if(window.katex && window.renderMathInElement) renderMath();
+else window.addEventListener('load', renderMath);
 
 requestAnimationFrame(loop);
 </script>
