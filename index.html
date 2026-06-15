@@ -189,6 +189,18 @@ svg.sim{width:100%;height:auto;background:#0d1b3a;border:1px solid var(--border)
 .preset-row .nm{color:var(--muted);font-size:.85em;white-space:nowrap}
 .preset-row select{flex:1;min-width:0;padding:.42rem .55rem;border:1px solid var(--border);
   border-radius:8px;font-size:.86em;background:var(--surface);color:var(--text);font-family:inherit}
+.dd{position:relative;flex:1;min-width:0}
+.dd-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:.4rem;
+  padding:.42rem .55rem;border:1px solid var(--border);border-radius:8px;font-size:.86em;
+  background:var(--surface);color:var(--text);font-family:inherit;cursor:pointer;text-align:left}
+.dd-btn .dd-ar{color:var(--muted);font-size:.8em;transition:transform .15s}
+.dd.open .dd-btn .dd-ar{transform:rotate(180deg)}
+.dd-list{position:absolute;z-index:30;top:calc(100% + 4px);left:0;right:0;margin:0;padding:.25rem;
+  list-style:none;background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);max-height:250px;overflow-y:auto;display:none}
+.dd.open .dd-list{display:block}
+.dd-opt{padding:.42rem .5rem;border-radius:6px;font-size:.86em;cursor:pointer;white-space:nowrap}
+.dd-opt:hover{background:var(--surface2)}
 table.pdata{width:100%;border-collapse:collapse;font-size:.82em;margin:.3rem 0 .1rem;
   display:block;overflow-x:auto;white-space:nowrap}
 table.pdata th,table.pdata td{padding:.34rem .55rem;text-align:right;border-bottom:1px solid var(--border);
@@ -320,27 +332,30 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
       </div>
       <div class="ctrl-pane">
         <div class="preset-row"><span class="nm">🪐 Carica</span>
-          <select id="kepPreset" onchange="applyPreset('kepler',this.value)">
-            <option value="">— pianeta reale —</option>
-            <option value="mercurio">Mercurio (a 0,39 · e 0,21)</option>
-            <option value="venere">Venere (a 0,72 · e 0,01)</option>
-            <option value="terra">Terra (a 1,00 · e 0,02)</option>
-            <option value="marte">Marte (a 1,52 · e 0,09)</option>
-            <option value="giove">Giove (a 5,20 · e 0,05)</option>
-            <option value="saturno">Saturno (a 9,54 · e 0,05)</option>
-            <option value="cometa">Cometa (orbita molto eccentrica)</option>
-          </select>
+          <div class="dd" data-sec="kepler">
+            <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur">— pianeta reale —</span><span class="dd-ar">▾</span></button>
+            <ul class="dd-list" role="listbox">
+              <li class="dd-opt" data-value="">— pianeta reale —</li>
+              <li class="dd-opt" data-value="mercurio">Mercurio (\(a=0{,}39\), \(e=0{,}21\))</li>
+              <li class="dd-opt" data-value="venere">Venere (\(a=0{,}72\), \(e=0{,}01\))</li>
+              <li class="dd-opt" data-value="terra">Terra (\(a=1{,}00\), \(e=0{,}02\))</li>
+              <li class="dd-opt" data-value="marte">Marte (\(a=1{,}52\), \(e=0{,}09\))</li>
+              <li class="dd-opt" data-value="giove">Giove (\(a=5{,}20\), \(e=0{,}05\))</li>
+              <li class="dd-opt" data-value="saturno">Saturno (\(a=9{,}54\), \(e=0{,}05\))</li>
+              <li class="dd-opt" data-value="cometa">Cometa (orbita molto eccentrica)</li>
+            </ul>
+          </div>
         </div>
         <div class="ctrl">
           <label><span class="nm">Semiasse \(a\)</span><input type="range" id="kepA" min="0.4" max="10" step="0.01" value="1.5"><span class="v" id="kepAv">1,5 UA</span></label>
           <label><span class="nm">Eccentricità \(e\)</span><input type="range" id="kepE" min="0" max="0.8" step="0.01" value="0.4"><span class="v" id="kepEv">0,40</span></label>
         </div>
         <div class="read">
-          <div class="it"><span class="l">Perielio</span><span class="v" id="kepRp">—</span> UA</div>
-          <div class="it"><span class="l">Afelio</span><span class="v" id="kepRa">—</span> UA</div>
-          <div class="it"><span class="l">Periodo \(T\)</span><span class="v" id="kepT">—</span> anni</div>
-          <div class="it"><span class="l">\(v\) perielio</span><span class="v" id="kepVp">—</span> km/s</div>
-          <div class="it"><span class="l">\(v\) afelio</span><span class="v" id="kepVa">—</span> km/s</div>
+          <div class="it"><span class="l">Perielio</span><span class="v" id="kepRp">—</span></div>
+          <div class="it"><span class="l">Afelio</span><span class="v" id="kepRa">—</span></div>
+          <div class="it"><span class="l">Periodo \(T\)</span><span class="v" id="kepT">—</span></div>
+          <div class="it"><span class="l">\(v\) perielio</span><span class="v" id="kepVp">—</span></div>
+          <div class="it"><span class="l">\(v\) afelio</span><span class="v" id="kepVa">—</span></div>
           <div class="it"><span class="l">\(v_{\text{p}}/v_{\text{a}}\)</span><span class="v" id="kepRatio">—</span></div>
         </div>
         <div class="eqs ok">✓ \(T^{2} = a^{3}\) (con \(a\) in UA, \(T\) in anni)</div>
@@ -393,10 +408,10 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
           <label><span class="nm">Distanza \(r\)</span><input type="range" id="newR" min="8" max="60" step="1" value="20"><span class="v" id="newRv">\(20\cdot 10^{3}\) km</span></label>
         </div>
         <div class="read">
-          <div class="it"><span class="l">Forza \(F\)</span><span class="v" id="newF">—</span> N</div>
-          <div class="it"><span class="l">\(a\) su \(m_{2}\)</span><span class="v" id="newA">—</span> m/\(s^{2}\)</div>
-          <div class="it"><span class="l">\(F\) a \(2r\)</span><span class="v" id="newF2">—</span> N</div>
-          <div class="it"><span class="l">\(F\) a \(r/2\)</span><span class="v" id="newFh">—</span> N</div>
+          <div class="it"><span class="l">Forza \(F\)</span><span class="v" id="newF">—</span></div>
+          <div class="it"><span class="l">\(a\) su \(m_{2}\)</span><span class="v" id="newA">—</span></div>
+          <div class="it"><span class="l">\(F\) a \(2r\)</span><span class="v" id="newF2">—</span></div>
+          <div class="it"><span class="l">\(F\) a \(r/2\)</span><span class="v" id="newFh">—</span></div>
         </div>
         <div class="eqs ok" id="newNote">\(F = G\cdot M_{1}\cdot m_{2}/r^{2}\)</div>
       </div>
@@ -439,15 +454,18 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
       </div>
       <div class="ctrl-pane">
         <div class="preset-row"><span class="nm">🌍 Carica</span>
-          <select id="cmpPreset" onchange="applyPreset('campo',this.value)">
-            <option value="">— corpo reale —</option>
-            <option value="terra">Terra (g ≈ 9,8)</option>
-            <option value="luna">Luna (g ≈ 1,6)</option>
-            <option value="mercurio">Mercurio (g ≈ 3,7)</option>
-            <option value="venere">Venere (g ≈ 8,9)</option>
-            <option value="marte">Marte (g ≈ 3,7)</option>
-            <option value="giove">Giove (g ≈ 24,8)</option>
-          </select>
+          <div class="dd" data-sec="campo">
+            <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur">— corpo reale —</span><span class="dd-ar">▾</span></button>
+            <ul class="dd-list" role="listbox">
+              <li class="dd-opt" data-value="">— corpo reale —</li>
+              <li class="dd-opt" data-value="terra">Terra (\(g \approx 9{,}8\))</li>
+              <li class="dd-opt" data-value="luna">Luna (\(g \approx 1{,}6\))</li>
+              <li class="dd-opt" data-value="mercurio">Mercurio (\(g \approx 3{,}7\))</li>
+              <li class="dd-opt" data-value="venere">Venere (\(g \approx 8{,}9\))</li>
+              <li class="dd-opt" data-value="marte">Marte (\(g \approx 3{,}7\))</li>
+              <li class="dd-opt" data-value="giove">Giove (\(g \approx 24{,}8\))</li>
+            </ul>
+          </div>
         </div>
         <div class="ctrl">
           <label><span class="nm">Massa</span><input type="range" id="cmpM" min="0.01" max="350" step="0.001" value="1"><span class="v" id="cmpMv">1,0 M⊕</span></label>
@@ -455,10 +473,10 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
           <label><span class="nm">Quota \(h\)</span><input type="range" id="cmpH" min="0" max="4" step="0.05" value="1"><span class="v" id="cmpHv">1,00 R</span></label>
         </div>
         <div class="read">
-          <div class="it"><span class="l">\(g\) superficie</span><span class="v" id="cmpGs">—</span> m/\(s^{2}\)</div>
-          <div class="it"><span class="l">\(g\) a quota \(h\)</span><span class="v" id="cmpGq">—</span> m/\(s^{2}\)</div>
+          <div class="it"><span class="l">\(g\) superficie</span><span class="v" id="cmpGs">—</span></div>
+          <div class="it"><span class="l">\(g\) a quota \(h\)</span><span class="v" id="cmpGq">—</span></div>
           <div class="it"><span class="l">\(g/g\) superf.</span><span class="v" id="cmpGr">—</span></div>
-          <div class="it"><span class="l">peso di \(1\,\text{kg}\)</span><span class="v" id="cmpW">—</span> N</div>
+          <div class="it"><span class="l">peso di \(1\,\text{kg}\)</span><span class="v" id="cmpW">—</span></div>
         </div>
         <div class="eqs ok">✓ \(g = G\cdot M/r^{2}\)</div>
       </div>
@@ -507,15 +525,18 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
       </div>
       <div class="ctrl-pane">
         <div class="preset-row"><span class="nm">🚀 Carica</span>
-          <select id="enPreset" onchange="applyPreset('energia',this.value)">
-            <option value="">— corpo reale —</option>
-            <option value="terra">Terra (v_fuga ≈ 11,2 km/s)</option>
-            <option value="luna">Luna (v_fuga ≈ 2,4 km/s)</option>
-            <option value="mercurio">Mercurio (v_fuga ≈ 4,3 km/s)</option>
-            <option value="venere">Venere (v_fuga ≈ 10,4 km/s)</option>
-            <option value="marte">Marte (v_fuga ≈ 5,0 km/s)</option>
-            <option value="giove">Giove (v_fuga ≈ 60 km/s)</option>
-          </select>
+          <div class="dd" data-sec="energia">
+            <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur">— corpo reale —</span><span class="dd-ar">▾</span></button>
+            <ul class="dd-list" role="listbox">
+              <li class="dd-opt" data-value="">— corpo reale —</li>
+              <li class="dd-opt" data-value="terra">Terra (\(v_{\text{fuga}} \approx 11{,}2\,\text{km/s}\))</li>
+              <li class="dd-opt" data-value="luna">Luna (\(v_{\text{fuga}} \approx 2{,}4\,\text{km/s}\))</li>
+              <li class="dd-opt" data-value="mercurio">Mercurio (\(v_{\text{fuga}} \approx 4{,}3\,\text{km/s}\))</li>
+              <li class="dd-opt" data-value="venere">Venere (\(v_{\text{fuga}} \approx 10{,}4\,\text{km/s}\))</li>
+              <li class="dd-opt" data-value="marte">Marte (\(v_{\text{fuga}} \approx 5{,}0\,\text{km/s}\))</li>
+              <li class="dd-opt" data-value="giove">Giove (\(v_{\text{fuga}} \approx 60\,\text{km/s}\))</li>
+            </ul>
+          </div>
         </div>
         <div class="ctrl">
           <label><span class="nm">Massa pianeta</span><input type="range" id="enM" min="0.01" max="350" step="0.001" value="1"><span class="v" id="enMv">1,0 M⊕</span></label>
@@ -523,10 +544,10 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
           <label><span class="nm">\(v\) lancio</span><input type="range" id="enV" min="1" max="30" step="0.1" value="9"><span class="v" id="enVv">9,0 km/s</span></label>
         </div>
         <div class="read">
-          <div class="it"><span class="l">\(v\) fuga</span><span class="v" id="enVesc">—</span> km/s</div>
-          <div class="it"><span class="l">\(K\) iniziale</span><span class="v" id="enK">—</span> MJ/kg</div>
-          <div class="it"><span class="l">\(U\) superficie</span><span class="v" id="enU">—</span> MJ/kg</div>
-          <div class="it"><span class="l">\(E\) totale</span><span class="v" id="enE">—</span> MJ/kg</div>
+          <div class="it"><span class="l">\(v\) fuga</span><span class="v" id="enVesc">—</span></div>
+          <div class="it"><span class="l">\(K\) iniziale</span><span class="v" id="enK">—</span></div>
+          <div class="it"><span class="l">\(U\) superficie</span><span class="v" id="enU">—</span></div>
+          <div class="it"><span class="l">\(E\) totale</span><span class="v" id="enE">—</span></div>
         </div>
         <div class="eqs" id="enBadge">—</div>
       </div>
@@ -570,20 +591,23 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
       </div>
       <div class="ctrl-pane">
         <div class="preset-row"><span class="nm">🛰️ Carica</span>
-          <select id="satPreset" onchange="applyPreset('satelliti',this.value)">
-            <option value="">— satellite reale —</option>
-            <option value="iss">ISS (≈ 400 km)</option>
-            <option value="hubble">Telescopio Hubble (≈ 540 km)</option>
-            <option value="gps">GPS (≈ 20 200 km)</option>
-            <option value="geo">Geostazionario (≈ 35 786 km)</option>
-          </select>
+          <div class="dd" data-sec="satelliti">
+            <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur">— satellite reale —</span><span class="dd-ar">▾</span></button>
+            <ul class="dd-list" role="listbox">
+              <li class="dd-opt" data-value="">— satellite reale —</li>
+              <li class="dd-opt" data-value="iss">ISS (\(\approx 400\,\text{km}\))</li>
+              <li class="dd-opt" data-value="hubble">Telescopio Hubble (\(\approx 540\,\text{km}\))</li>
+              <li class="dd-opt" data-value="gps">GPS (\(\approx 20\,200\,\text{km}\))</li>
+              <li class="dd-opt" data-value="geo">Geostazionario (\(\approx 35\,786\,\text{km}\))</li>
+            </ul>
+          </div>
         </div>
         <div class="ctrl">
           <label><span class="nm">Quota \(h\)</span><input type="range" id="satH" min="200" max="42000" step="10" value="400"><span class="v" id="satHv">400 km</span></label>
         </div>
         <div class="read">
-          <div class="it"><span class="l">Raggio orbita</span><span class="v" id="satR">—</span> km</div>
-          <div class="it"><span class="l">\(v\) orbitale</span><span class="v" id="satV">—</span> km/s</div>
+          <div class="it"><span class="l">Raggio orbita</span><span class="v" id="satR">—</span></div>
+          <div class="it"><span class="l">\(v\) orbitale</span><span class="v" id="satV">—</span></div>
           <div class="it"><span class="l">Periodo \(T\)</span><span class="v" id="satT">—</span></div>
           <div class="it"><span class="l">Tipo</span><span class="v" id="satType">—</span></div>
         </div>
@@ -629,6 +653,33 @@ function fmtT(s){ if(!isFinite(s)||s<=0) return '—';
   if(h<72){const H=Math.floor(h),M=Math.round((h-H)*60);return H+'h '+(M<10?'0':'')+M+'m';}
   return (s/86400).toFixed(1)+' giorni'; }
 
+/* ===== Rende KaTeX nei valori dinamici (memoizzato per non ri-renderizzare ogni frame) ===== */
+function deTeX(t){ return t.replace(/\\,/g,' ').replace(/\\(?:text|mathrm)\{([^}]*)\}/g,'$1')
+  .replace(/\\times/g,'×').replace(/\\cdot/g,'·').replace(/\\approx/g,'≈').replace(/\\ge/g,'≥')
+  .replace(/\^\{([^}]*)\}/g,'$1').replace(/_\{([^}]*)\}/g,'$1').replace(/[{}]/g,''); }
+function setMath(el,tex){
+  if(!el) return;
+  if(window.katex){ if(el.__tex===tex) return; el.__tex=tex;
+    try{ katex.render(tex,el,{throwOnError:false}); }catch(_){ el.textContent=deTeX(tex); } }
+  else el.textContent=deTeX(tex);
+}
+function setMixed(el,html){
+  if(!el) return; if(el.__html===html) return; el.__html=html;
+  el.innerHTML=html; if(window.renderMathInElement) typeset(el);
+}
+/* numero con virgola italiana (+unità TeX opzionale) */
+function texU(x,d,u){ if(!isFinite(x)) return '\\text{—}'; const s=x.toFixed(d).replace('.','{,}'); return u?s+'\\,'+u:s; }
+/* notazione scientifica TeX */
+function texSci(x,u){ if(!isFinite(x)) return '\\text{—}'; const a=Math.abs(x); let s;
+  if(a!==0&&(a<0.01||a>=1e5)){ const p=x.toExponential(2).split('e'); s=p[0].replace('.','{,}')+'\\times 10^{'+(+p[1])+'}'; }
+  else s=Number(x.toPrecision(3)).toString().replace('.','{,}');
+  return u?s+'\\,'+u:s; }
+/* tempo TeX (min / h m / giorni) */
+function texT(s){ if(!isFinite(s)||s<=0) return '\\text{—}'; const h=s/3600;
+  if(h<1) return Math.round(s/60)+'\\,\\text{min}';
+  if(h<72){ const H=Math.floor(h),M=Math.round((h-H)*60); return H+'\\,\\text{h}\\;'+(M<10?'0':'')+M+'\\,\\text{m}'; }
+  return (s/86400).toFixed(1).replace('.','{,}')+'\\,\\text{giorni}'; }
+
 /* ===== Navigazione a schede ===== */
 const navBtns=document.querySelectorAll('#mainNav button');
 const scenes=document.querySelectorAll('section.scene');
@@ -647,7 +698,7 @@ document.querySelectorAll('.home-card').forEach(c=>c.addEventListener('click',()
 function bindRange(id,valId,fmtFn){
   const el=document.getElementById(id), out=document.getElementById(valId);
   if(!el||!out) return el;
-  const upd=()=>{ out.textContent=fmtFn?fmtFn(+el.value):el.value; };
+  const upd=()=>{ setMath(out, fmtFn?fmtFn(+el.value):el.value); };
   el.addEventListener('input',upd); upd();
   return el;
 }
@@ -774,12 +825,12 @@ function kepDraw(){
     +vArr
     +dot(planet.x,planet.y,6,COL.planet,'#bbdefb')
     +`<text x="${cx}" y="${cy+26}" fill="#ffe082" font-size="11" text-anchor="middle">Sole</text>`;
-  document.getElementById('kepRp').textContent=fmt(d.rp,2);
-  document.getElementById('kepRa').textContent=fmt(d.ra,2);
-  document.getElementById('kepT').textContent=fmt(d.T,2);
-  document.getElementById('kepVp').textContent=fmt(d.vp,1);
-  document.getElementById('kepVa').textContent=fmt(d.va,1);
-  document.getElementById('kepRatio').textContent=fmt(d.vp/d.va,2);
+  setMath(document.getElementById('kepRp'), texU(d.rp,2,'\\text{UA}'));
+  setMath(document.getElementById('kepRa'), texU(d.ra,2,'\\text{UA}'));
+  setMath(document.getElementById('kepT'),  texU(d.T,2,'\\text{anni}'));
+  setMath(document.getElementById('kepVp'), texU(d.vp,1,'\\text{km/s}'));
+  setMath(document.getElementById('kepVa'), texU(d.va,1,'\\text{km/s}'));
+  setMath(document.getElementById('kepRatio'), texU(d.vp/d.va,2));
 }
 
 /* ============ NEWTON ============ */
@@ -827,10 +878,10 @@ function newDraw(){
     +`<text x="${x1}" y="${y+r1+15}" fill="#ffcdd2" font-size="11" text-anchor="middle">M₁</text>`
     +tl+fA2+fA1+probe
     +`<text x="${px}" y="${y-r2-8}" fill="#e3f2fd" font-size="11" text-anchor="middle">m₂</text>`;
-  document.getElementById('newF').textContent=p3(d.F);
-  document.getElementById('newA').textContent=p3(d.a);
-  document.getElementById('newF2').textContent=p3(d.F/4);
-  document.getElementById('newFh').textContent=p3(d.F*4);
+  setMath(document.getElementById('newF'),  texSci(d.F,'\\text{N}'));
+  setMath(document.getElementById('newA'),  texSci(d.a,'\\mathrm{m/s^2}'));
+  setMath(document.getElementById('newF2'), texSci(d.F/4,'\\text{N}'));
+  setMath(document.getElementById('newFh'), texSci(d.F*4,'\\text{N}'));
 }
 
 /* ============ CAMPO g ============ */
@@ -890,10 +941,10 @@ function cmpDraw(){
     +arrow(colX,py,colX-22,py,COL.g,'',2)
     +dot(colX,py,6,COL.probe,'#e3f2fd')
     +`<text x="${colX+6}" y="${py-8}" fill="#e3f2fd" font-size="10">quota</text>`;
-  document.getElementById('cmpGs').textContent=fmt(d.gs,2);
-  document.getElementById('cmpGq').textContent=fmt(d.gq,2);
-  document.getElementById('cmpGr').textContent=fmt(d.gq/d.gs,2);
-  document.getElementById('cmpW').textContent=fmt(d.gq,2);
+  setMath(document.getElementById('cmpGs'), texU(d.gs,2,'\\mathrm{m/s^2}'));
+  setMath(document.getElementById('cmpGq'), texU(d.gq,2,'\\mathrm{m/s^2}'));
+  setMath(document.getElementById('cmpGr'), texU(d.gq/d.gs,2));
+  setMath(document.getElementById('cmpW'),  texU(d.gq,2,'\\text{N}'));
 }
 
 /* ============ ENERGIA / FUGA ============ */
@@ -959,13 +1010,13 @@ function enDraw(){
     +tl
     +dot(colX,py,6,COL.probe,'#e3f2fd')
     +`<text x="${colX}" y="${yBase+26}" fill="#a5d6a7" font-size="10" text-anchor="middle">pianeta</text>`;
-  document.getElementById('enVesc').textContent=fmt(d.vesc/1000,2);
-  document.getElementById('enK').textContent=fmt(d.k/1e6,1);
-  document.getElementById('enU').textContent=fmt(d.u/1e6,1);
-  document.getElementById('enE').textContent=fmt(d.e/1e6,1);
+  setMath(document.getElementById('enVesc'), texU(d.vesc/1000,2,'\\text{km/s}'));
+  setMath(document.getElementById('enK'), texU(d.k/1e6,1,'\\mathrm{MJ/kg}'));
+  setMath(document.getElementById('enU'), texU(d.u/1e6,1,'\\mathrm{MJ/kg}'));
+  setMath(document.getElementById('enE'), texU(d.e/1e6,1,'\\mathrm{MJ/kg}'));
   const out=document.getElementById('enOut'), badge=document.getElementById('enBadge');
-  if(d.escape){ out.textContent='🚀 Sfugge!'; badge.textContent='E ≥ 0 → traiettoria di fuga'; badge.className='eqs ok'; }
-  else{ out.textContent='↩️ Ricade'; badge.textContent='E < 0 → orbita legata, ricade'; badge.className='eqs no'; }
+  if(d.escape){ out.textContent='🚀 Sfugge!'; setMixed(badge,'\\(E \\ge 0\\) → traiettoria di fuga'); badge.className='eqs ok'; }
+  else{ out.textContent='↩️ Ricade'; setMixed(badge,'\\(E &lt; 0\\) → orbita legata, ricade'); badge.className='eqs no'; }
 }
 
 /* ============ SATELLITI ============ */
@@ -1008,14 +1059,14 @@ function satDraw(){
     +`<text x="${cx}" y="${cy+Rpx+15}" fill="#90caf9" font-size="11" text-anchor="middle">Terra</text>`
     +vArr
     +dot(sx,sy,5,COL.sat,'#f3e5f5');
-  document.getElementById('satR').textContent=Math.round(d.r/1000).toLocaleString('it-IT');
-  document.getElementById('satV').textContent=fmt(d.v/1000,2);
-  document.getElementById('satT').textContent=fmtT(d.T);
+  setMath(document.getElementById('satR'), Math.round(d.r/1000).toLocaleString('it-IT').replace(/\./g,'\\,')+'\\,\\text{km}');
+  setMath(document.getElementById('satV'), texU(d.v/1000,2,'\\text{km/s}'));
+  setMath(document.getElementById('satT'), texT(d.T));
   const type=d.h<2000e3?'LEO (bassa)':d.h<35000e3?'MEO (media)':'alta / GEO';
   document.getElementById('satType').textContent=type;
   const badge=document.getElementById('satBadge');
-  if(geo){ badge.textContent='📡 Geostazionaria! (T ≈ 24 h)'; badge.className='eqs ok'; }
-  else{ badge.textContent='v = √(GM/r) · T = 2π√(r³/GM)'; badge.className='eqs lim'; }
+  if(geo){ setMixed(badge,'📡 Geostazionaria! (\\(T \\approx 24\\,\\text{h}\\))'); badge.className='eqs ok'; }
+  else{ setMixed(badge,'\\(v = \\sqrt{GM/r}\\) · \\(T = 2\\pi\\sqrt{r^{3}/GM}\\)'); badge.className='eqs lim'; }
 }
 
 /* ===== Sfondo stellato (deterministico) ===== */
@@ -1260,24 +1311,44 @@ document.getElementById('btnCmp').addEventListener('click',e=>togglePlay('campo'
 document.getElementById('btnEn').addEventListener('click',e=>togglePlay('energia',e.target));
 document.getElementById('btnSat').addEventListener('click',e=>togglePlay('satelliti',e.target));
 
-bindRange('kepA','kepAv',v=>(+v).toFixed(2).replace('.',',')+' UA');
-bindRange('kepE','kepEv',v=>v.toFixed(2).replace('.',','));
-bindRange('newM1','newM1v',v=>v+'·10²⁴ kg');
-bindRange('newM2','newM2v',v=>v+' kg');
-bindRange('newR','newRv',v=>v+'·10³ km');
-bindRange('cmpM','cmpMv',v=>(v<1?(+v).toFixed(3):(+v).toFixed(1)).replace('.',',')+' M⊕');
-bindRange('cmpR','cmpRv',v=>(v<1?(+v).toFixed(2):(+v).toFixed(1)).replace('.',',')+' R⊕');
-bindRange('cmpH','cmpHv',v=>v.toFixed(2).replace('.',',')+' R');
-bindRange('enM','enMv',v=>(v<1?(+v).toFixed(3):(+v).toFixed(1)).replace('.',',')+' M⊕');
-bindRange('enR','enRv',v=>(v<1?(+v).toFixed(2):(+v).toFixed(1)).replace('.',',')+' R⊕');
-bindRange('enV','enVv',v=>v.toFixed(1).replace('.',',')+' km/s');
-bindRange('satH','satHv',v=>(+v).toLocaleString('it-IT')+' km');
+bindRange('kepA','kepAv',v=>v.toFixed(2).replace('.','{,}')+'\\,\\text{UA}');
+bindRange('kepE','kepEv',v=>v.toFixed(2).replace('.','{,}'));
+bindRange('newM1','newM1v',v=>v+'\\cdot 10^{24}\\,\\text{kg}');
+bindRange('newM2','newM2v',v=>v+'\\,\\text{kg}');
+bindRange('newR','newRv',v=>v+'\\cdot 10^{3}\\,\\text{km}');
+bindRange('cmpM','cmpMv',v=>(v<1?v.toFixed(3):v.toFixed(1)).replace('.','{,}')+'\\,M_{\\oplus}');
+bindRange('cmpR','cmpRv',v=>(v<1?v.toFixed(2):v.toFixed(1)).replace('.','{,}')+'\\,R_{\\oplus}');
+bindRange('cmpH','cmpHv',v=>v.toFixed(2).replace('.','{,}')+'\\,R');
+bindRange('enM','enMv',v=>(v<1?v.toFixed(3):v.toFixed(1)).replace('.','{,}')+'\\,M_{\\oplus}');
+bindRange('enR','enRv',v=>(v<1?v.toFixed(2):v.toFixed(1)).replace('.','{,}')+'\\,R_{\\oplus}');
+bindRange('enV','enVv',v=>v.toFixed(1).replace('.','{,}')+'\\,\\text{km/s}');
+bindRange('satH','satHv',v=>v.toLocaleString('it-IT').replace(/\./g,'\\,')+'\\,\\text{km}');
 
 ['kepA','kepE'].forEach(id=>document.getElementById(id).addEventListener('input',kepDraw));
 ['newM1','newM2','newR'].forEach(id=>document.getElementById(id).addEventListener('input',newDraw));
 ['cmpM','cmpR','cmpH'].forEach(id=>document.getElementById(id).addEventListener('input',cmpDraw));
 ['enM','enR','enV'].forEach(id=>document.getElementById(id).addEventListener('input',enDraw));
 ['satH'].forEach(id=>document.getElementById(id).addEventListener('input',satDraw));
+
+/* ===== Dropdown preset personalizzati (le etichette mostrano KaTeX) ===== */
+document.querySelectorAll('.dd').forEach(dd=>{
+  const btn=dd.querySelector('.dd-btn'), cur=dd.querySelector('.dd-cur'), sec=dd.dataset.sec;
+  btn.addEventListener('click',e=>{ e.stopPropagation();
+    const open=!dd.classList.contains('open');
+    document.querySelectorAll('.dd.open').forEach(d=>{ d.classList.remove('open'); d.querySelector('.dd-btn').setAttribute('aria-expanded','false'); });
+    dd.classList.toggle('open',open); btn.setAttribute('aria-expanded',open); });
+  dd.querySelectorAll('.dd-opt').forEach(opt=>{
+    opt.addEventListener('click',()=>{ cur.innerHTML=opt.innerHTML; dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); applyPreset(sec,opt.dataset.value); });
+  });
+});
+document.addEventListener('click',()=>document.querySelectorAll('.dd.open').forEach(d=>{ d.classList.remove('open'); d.querySelector('.dd-btn').setAttribute('aria-expanded','false'); }));
+
+/* ri-renderizza i valori dinamici quando KaTeX è pronto */
+function refreshDynamic(){
+  ['kepA','kepE','newM1','newM2','newR','cmpM','cmpR','cmpH','enM','enR','enV','satH']
+    .forEach(id=>{ const el=document.getElementById(id); if(el) el.dispatchEvent(new Event('input')); });
+  [kepDraw,newDraw,cmpDraw,enDraw,satDraw].forEach(f=>{ try{ f(); }catch(_){} });
+}
 
 initQuiz();
 QSECS.forEach(renderQuiz);
@@ -1296,7 +1367,7 @@ function typeset(el){
   try{ renderMathInElement(el,{delimiters:[{left:'\\(',right:'\\)',display:false}],throwOnError:false}); }
   catch(e){}
 }
-function renderMath(){ renderFormulas(); typeset(document.body); }
+function renderMath(){ renderFormulas(); typeset(document.body); if(typeof refreshDynamic==='function') refreshDynamic(); }
 if(window.katex && window.renderMathInElement) renderMath();
 else window.addEventListener('load', renderMath);
 
