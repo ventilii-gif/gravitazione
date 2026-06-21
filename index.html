@@ -329,42 +329,42 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 
   <p class="sec-label" data-i18n="lbl_provatu">Prova tu</p>
   <div class="card sim-block">
-    <h3>🪐 Un pianeta in orbita ellittica</h3>
-    <p class="lead">Cambia il semiasse e l'eccentricità: osserva la forma dell'orbita e nota come il pianeta acceleri al perielio (settore azzurro = area spazzata in un tempo fisso, sempre uguale \(\to \) 2ª legge).</p>
+    <h3 data-i18n="simh3_kepler">🪐 Un pianeta in orbita ellittica</h3>
+    <p class="lead" data-i18n="simlead_kepler">Cambia il semiasse e l'eccentricità: osserva la forma dell'orbita e nota come il pianeta acceleri al perielio (settore azzurro = area spazzata in un tempo fisso, sempre uguale \(\to \) 2ª legge).</p>
     <div class="sim-layout">
       <div class="sim-pane">
         <svg class="sim" id="svgKep" viewBox="0 0 440 300" preserveAspectRatio="xMidYMid meet"></svg>
-        <div class="legend">
+        <div class="legend" data-i18n="leg_kepler">
           <span style="color:var(--star)"><i style="background:var(--star)"></i>Sole (fuoco)</span>
           <span style="color:var(--vV)"><i style="background:var(--vV)"></i>velocità</span>
           <span style="color:#64b5f6"><i style="background:#64b5f6"></i>area spazzata</span>
         </div>
         <div class="sim-foot">
           <button class="play-btn" id="btnKep">⏸️ Pausa</button>
-          <span class="lead" style="margin:0">2ª legge in azione</span>
+          <span class="lead" style="margin:0" data-i18n="foot_kepler">2ª legge in azione</span>
         </div>
       </div>
       <div class="ctrl-pane">
-        <div class="preset-row"><span class="nm">🪐 Carica</span>
+        <div class="preset-row"><span class="nm" data-i18n="load_kepler">🪐 Carica</span>
           <div class="dd" data-sec="kepler">
-            <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur">— pianeta reale —</span><span class="dd-ar">▾</span></button>
+            <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur" data-i18n="ddc_kepler">— pianeta reale —</span><span class="dd-ar">▾</span></button>
             <ul class="dd-list" role="listbox">
-              <li class="dd-opt" data-value="">— pianeta reale —</li>
-              <li class="dd-opt" data-value="mercurio">Mercurio (\(a=0{,}39\), \(e=0{,}21\))</li>
-              <li class="dd-opt" data-value="venere">Venere (\(a=0{,}72\), \(e=0{,}01\))</li>
-              <li class="dd-opt" data-value="terra">Terra (\(a=1{,}00\), \(e=0{,}02\))</li>
-              <li class="dd-opt" data-value="marte">Marte (\(a=1{,}52\), \(e=0{,}09\))</li>
-              <li class="dd-opt" data-value="giove">Giove (\(a=5{,}20\), \(e=0{,}05\))</li>
-              <li class="dd-opt" data-value="saturno">Saturno (\(a=9{,}54\), \(e=0{,}05\))</li>
-              <li class="dd-opt" data-value="cometa">Cometa (orbita molto eccentrica)</li>
+              <li class="dd-opt" data-value="" data-i18n="ddo_kepler_none">— pianeta reale —</li>
+              <li class="dd-opt" data-value="mercurio" data-i18n="ddo_kepler_mercurio">Mercurio (\(a=0{,}39\), \(e=0{,}21\))</li>
+              <li class="dd-opt" data-value="venere" data-i18n="ddo_kepler_venere">Venere (\(a=0{,}72\), \(e=0{,}01\))</li>
+              <li class="dd-opt" data-value="terra" data-i18n="ddo_kepler_terra">Terra (\(a=1{,}00\), \(e=0{,}02\))</li>
+              <li class="dd-opt" data-value="marte" data-i18n="ddo_kepler_marte">Marte (\(a=1{,}52\), \(e=0{,}09\))</li>
+              <li class="dd-opt" data-value="giove" data-i18n="ddo_kepler_giove">Giove (\(a=5{,}20\), \(e=0{,}05\))</li>
+              <li class="dd-opt" data-value="saturno" data-i18n="ddo_kepler_saturno">Saturno (\(a=9{,}54\), \(e=0{,}05\))</li>
+              <li class="dd-opt" data-value="cometa" data-i18n="ddo_kepler_cometa">Cometa (orbita molto eccentrica)</li>
             </ul>
           </div>
         </div>
         <div class="ctrl">
-          <label><span class="nm">Semiasse \(a\)</span><input type="range" id="kepA" min="0.4" max="10" step="0.01" value="1.5"><span class="v" id="kepAv">1,5 UA</span></label>
-          <label><span class="nm">Eccentricità \(e\)</span><input type="range" id="kepE" min="0" max="0.8" step="0.01" value="0.4"><span class="v" id="kepEv">0,40</span></label>
+          <label><span class="nm" data-i18n="nm_kepler_1">Semiasse \(a\)</span><input type="range" id="kepA" min="0.4" max="10" step="0.01" value="1.5"><span class="v" id="kepAv">1,5 UA</span></label>
+          <label><span class="nm" data-i18n="nm_kepler_2">Eccentricità \(e\)</span><input type="range" id="kepE" min="0" max="0.8" step="0.01" value="0.4"><span class="v" id="kepEv">0,40</span></label>
         </div>
-        <div class="read">
+        <div class="read" data-i18n="read_kepler">
           <div class="it"><span class="l">Perielio</span><span class="v" id="kepRp">—</span></div>
           <div class="it"><span class="l">Afelio</span><span class="v" id="kepRa">—</span></div>
           <div class="it"><span class="l">Periodo \(T\)</span><span class="v" id="kepT">—</span></div>
@@ -372,7 +372,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
           <div class="it"><span class="l">\(v\) afelio</span><span class="v" id="kepVa">—</span></div>
           <div class="it"><span class="l">\(v_{\text{p}}/v_{\text{a}}\)</span><span class="v" id="kepRatio">—</span></div>
         </div>
-        <div class="eqs ok">✓ \(T^{2} = a^{3}\) (con \(a\) in UA, \(T\) in anni)</div>
+        <div class="eqs ok" data-i18n="eqs_kepler">✓ \(T^{2} = a^{3}\) (con \(a\) in UA, \(T\) in anni)</div>
       </div>
     </div>
   </div>
@@ -401,33 +401,33 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 
   <p class="sec-label" data-i18n="lbl_provatu">Prova tu</p>
   <div class="card sim-block">
-    <h3>⚖️ Due masse che si attraggono</h3>
-    <p class="lead">Imposta le masse e la distanza iniziale, poi guarda il corpo piccolo cadere verso quello grande: più si avvicina, più la forza (e quindi l'accelerazione) cresce — è l'effetto \(1/r^{2}\).</p>
+    <h3 data-i18n="simh3_newton">⚖️ Due masse che si attraggono</h3>
+    <p class="lead" data-i18n="simlead_newton">Imposta le masse e la distanza iniziale, poi guarda il corpo piccolo cadere verso quello grande: più si avvicina, più la forza (e quindi l'accelerazione) cresce — è l'effetto \(1/r^{2}\).</p>
     <div class="sim-layout">
       <div class="sim-pane">
         <svg class="sim" id="svgNew" viewBox="0 0 440 240" preserveAspectRatio="xMidYMid meet"></svg>
-        <div class="legend">
+        <div class="legend" data-i18n="leg_newton">
           <span style="color:var(--vF)"><i style="background:var(--vF)"></i>Forza F</span>
           <span style="color:#90caf9"><i style="background:#90caf9"></i>corpo in caduta</span>
         </div>
         <div class="sim-foot">
           <button class="play-btn" id="btnNew">⏸️ Pausa</button>
-          <span class="lead" style="margin:0">caduta libera radiale</span>
+          <span class="lead" style="margin:0" data-i18n="foot_newton">caduta libera radiale</span>
         </div>
       </div>
       <div class="ctrl-pane">
         <div class="ctrl">
-          <label><span class="nm">Massa \(M_{1}\)</span><input type="range" id="newM1" min="1" max="200" step="1" value="60"><span class="v" id="newM1v">\(60\cdot 10^{24}\) kg</span></label>
-          <label><span class="nm">Massa \(m_{2}\)</span><input type="range" id="newM2" min="10" max="2000" step="10" value="500"><span class="v" id="newM2v">500 kg</span></label>
-          <label><span class="nm">Distanza \(r\)</span><input type="range" id="newR" min="8" max="60" step="1" value="20"><span class="v" id="newRv">\(20\cdot 10^{3}\) km</span></label>
+          <label><span class="nm" data-i18n="nm_newton_1">Massa \(M_{1}\)</span><input type="range" id="newM1" min="1" max="200" step="1" value="60"><span class="v" id="newM1v">\(60\cdot 10^{24}\) kg</span></label>
+          <label><span class="nm" data-i18n="nm_newton_2">Massa \(m_{2}\)</span><input type="range" id="newM2" min="10" max="2000" step="10" value="500"><span class="v" id="newM2v">500 kg</span></label>
+          <label><span class="nm" data-i18n="nm_newton_3">Distanza \(r\)</span><input type="range" id="newR" min="8" max="60" step="1" value="20"><span class="v" id="newRv">\(20\cdot 10^{3}\) km</span></label>
         </div>
-        <div class="read">
+        <div class="read" data-i18n="read_newton">
           <div class="it"><span class="l">Forza \(F\)</span><span class="v" id="newF">—</span></div>
           <div class="it"><span class="l">\(a\) su \(m_{2}\)</span><span class="v" id="newA">—</span></div>
           <div class="it"><span class="l">\(F\) a \(2r\)</span><span class="v" id="newF2">—</span></div>
           <div class="it"><span class="l">\(F\) a \(r/2\)</span><span class="v" id="newFh">—</span></div>
         </div>
-        <div class="eqs ok" id="newNote">\(F = G\cdot M_{1}\cdot m_{2}/r^{2}\)</div>
+        <div class="eqs ok" id="newNote" data-i18n="eqs_newton">\(F = G\cdot M_{1}\cdot m_{2}/r^{2}\)</div>
       </div>
     </div>
   </div>
@@ -452,47 +452,47 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 
   <p class="sec-label" data-i18n="lbl_provatu">Prova tu</p>
   <div class="card sim-block">
-    <h3>📉 Come varia g</h3>
-    <p class="lead">Costruisci un pianeta cambiandone massa e raggio, poi solleva il punto di prova: leggi \(g\) in superficie e in quota e osserva la curva \(g(r)\) decrescere come \(1/r^{2}\). Il puntino blu cade con l'accelerazione locale.</p>
+    <h3 data-i18n="simh3_campo">📉 Come varia g</h3>
+    <p class="lead" data-i18n="simlead_campo">Costruisci un pianeta cambiandone massa e raggio, poi solleva il punto di prova: leggi \(g\) in superficie e in quota e osserva la curva \(g(r)\) decrescere come \(1/r^{2}\). Il puntino blu cade con l'accelerazione locale.</p>
     <div class="sim-layout">
       <div class="sim-pane">
         <svg class="sim" id="svgCmp" viewBox="0 0 440 260" preserveAspectRatio="xMidYMid meet"></svg>
-        <div class="legend">
+        <div class="legend" data-i18n="leg_campo">
           <span style="color:var(--vG)"><i style="background:var(--vG)"></i>campo g</span>
           <span style="color:#90caf9"><i style="background:#90caf9"></i>corpo in caduta</span>
         </div>
         <div class="sim-foot">
           <button class="play-btn" id="btnCmp">⏸️ Pausa</button>
-          <span class="lead" style="margin:0">caduta a quota variabile</span>
+          <span class="lead" style="margin:0" data-i18n="foot_campo">caduta a quota variabile</span>
         </div>
       </div>
       <div class="ctrl-pane">
-        <div class="preset-row"><span class="nm">🌍 Carica</span>
+        <div class="preset-row"><span class="nm" data-i18n="load_campo">🌍 Carica</span>
           <div class="dd" data-sec="campo">
-            <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur">— corpo reale —</span><span class="dd-ar">▾</span></button>
+            <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur" data-i18n="ddc_campo">— corpo reale —</span><span class="dd-ar">▾</span></button>
             <ul class="dd-list" role="listbox">
-              <li class="dd-opt" data-value="">— corpo reale —</li>
-              <li class="dd-opt" data-value="terra">Terra (\(g \approx 9{,}8\))</li>
-              <li class="dd-opt" data-value="luna">Luna (\(g \approx 1{,}6\))</li>
-              <li class="dd-opt" data-value="mercurio">Mercurio (\(g \approx 3{,}7\))</li>
-              <li class="dd-opt" data-value="venere">Venere (\(g \approx 8{,}9\))</li>
-              <li class="dd-opt" data-value="marte">Marte (\(g \approx 3{,}7\))</li>
-              <li class="dd-opt" data-value="giove">Giove (\(g \approx 24{,}8\))</li>
+              <li class="dd-opt" data-value="" data-i18n="ddo_campo_none">— corpo reale —</li>
+              <li class="dd-opt" data-value="terra" data-i18n="ddo_campo_terra">Terra (\(g \approx 9{,}8\))</li>
+              <li class="dd-opt" data-value="luna" data-i18n="ddo_campo_luna">Luna (\(g \approx 1{,}6\))</li>
+              <li class="dd-opt" data-value="mercurio" data-i18n="ddo_campo_mercurio">Mercurio (\(g \approx 3{,}7\))</li>
+              <li class="dd-opt" data-value="venere" data-i18n="ddo_campo_venere">Venere (\(g \approx 8{,}9\))</li>
+              <li class="dd-opt" data-value="marte" data-i18n="ddo_campo_marte">Marte (\(g \approx 3{,}7\))</li>
+              <li class="dd-opt" data-value="giove" data-i18n="ddo_campo_giove">Giove (\(g \approx 24{,}8\))</li>
             </ul>
           </div>
         </div>
         <div class="ctrl">
-          <label><span class="nm">Massa</span><input type="range" id="cmpM" min="0.01" max="350" step="0.001" value="1"><span class="v" id="cmpMv">1,0 M⊕</span></label>
-          <label><span class="nm">Raggio</span><input type="range" id="cmpR" min="0.2" max="12" step="0.01" value="1"><span class="v" id="cmpRv">1,0 R⊕</span></label>
-          <label><span class="nm">Quota \(h\)</span><input type="range" id="cmpH" min="0" max="4" step="0.05" value="1"><span class="v" id="cmpHv">1,00 R</span></label>
+          <label><span class="nm" data-i18n="nm_campo_1">Massa</span><input type="range" id="cmpM" min="0.01" max="350" step="0.001" value="1"><span class="v" id="cmpMv">1,0 M⊕</span></label>
+          <label><span class="nm" data-i18n="nm_campo_2">Raggio</span><input type="range" id="cmpR" min="0.2" max="12" step="0.01" value="1"><span class="v" id="cmpRv">1,0 R⊕</span></label>
+          <label><span class="nm" data-i18n="nm_campo_3">Quota \(h\)</span><input type="range" id="cmpH" min="0" max="4" step="0.05" value="1"><span class="v" id="cmpHv">1,00 R</span></label>
         </div>
-        <div class="read">
+        <div class="read" data-i18n="read_campo">
           <div class="it"><span class="l">\(g\) superficie</span><span class="v" id="cmpGs">—</span></div>
           <div class="it"><span class="l">\(g\) a quota \(h\)</span><span class="v" id="cmpGq">—</span></div>
           <div class="it"><span class="l">\(g/g\) superf.</span><span class="v" id="cmpGr">—</span></div>
           <div class="it"><span class="l">peso di \(1\,\text{kg}\)</span><span class="v" id="cmpW">—</span></div>
         </div>
-        <div class="eqs ok">✓ \(g = G\cdot M/r^{2}\)</div>
+        <div class="eqs ok" data-i18n="eqs_campo">✓ \(g = G\cdot M/r^{2}\)</div>
       </div>
     </div>
   </div>
@@ -522,12 +522,12 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 
   <p class="sec-label" data-i18n="lbl_provatu">Prova tu</p>
   <div class="card sim-block">
-    <h3>🎯 Sfuggi alla gravità</h3>
-    <p class="lead">Lancia un proiettile verticalmente regolando la velocità iniziale. Se è minore di \(v_{\text{fuga}}\) ricade; se la raggiunge, sfugge. La curva mostra \(U(r)\) e la retta l'energia totale \(E\).</p>
+    <h3 data-i18n="simh3_energia">🎯 Sfuggi alla gravità</h3>
+    <p class="lead" data-i18n="simlead_energia">Lancia un proiettile verticalmente regolando la velocità iniziale. Se è minore di \(v_{\text{fuga}}\) ricade; se la raggiunge, sfugge. La curva mostra \(U(r)\) e la retta l'energia totale \(E\).</p>
     <div class="sim-layout">
       <div class="sim-pane">
         <svg class="sim" id="svgEn" viewBox="0 0 440 260" preserveAspectRatio="xMidYMid meet"></svg>
-        <div class="legend">
+        <div class="legend" data-i18n="leg_energia">
           <span style="color:var(--vU)"><i style="background:var(--vU)"></i>U(r)</span>
           <span style="color:var(--vK)"><i style="background:var(--vK)"></i>energia E</span>
           <span style="color:#90caf9"><i style="background:#90caf9"></i>proiettile</span>
@@ -538,26 +538,26 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
         </div>
       </div>
       <div class="ctrl-pane">
-        <div class="preset-row"><span class="nm">🚀 Carica</span>
+        <div class="preset-row"><span class="nm" data-i18n="load_energia">🚀 Carica</span>
           <div class="dd" data-sec="energia">
-            <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur">— corpo reale —</span><span class="dd-ar">▾</span></button>
+            <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur" data-i18n="ddc_energia">— corpo reale —</span><span class="dd-ar">▾</span></button>
             <ul class="dd-list" role="listbox">
-              <li class="dd-opt" data-value="">— corpo reale —</li>
-              <li class="dd-opt" data-value="terra">Terra (\(v_{\text{fuga}} \approx 11{,}2\,\text{km/s}\))</li>
-              <li class="dd-opt" data-value="luna">Luna (\(v_{\text{fuga}} \approx 2{,}4\,\text{km/s}\))</li>
-              <li class="dd-opt" data-value="mercurio">Mercurio (\(v_{\text{fuga}} \approx 4{,}3\,\text{km/s}\))</li>
-              <li class="dd-opt" data-value="venere">Venere (\(v_{\text{fuga}} \approx 10{,}4\,\text{km/s}\))</li>
-              <li class="dd-opt" data-value="marte">Marte (\(v_{\text{fuga}} \approx 5{,}0\,\text{km/s}\))</li>
-              <li class="dd-opt" data-value="giove">Giove (\(v_{\text{fuga}} \approx 60\,\text{km/s}\))</li>
+              <li class="dd-opt" data-value="" data-i18n="ddo_energia_none">— corpo reale —</li>
+              <li class="dd-opt" data-value="terra" data-i18n="ddo_energia_terra">Terra (\(v_{\text{fuga}} \approx 11{,}2\,\text{km/s}\))</li>
+              <li class="dd-opt" data-value="luna" data-i18n="ddo_energia_luna">Luna (\(v_{\text{fuga}} \approx 2{,}4\,\text{km/s}\))</li>
+              <li class="dd-opt" data-value="mercurio" data-i18n="ddo_energia_mercurio">Mercurio (\(v_{\text{fuga}} \approx 4{,}3\,\text{km/s}\))</li>
+              <li class="dd-opt" data-value="venere" data-i18n="ddo_energia_venere">Venere (\(v_{\text{fuga}} \approx 10{,}4\,\text{km/s}\))</li>
+              <li class="dd-opt" data-value="marte" data-i18n="ddo_energia_marte">Marte (\(v_{\text{fuga}} \approx 5{,}0\,\text{km/s}\))</li>
+              <li class="dd-opt" data-value="giove" data-i18n="ddo_energia_giove">Giove (\(v_{\text{fuga}} \approx 60\,\text{km/s}\))</li>
             </ul>
           </div>
         </div>
         <div class="ctrl">
-          <label><span class="nm">Massa pianeta</span><input type="range" id="enM" min="0.01" max="350" step="0.001" value="1"><span class="v" id="enMv">1,0 M⊕</span></label>
-          <label><span class="nm">Raggio</span><input type="range" id="enR" min="0.2" max="12" step="0.01" value="1"><span class="v" id="enRv">1,0 R⊕</span></label>
-          <label><span class="nm">\(v\) lancio</span><input type="range" id="enV" min="1" max="30" step="0.1" value="9"><span class="v" id="enVv">9,0 km/s</span></label>
+          <label><span class="nm" data-i18n="nm_energia_1">Massa pianeta</span><input type="range" id="enM" min="0.01" max="350" step="0.001" value="1"><span class="v" id="enMv">1,0 M⊕</span></label>
+          <label><span class="nm" data-i18n="nm_energia_2">Raggio</span><input type="range" id="enR" min="0.2" max="12" step="0.01" value="1"><span class="v" id="enRv">1,0 R⊕</span></label>
+          <label><span class="nm" data-i18n="nm_energia_3">\(v\) lancio</span><input type="range" id="enV" min="1" max="30" step="0.1" value="9"><span class="v" id="enVv">9,0 km/s</span></label>
         </div>
-        <div class="read">
+        <div class="read" data-i18n="read_energia">
           <div class="it"><span class="l">\(v\) fuga</span><span class="v" id="enVesc">—</span></div>
           <div class="it"><span class="l">\(K\) iniziale</span><span class="v" id="enK">—</span></div>
           <div class="it"><span class="l">\(U\) superficie</span><span class="v" id="enU">—</span></div>
@@ -589,37 +589,37 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 
   <p class="sec-label" data-i18n="lbl_provatu">Prova tu</p>
   <div class="card sim-block">
-    <h3>🌐 Metti un satellite in orbita</h3>
-    <p class="lead">Cambia la quota dell'orbita attorno alla Terra: leggi come variano velocità e periodo. Le orbite basse sono veloci e con periodo breve; cerca la quota geostazionaria (\(T \approx 24\,\text{h}\)).</p>
+    <h3 data-i18n="simh3_satelliti">🌐 Metti un satellite in orbita</h3>
+    <p class="lead" data-i18n="simlead_satelliti">Cambia la quota dell'orbita attorno alla Terra: leggi come variano velocità e periodo. Le orbite basse sono veloci e con periodo breve; cerca la quota geostazionaria (\(T \approx 24\,\text{h}\)).</p>
     <div class="sim-layout">
       <div class="sim-pane">
         <svg class="sim" id="svgSat" viewBox="0 0 440 300" preserveAspectRatio="xMidYMid meet"></svg>
-        <div class="legend">
+        <div class="legend" data-i18n="leg_satelliti">
           <span style="color:var(--sat)"><i style="background:var(--sat)"></i>satellite</span>
           <span style="color:var(--vV)"><i style="background:var(--vV)"></i>velocità</span>
         </div>
         <div class="sim-foot">
           <button class="play-btn" id="btnSat">⏸️ Pausa</button>
-          <span class="lead" style="margin:0">orbita circolare</span>
+          <span class="lead" style="margin:0" data-i18n="foot_satelliti">orbita circolare</span>
         </div>
       </div>
       <div class="ctrl-pane">
-        <div class="preset-row"><span class="nm">🛰️ Carica</span>
+        <div class="preset-row"><span class="nm" data-i18n="load_satelliti">🛰️ Carica</span>
           <div class="dd" data-sec="satelliti">
-            <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur">— satellite reale —</span><span class="dd-ar">▾</span></button>
+            <button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur" data-i18n="ddc_satelliti">— satellite reale —</span><span class="dd-ar">▾</span></button>
             <ul class="dd-list" role="listbox">
-              <li class="dd-opt" data-value="">— satellite reale —</li>
-              <li class="dd-opt" data-value="iss">ISS (\(\approx 400\,\text{km}\))</li>
-              <li class="dd-opt" data-value="hubble">Telescopio Hubble (\(\approx 540\,\text{km}\))</li>
-              <li class="dd-opt" data-value="gps">GPS (\(\approx 20\,200\,\text{km}\))</li>
-              <li class="dd-opt" data-value="geo">Geostazionario (\(\approx 35\,786\,\text{km}\))</li>
+              <li class="dd-opt" data-value="" data-i18n="ddo_satelliti_none">— satellite reale —</li>
+              <li class="dd-opt" data-value="iss" data-i18n="ddo_satelliti_iss">ISS (\(\approx 400\,\text{km}\))</li>
+              <li class="dd-opt" data-value="hubble" data-i18n="ddo_satelliti_hubble">Telescopio Hubble (\(\approx 540\,\text{km}\))</li>
+              <li class="dd-opt" data-value="gps" data-i18n="ddo_satelliti_gps">GPS (\(\approx 20\,200\,\text{km}\))</li>
+              <li class="dd-opt" data-value="geo" data-i18n="ddo_satelliti_geo">Geostazionario (\(\approx 35\,786\,\text{km}\))</li>
             </ul>
           </div>
         </div>
         <div class="ctrl">
-          <label><span class="nm">Quota \(h\)</span><input type="range" id="satH" min="200" max="42000" step="10" value="400"><span class="v" id="satHv">400 km</span></label>
+          <label><span class="nm" data-i18n="nm_satelliti_1">Quota \(h\)</span><input type="range" id="satH" min="200" max="42000" step="10" value="400"><span class="v" id="satHv">400 km</span></label>
         </div>
-        <div class="read">
+        <div class="read" data-i18n="read_satelliti">
           <div class="it"><span class="l">Raggio orbita</span><span class="v" id="satR">—</span></div>
           <div class="it"><span class="l">\(v\) orbitale</span><span class="v" id="satV">—</span></div>
           <div class="it"><span class="l">Periodo \(T\)</span><span class="v" id="satT">—</span></div>
@@ -1887,6 +1887,67 @@ Object.assign(I18N.pt,{
     <h3>Energia de uma órbita circular</h3>
     <div class="formula" data-tex="E = K + U = -\\,\\dfrac{G\\,M\\,m}{2\\,r}">E = − G M m / (2 r)</div>
     <div class="tip">📡 A <strong>órbita geoestacionária</strong> tem período \\(T = 24\\,\\text{h}\\): o satélite fica sobre o mesmo ponto do equador. Está a \\(r \\approx 42\\,200\\,\\text{km}\\) do centro (altitude \\(\\approx 35\\,800\\,\\text{km}\\)). A ISS, bem mais baixa (\\(\\approx 400\\,\\text{km}\\)), orbita em \\(\\approx 92\\,\\text{minutos}\\) a \\(\\approx 7{,}7\\,\\text{km/s}\\).</div>`
+});
+/* ---- SIMULAZIONI: titoli, descrizioni, legende, etichette, menu preset ---- */
+Object.assign(I18N.en,{
+  simh3_kepler:'🪐 A planet in an elliptical orbit', simh3_newton:'⚖️ Two masses attracting each other', simh3_campo:'📉 How g varies', simh3_energia:'🎯 Escape gravity', simh3_satelliti:'🌐 Put a satellite in orbit',
+  simlead_kepler:`Change the semi-major axis and the eccentricity: watch the orbit's shape and how the planet speeds up at perihelion (blue sector = area swept in a fixed time, always equal \\(\\to\\) 2nd law).`,
+  simlead_newton:`Set the masses and the initial distance, then watch the small body fall towards the large one: the closer it gets, the larger the force (and so the acceleration) — it's the \\(1/r^{2}\\) effect.`,
+  simlead_campo:`Build a planet by changing its mass and radius, then raise the test point: read \\(g\\) at the surface and at altitude and watch the curve \\(g(r)\\) decrease as \\(1/r^{2}\\). The blue dot falls with the local acceleration.`,
+  simlead_energia:`Launch a projectile vertically by adjusting the initial speed. If it is below \\(v_{\\text{esc}}\\) it falls back; if it reaches it, it escapes. The curve shows \\(U(r)\\) and the line the total energy \\(E\\).`,
+  simlead_satelliti:`Change the orbit's altitude around the Earth: read how velocity and period vary. Low orbits are fast with short periods; look for the geostationary altitude (\\(T \\approx 24\\,\\text{h}\\)).`,
+  leg_kepler:`<span style="color:var(--star)"><i style="background:var(--star)"></i>Sun (focus)</span><span style="color:var(--vV)"><i style="background:var(--vV)"></i>velocity</span><span style="color:#64b5f6"><i style="background:#64b5f6"></i>swept area</span>`,
+  leg_newton:`<span style="color:var(--vF)"><i style="background:var(--vF)"></i>Force F</span><span style="color:#90caf9"><i style="background:#90caf9"></i>falling body</span>`,
+  leg_campo:`<span style="color:var(--vG)"><i style="background:var(--vG)"></i>field g</span><span style="color:#90caf9"><i style="background:#90caf9"></i>falling body</span>`,
+  leg_energia:`<span style="color:var(--vU)"><i style="background:var(--vU)"></i>U(r)</span><span style="color:var(--vK)"><i style="background:var(--vK)"></i>energy E</span><span style="color:#90caf9"><i style="background:#90caf9"></i>projectile</span>`,
+  leg_satelliti:`<span style="color:var(--sat)"><i style="background:var(--sat)"></i>satellite</span><span style="color:var(--vV)"><i style="background:var(--vV)"></i>velocity</span>`,
+  foot_kepler:'2nd law in action', foot_newton:'radial free fall', foot_campo:'fall at variable altitude', foot_satelliti:'circular orbit',
+  load_kepler:'🪐 Load', load_campo:'🌍 Load', load_energia:'🚀 Load', load_satelliti:'🛰️ Load',
+  nm_kepler_1:'Semi-axis \\(a\\)', nm_kepler_2:'Eccentricity \\(e\\)',
+  nm_newton_1:'Mass \\(M_{1}\\)', nm_newton_2:'Mass \\(m_{2}\\)', nm_newton_3:'Distance \\(r\\)',
+  nm_campo_1:'Mass', nm_campo_2:'Radius', nm_campo_3:'Altitude \\(h\\)',
+  nm_energia_1:'Planet mass', nm_energia_2:'Radius', nm_energia_3:'\\(v\\) launch',
+  nm_satelliti_1:'Altitude \\(h\\)',
+  read_kepler:`<div class="it"><span class="l">Perihelion</span><span class="v" id="kepRp">—</span></div><div class="it"><span class="l">Aphelion</span><span class="v" id="kepRa">—</span></div><div class="it"><span class="l">Period \\(T\\)</span><span class="v" id="kepT">—</span></div><div class="it"><span class="l">\\(v\\) perihelion</span><span class="v" id="kepVp">—</span></div><div class="it"><span class="l">\\(v\\) aphelion</span><span class="v" id="kepVa">—</span></div><div class="it"><span class="l">\\(v_{\\text{p}}/v_{\\text{a}}\\)</span><span class="v" id="kepRatio">—</span></div>`,
+  read_newton:`<div class="it"><span class="l">Force \\(F\\)</span><span class="v" id="newF">—</span></div><div class="it"><span class="l">\\(a\\) on \\(m_{2}\\)</span><span class="v" id="newA">—</span></div><div class="it"><span class="l">\\(F\\) at \\(2r\\)</span><span class="v" id="newF2">—</span></div><div class="it"><span class="l">\\(F\\) at \\(r/2\\)</span><span class="v" id="newFh">—</span></div>`,
+  read_campo:`<div class="it"><span class="l">surface \\(g\\)</span><span class="v" id="cmpGs">—</span></div><div class="it"><span class="l">\\(g\\) at altitude \\(h\\)</span><span class="v" id="cmpGq">—</span></div><div class="it"><span class="l">\\(g/g\\) surf.</span><span class="v" id="cmpGr">—</span></div><div class="it"><span class="l">weight of \\(1\\,\\text{kg}\\)</span><span class="v" id="cmpW">—</span></div>`,
+  read_energia:`<div class="it"><span class="l">\\(v\\) esc</span><span class="v" id="enVesc">—</span></div><div class="it"><span class="l">\\(K\\) initial</span><span class="v" id="enK">—</span></div><div class="it"><span class="l">\\(U\\) surface</span><span class="v" id="enU">—</span></div><div class="it"><span class="l">\\(E\\) total</span><span class="v" id="enE">—</span></div>`,
+  read_satelliti:`<div class="it"><span class="l">Orbit radius</span><span class="v" id="satR">—</span></div><div class="it"><span class="l">\\(v\\) orbital</span><span class="v" id="satV">—</span></div><div class="it"><span class="l">Period \\(T\\)</span><span class="v" id="satT">—</span></div><div class="it"><span class="l">Type</span><span class="v" id="satType">—</span></div>`,
+  eqs_kepler:'✓ \\(T^{2} = a^{3}\\) (with \\(a\\) in AU, \\(T\\) in years)', eqs_newton:'\\(F = G\\cdot M_{1}\\cdot m_{2}/r^{2}\\)', eqs_campo:'✓ \\(g = G\\cdot M/r^{2}\\)',
+  ddc_kepler:'— real planet —', ddo_kepler_none:'— real planet —', ddo_kepler_mercurio:'Mercury (\\(a=0.39\\), \\(e=0.21\\))', ddo_kepler_venere:'Venus (\\(a=0.72\\), \\(e=0.01\\))', ddo_kepler_terra:'Earth (\\(a=1.00\\), \\(e=0.02\\))', ddo_kepler_marte:'Mars (\\(a=1.52\\), \\(e=0.09\\))', ddo_kepler_giove:'Jupiter (\\(a=5.20\\), \\(e=0.05\\))', ddo_kepler_saturno:'Saturn (\\(a=9.54\\), \\(e=0.05\\))', ddo_kepler_cometa:'Comet (very eccentric orbit)',
+  ddc_campo:'— real body —', ddo_campo_none:'— real body —', ddo_campo_terra:'Earth (\\(g \\approx 9.8\\))', ddo_campo_luna:'Moon (\\(g \\approx 1.6\\))', ddo_campo_mercurio:'Mercury (\\(g \\approx 3.7\\))', ddo_campo_venere:'Venus (\\(g \\approx 8.9\\))', ddo_campo_marte:'Mars (\\(g \\approx 3.7\\))', ddo_campo_giove:'Jupiter (\\(g \\approx 24.8\\))',
+  ddc_energia:'— real body —', ddo_energia_none:'— real body —', ddo_energia_terra:'Earth (\\(v_{\\text{esc}} \\approx 11.2\\,\\text{km/s}\\))', ddo_energia_luna:'Moon (\\(v_{\\text{esc}} \\approx 2.4\\,\\text{km/s}\\))', ddo_energia_mercurio:'Mercury (\\(v_{\\text{esc}} \\approx 4.3\\,\\text{km/s}\\))', ddo_energia_venere:'Venus (\\(v_{\\text{esc}} \\approx 10.4\\,\\text{km/s}\\))', ddo_energia_marte:'Mars (\\(v_{\\text{esc}} \\approx 5.0\\,\\text{km/s}\\))', ddo_energia_giove:'Jupiter (\\(v_{\\text{esc}} \\approx 60\\,\\text{km/s}\\))',
+  ddc_satelliti:'— real satellite —', ddo_satelliti_none:'— real satellite —', ddo_satelliti_iss:'ISS (\\(\\approx 400\\,\\text{km}\\))', ddo_satelliti_hubble:'Hubble Telescope (\\(\\approx 540\\,\\text{km}\\))', ddo_satelliti_gps:'GPS (\\(\\approx 20\\,200\\,\\text{km}\\))', ddo_satelliti_geo:'Geostationary (\\(\\approx 35\\,786\\,\\text{km}\\))'
+});
+Object.assign(I18N.pt,{
+  simh3_kepler:'🪐 Um planeta em órbita elíptica', simh3_newton:'⚖️ Duas massas que se atraem', simh3_campo:'📉 Como varia g', simh3_energia:'🎯 Escape da gravidade', simh3_satelliti:'🌐 Coloque um satélite em órbita',
+  simlead_kepler:`Mude o semieixo e a excentricidade: observe a forma da órbita e note como o planeta acelera no periélio (setor azul = área varrida num tempo fixo, sempre igual \\(\\to\\) 2ª lei).`,
+  simlead_newton:`Defina as massas e a distância inicial, depois veja o corpo pequeno cair em direção ao grande: quanto mais se aproxima, maior a força (e portanto a aceleração) — é o efeito \\(1/r^{2}\\).`,
+  simlead_campo:`Construa um planeta mudando massa e raio, depois levante o ponto de prova: leia \\(g\\) na superfície e na altitude e observe a curva \\(g(r)\\) decrescer como \\(1/r^{2}\\). O pontinho azul cai com a aceleração local.`,
+  simlead_energia:`Lance um projétil verticalmente ajustando a velocidade inicial. Se for menor que \\(v_{\\text{fuga}}\\) recai; se a alcança, escapa. A curva mostra \\(U(r)\\) e a reta a energia total \\(E\\).`,
+  simlead_satelliti:`Mude a altitude da órbita ao redor da Terra: leia como variam velocidade e período. Órbitas baixas são rápidas e de período curto; procure a altitude geoestacionária (\\(T \\approx 24\\,\\text{h}\\)).`,
+  leg_kepler:`<span style="color:var(--star)"><i style="background:var(--star)"></i>Sol (foco)</span><span style="color:var(--vV)"><i style="background:var(--vV)"></i>velocidade</span><span style="color:#64b5f6"><i style="background:#64b5f6"></i>área varrida</span>`,
+  leg_newton:`<span style="color:var(--vF)"><i style="background:var(--vF)"></i>Força F</span><span style="color:#90caf9"><i style="background:#90caf9"></i>corpo em queda</span>`,
+  leg_campo:`<span style="color:var(--vG)"><i style="background:var(--vG)"></i>campo g</span><span style="color:#90caf9"><i style="background:#90caf9"></i>corpo em queda</span>`,
+  leg_energia:`<span style="color:var(--vU)"><i style="background:var(--vU)"></i>U(r)</span><span style="color:var(--vK)"><i style="background:var(--vK)"></i>energia E</span><span style="color:#90caf9"><i style="background:#90caf9"></i>projétil</span>`,
+  leg_satelliti:`<span style="color:var(--sat)"><i style="background:var(--sat)"></i>satélite</span><span style="color:var(--vV)"><i style="background:var(--vV)"></i>velocidade</span>`,
+  foot_kepler:'2ª lei em ação', foot_newton:'queda livre radial', foot_campo:'queda a altitude variável', foot_satelliti:'órbita circular',
+  load_kepler:'🪐 Carregar', load_campo:'🌍 Carregar', load_energia:'🚀 Carregar', load_satelliti:'🛰️ Carregar',
+  nm_kepler_1:'Semieixo \\(a\\)', nm_kepler_2:'Excentricidade \\(e\\)',
+  nm_newton_1:'Massa \\(M_{1}\\)', nm_newton_2:'Massa \\(m_{2}\\)', nm_newton_3:'Distância \\(r\\)',
+  nm_campo_1:'Massa', nm_campo_2:'Raio', nm_campo_3:'Altitude \\(h\\)',
+  nm_energia_1:'Massa do planeta', nm_energia_2:'Raio', nm_energia_3:'\\(v\\) lançamento',
+  nm_satelliti_1:'Altitude \\(h\\)',
+  read_kepler:`<div class="it"><span class="l">Periélio</span><span class="v" id="kepRp">—</span></div><div class="it"><span class="l">Afélio</span><span class="v" id="kepRa">—</span></div><div class="it"><span class="l">Período \\(T\\)</span><span class="v" id="kepT">—</span></div><div class="it"><span class="l">\\(v\\) periélio</span><span class="v" id="kepVp">—</span></div><div class="it"><span class="l">\\(v\\) afélio</span><span class="v" id="kepVa">—</span></div><div class="it"><span class="l">\\(v_{\\text{p}}/v_{\\text{a}}\\)</span><span class="v" id="kepRatio">—</span></div>`,
+  read_newton:`<div class="it"><span class="l">Força \\(F\\)</span><span class="v" id="newF">—</span></div><div class="it"><span class="l">\\(a\\) em \\(m_{2}\\)</span><span class="v" id="newA">—</span></div><div class="it"><span class="l">\\(F\\) a \\(2r\\)</span><span class="v" id="newF2">—</span></div><div class="it"><span class="l">\\(F\\) a \\(r/2\\)</span><span class="v" id="newFh">—</span></div>`,
+  read_campo:`<div class="it"><span class="l">\\(g\\) na superfície</span><span class="v" id="cmpGs">—</span></div><div class="it"><span class="l">\\(g\\) na altitude \\(h\\)</span><span class="v" id="cmpGq">—</span></div><div class="it"><span class="l">\\(g/g\\) sup.</span><span class="v" id="cmpGr">—</span></div><div class="it"><span class="l">peso de \\(1\\,\\text{kg}\\)</span><span class="v" id="cmpW">—</span></div>`,
+  read_energia:`<div class="it"><span class="l">\\(v\\) fuga</span><span class="v" id="enVesc">—</span></div><div class="it"><span class="l">\\(K\\) inicial</span><span class="v" id="enK">—</span></div><div class="it"><span class="l">\\(U\\) superfície</span><span class="v" id="enU">—</span></div><div class="it"><span class="l">\\(E\\) total</span><span class="v" id="enE">—</span></div>`,
+  read_satelliti:`<div class="it"><span class="l">Raio da órbita</span><span class="v" id="satR">—</span></div><div class="it"><span class="l">\\(v\\) orbital</span><span class="v" id="satV">—</span></div><div class="it"><span class="l">Período \\(T\\)</span><span class="v" id="satT">—</span></div><div class="it"><span class="l">Tipo</span><span class="v" id="satType">—</span></div>`,
+  eqs_kepler:'✓ \\(T^{2} = a^{3}\\) (com \\(a\\) em UA, \\(T\\) em anos)', eqs_newton:'\\(F = G\\cdot M_{1}\\cdot m_{2}/r^{2}\\)', eqs_campo:'✓ \\(g = G\\cdot M/r^{2}\\)',
+  ddc_kepler:'— planeta real —', ddo_kepler_none:'— planeta real —', ddo_kepler_mercurio:'Mercúrio (\\(a=0{,}39\\), \\(e=0{,}21\\))', ddo_kepler_venere:'Vênus (\\(a=0{,}72\\), \\(e=0{,}01\\))', ddo_kepler_terra:'Terra (\\(a=1{,}00\\), \\(e=0{,}02\\))', ddo_kepler_marte:'Marte (\\(a=1{,}52\\), \\(e=0{,}09\\))', ddo_kepler_giove:'Júpiter (\\(a=5{,}20\\), \\(e=0{,}05\\))', ddo_kepler_saturno:'Saturno (\\(a=9{,}54\\), \\(e=0{,}05\\))', ddo_kepler_cometa:'Cometa (órbita muito excêntrica)',
+  ddc_campo:'— corpo real —', ddo_campo_none:'— corpo real —', ddo_campo_terra:'Terra (\\(g \\approx 9{,}8\\))', ddo_campo_luna:'Lua (\\(g \\approx 1{,}6\\))', ddo_campo_mercurio:'Mercúrio (\\(g \\approx 3{,}7\\))', ddo_campo_venere:'Vênus (\\(g \\approx 8{,}9\\))', ddo_campo_marte:'Marte (\\(g \\approx 3{,}7\\))', ddo_campo_giove:'Júpiter (\\(g \\approx 24{,}8\\))',
+  ddc_energia:'— corpo real —', ddo_energia_none:'— corpo real —', ddo_energia_terra:'Terra (\\(v_{\\text{fuga}} \\approx 11{,}2\\,\\text{km/s}\\))', ddo_energia_luna:'Lua (\\(v_{\\text{fuga}} \\approx 2{,}4\\,\\text{km/s}\\))', ddo_energia_mercurio:'Mercúrio (\\(v_{\\text{fuga}} \\approx 4{,}3\\,\\text{km/s}\\))', ddo_energia_venere:'Vênus (\\(v_{\\text{fuga}} \\approx 10{,}4\\,\\text{km/s}\\))', ddo_energia_marte:'Marte (\\(v_{\\text{fuga}} \\approx 5{,}0\\,\\text{km/s}\\))', ddo_energia_giove:'Júpiter (\\(v_{\\text{fuga}} \\approx 60\\,\\text{km/s}\\))',
+  ddc_satelliti:'— satélite real —', ddo_satelliti_none:'— satélite real —', ddo_satelliti_iss:'ISS (\\(\\approx 400\\,\\text{km}\\))', ddo_satelliti_hubble:'Telescópio Hubble (\\(\\approx 540\\,\\text{km}\\))', ddo_satelliti_gps:'GPS (\\(\\approx 20\\,200\\,\\text{km}\\))', ddo_satelliti_geo:'Geoestacionário (\\(\\approx 35\\,786\\,\\text{km}\\))'
 });
 /* INIT_I18N */
 captureIT();
