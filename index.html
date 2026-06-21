@@ -260,7 +260,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 
 <!-- ============ HOME ============ -->
 <section class="scene active" id="home" data-ti="title_home" data-title="Gravitazione">
-  <div class="card">
+  <div class="card" data-i18n="home_intro">
     <h2>Dalla mela alla Luna: la gravitazione</h2>
     <p>Perché i pianeti girano intorno al Sole? Perché la Luna non cade sulla Terra — o forse <em>sta</em> cadendo? La <strong>gravitazione</strong> è la forza che governa il moto dei corpi celesti e, allo stesso tempo, fa cadere una mela. Newton capì che è la <em>stessa</em> forza.</p>
     <p>Seguiremo il percorso storico: prima le tre <strong>leggi di Keplero</strong> (che <em>descrivono</em> come si muovono i pianeti), poi la <strong>legge di gravitazione universale</strong> di Newton (che <em>spiega</em> il perché), infine la <strong>dinamica</strong>: campo gravitazionale, energia, satelliti.</p>
@@ -268,13 +268,13 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
   </div>
   <p class="sec-label" data-i18n="lbl_percorso">Percorso</p>
   <div class="home-grid">
-    <button class="home-card" data-go="kepler"><span class="ico">🔭</span><strong>Le leggi di Keplero</strong><span>Orbite, aree, periodi</span></button>
-    <button class="home-card" data-go="newton"><span class="ico">🍎</span><strong>Legge di Newton</strong><span>\(F = G\,m_{1}m_{2}/r^{2}\)</span></button>
-    <button class="home-card" data-go="campo"><span class="ico">🌍</span><strong>Campo gravitazionale</strong><span>\(g\) e il suo andamento</span></button>
-    <button class="home-card" data-go="energia"><span class="ico">🚀</span><strong>Energia e velocità di fuga</strong><span>\(U = -GMm/r\)</span></button>
-    <button class="home-card" data-go="satelliti"><span class="ico">🛰️</span><strong>Satelliti e orbite</strong><span>Velocità orbitale e periodo</span></button>
+    <button class="home-card" data-go="kepler" data-i18n="hc_kepler"><span class="ico">🔭</span><strong>Le leggi di Keplero</strong><span>Orbite, aree, periodi</span></button>
+    <button class="home-card" data-go="newton" data-i18n="hc_newton"><span class="ico">🍎</span><strong>Legge di Newton</strong><span>\(F = G\,m_{1}m_{2}/r^{2}\)</span></button>
+    <button class="home-card" data-go="campo" data-i18n="hc_campo"><span class="ico">🌍</span><strong>Campo gravitazionale</strong><span>\(g\) e il suo andamento</span></button>
+    <button class="home-card" data-go="energia" data-i18n="hc_energia"><span class="ico">🚀</span><strong>Energia e velocità di fuga</strong><span>\(U = -GMm/r\)</span></button>
+    <button class="home-card" data-go="satelliti" data-i18n="hc_satelliti"><span class="ico">🛰️</span><strong>Satelliti e orbite</strong><span>Velocità orbitale e periodo</span></button>
   </div>
-  <div class="card">
+  <div class="card" data-i18n="home_const">
     <h3>Costanti utili</h3>
     <div class="read">
       <div class="it"><span class="l">Costante \(G\)</span><span class="v">\(6{,}674\cdot 10^{-11}\)</span> \(\mathrm{N\cdot m^{2}/kg^{2}}\)</div>
@@ -286,7 +286,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
     </div>
   </div>
   <p class="sec-label" data-i18n="lbl_datireali">Dati reali dei pianeti</p>
-  <div class="card">
+  <div class="card" data-i18n="home_table">
     <h3>I pianeti del Sistema Solare</h3>
     <p class="lead">Carica questi valori nelle simulazioni con il menu “Carica” presente in ogni sezione. \(a\) = semiasse orbitale, \(e\) = eccentricità, \(T\) = periodo di rivoluzione.</p>
     <table class="pdata">
@@ -309,7 +309,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 <!-- ============ KEPLERO ============ -->
 <section class="scene" id="kepler" data-ti="title_kepler" data-title="Le tre leggi di Keplero">
   <p class="sec-label" data-i18n="lbl_teoria">Teoria</p>
-  <div class="card">
+  <div class="card" data-i18n="theory_kepler">
     <h2>🔭 Le tre leggi di Keplero</h2>
     <p>All'inizio del '600 Keplero, analizzando le osservazioni di Tycho Brahe, ricavò tre leggi <em>empiriche</em> sul moto dei pianeti attorno al Sole.</p>
     <h3>1ª legge — legge delle orbite (1609)</h3>
@@ -382,7 +382,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 <!-- ============ NEWTON ============ -->
 <section class="scene" id="newton" data-ti="title_newton" data-title="La legge di gravitazione universale">
   <p class="sec-label" data-i18n="lbl_teoria">Teoria</p>
-  <div class="card">
+  <div class="card" data-i18n="theory_newton">
     <h2>🍎 La legge di gravitazione universale</h2>
     <p>Newton (1687) capì che la forza che fa cadere una mela è la stessa che tiene la Luna in orbita. Due corpi qualsiasi di massa <em>\(m_{1}\)</em> e <em>\(m_{2}\)</em> si attraggono con una forza diretta lungo la loro congiungente:</p>
     <div class="formula" data-tex="F = G\,\dfrac{m_1 \cdot m_2}{r^2}">F = G · (m₁ · m₂) / r²</div>
@@ -437,7 +437,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 <!-- ============ CAMPO ============ -->
 <section class="scene" id="campo" data-ti="title_campo" data-title="Il campo gravitazionale">
   <p class="sec-label" data-i18n="lbl_teoria">Teoria</p>
-  <div class="card">
+  <div class="card" data-i18n="theory_campo">
     <h2>🌍 Il campo gravitazionale e g</h2>
     <p>Invece di pensare a una forza "a distanza", possiamo dire che una massa <em>\(M\)</em> crea attorno a sé un <strong>campo gravitazionale</strong>: ogni punto dello spazio acquista una proprietà, l'<strong>intensità del campo</strong> <b>\(g\)</b>, cioè la forza per unità di massa che vi sentirebbe un corpo:</p>
     <div class="formula" data-tex="g = \dfrac{F}{m} = G\,\dfrac{M}{r^2}">g = F / m = G · M / r²</div>
@@ -502,7 +502,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 <!-- ============ ENERGIA ============ -->
 <section class="scene" id="energia" data-ti="title_energia" data-title="Energia potenziale e velocità di fuga">
   <p class="sec-label" data-i18n="lbl_teoria">Teoria</p>
-  <div class="card">
+  <div class="card" data-i18n="theory_energia">
     <h2>🚀 Energia potenziale gravitazionale e velocità di fuga</h2>
     <p>Sollevare un corpo costa energia. Vicino al suolo usiamo <em>U = mgh</em>, ma è solo un'<strong>approssimazione</strong> valida per piccole quote. La formula generale, ponendo lo zero all'infinito, è:</p>
     <div class="formula" data-tex="U = -\,G\,\dfrac{M\,m}{r}">U = − G · M · m / r</div>
@@ -573,7 +573,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 <!-- ============ SATELLITI ============ -->
 <section class="scene" id="satelliti" data-ti="title_satelliti" data-title="Satelliti e moto orbitale">
   <p class="sec-label" data-i18n="lbl_teoria">Teoria</p>
-  <div class="card">
+  <div class="card" data-i18n="theory_satelliti">
     <h2>🛰️ Satelliti e moto orbitale</h2>
     <p>Un satellite in <strong>orbita circolare</strong> è un corpo in caduta libera permanente: la forza di gravità fa da <strong>forza centripeta</strong> che lo mantiene sulla circonferenza. Uguagliando le due:</p>
     <div class="formula" data-tex="\dfrac{G\,M\,m}{r^2} = \dfrac{m\,v^2}{r}">G · M · m / r² = m · v² / r</div>
@@ -1446,6 +1446,215 @@ Object.assign(I18N.pt,{
   nav_home:'🏠 Início', nav_kepler:'🔭 Kepler', nav_newton:'🍎 Newton', nav_campo:'🌍 Campo g', nav_energia:'🚀 Energia & escape', nav_satelliti:'🛰️ Satélites',
   lbl_percorso:'Percurso', lbl_datireali:'Dados reais dos planetas', lbl_teoria:'Teoria', lbl_provatu:'Experimente',
   title_home:'Gravitação', title_kepler:'As três leis de Kepler', title_newton:'A lei da gravitação universal', title_campo:'O campo gravitacional', title_energia:'Energia potencial e velocidade de escape', title_satelliti:'Satélites e movimento orbital'
+});
+/* ---- HOME ---- */
+Object.assign(I18N.en,{
+  home_intro:`<h2>From the apple to the Moon: gravitation</h2>
+    <p>Why do the planets orbit the Sun? Why doesn't the Moon fall onto the Earth — or is it actually <em>falling</em>? <strong>Gravitation</strong> is the force that governs the motion of celestial bodies and, at the same time, makes an apple fall. Newton realised it is the <em>same</em> force.</p>
+    <p>We'll follow the historical path: first Kepler's three <strong>laws</strong> (which <em>describe</em> how the planets move), then Newton's <strong>law of universal gravitation</strong> (which <em>explains</em> why), and finally the <strong>dynamics</strong>: gravitational field, energy, satellites.</p>
+    <div class="tip">💡 In every section there is a <strong>"Try it"</strong> area: start the animation, move the sliders and watch orbits and forces change in real time. Then test yourself with the quizzes.</div>`,
+  hc_kepler:`<span class="ico">🔭</span><strong>Kepler's laws</strong><span>Orbits, areas, periods</span>`,
+  hc_newton:`<span class="ico">🍎</span><strong>Newton's law</strong><span>\\(F = G\\,m_{1}m_{2}/r^{2}\\)</span>`,
+  hc_campo:`<span class="ico">🌍</span><strong>Gravitational field</strong><span>\\(g\\) and how it varies</span>`,
+  hc_energia:`<span class="ico">🚀</span><strong>Energy and escape velocity</strong><span>\\(U = -GMm/r\\)</span>`,
+  hc_satelliti:`<span class="ico">🛰️</span><strong>Satellites and orbits</strong><span>Orbital velocity and period</span>`,
+  home_const:`<h3>Useful constants</h3>
+    <div class="read">
+      <div class="it"><span class="l">Constant \\(G\\)</span><span class="v">\\(6.674\\cdot 10^{-11}\\)</span> \\(\\mathrm{N\\cdot m^{2}/kg^{2}}\\)</div>
+      <div class="it"><span class="l">Sun mass</span><span class="v">\\(1.99\\cdot 10^{30}\\)</span> \\(\\mathrm{kg}\\)</div>
+      <div class="it"><span class="l">Earth mass</span><span class="v">\\(5.97\\cdot 10^{24}\\)</span> \\(\\mathrm{kg}\\)</div>
+      <div class="it"><span class="l">Earth radius</span><span class="v">\\(6.37\\cdot 10^{6}\\)</span> \\(\\mathrm{m}\\)</div>
+      <div class="it"><span class="l">1 AU</span><span class="v">\\(1.50\\cdot 10^{11}\\)</span> \\(\\mathrm{m}\\)</div>
+      <div class="it"><span class="l">surface \\(g\\)</span><span class="v">\\(9.81\\)</span> \\(\\mathrm{m/s^{2}}\\)</div>
+    </div>`,
+  home_table:`<h3>The planets of the Solar System</h3>
+    <p class="lead">Load these values into the simulations with the "Load" menu in each section. \\(a\\) = orbital semi-major axis, \\(e\\) = eccentricity, \\(T\\) = revolution period.</p>
+    <table class="pdata">
+      <thead><tr><th>Planet</th><th>\\(a\\) (AU)</th><th>\\(e\\)</th><th>\\(T\\) (years)</th><th>Mass (\\(M_{\\oplus}\\))</th><th>Radius (\\(R_{\\oplus}\\))</th><th>\\(g\\) (\\(\\mathrm{m/s^{2}}\\))</th></tr></thead>
+      <tbody>
+        <tr><td>Mercury</td><td>\\(0.39\\)</td><td>\\(0.206\\)</td><td>\\(0.24\\)</td><td>\\(0.055\\)</td><td>\\(0.38\\)</td><td>\\(3.7\\)</td></tr>
+        <tr><td>Venus</td><td>\\(0.72\\)</td><td>\\(0.007\\)</td><td>\\(0.62\\)</td><td>\\(0.815\\)</td><td>\\(0.95\\)</td><td>\\(8.9\\)</td></tr>
+        <tr><td>Earth</td><td>\\(1.00\\)</td><td>\\(0.017\\)</td><td>\\(1.00\\)</td><td>\\(1.000\\)</td><td>\\(1.00\\)</td><td>\\(9.8\\)</td></tr>
+        <tr><td>Mars</td><td>\\(1.52\\)</td><td>\\(0.093\\)</td><td>\\(1.88\\)</td><td>\\(0.107\\)</td><td>\\(0.53\\)</td><td>\\(3.7\\)</td></tr>
+        <tr><td>Jupiter</td><td>\\(5.20\\)</td><td>\\(0.048\\)</td><td>\\(11.86\\)</td><td>\\(317.8\\)</td><td>\\(11.21\\)</td><td>\\(24.8\\)</td></tr>
+        <tr><td>Saturn</td><td>\\(9.54\\)</td><td>\\(0.054\\)</td><td>\\(29.4\\)</td><td>\\(95.2\\)</td><td>\\(9.45\\)</td><td>\\(10.4\\)</td></tr>
+        <tr><td>Uranus</td><td>\\(19.2\\)</td><td>\\(0.047\\)</td><td>\\(84.0\\)</td><td>\\(14.5\\)</td><td>\\(4.01\\)</td><td>\\(8.7\\)</td></tr>
+        <tr><td>Neptune</td><td>\\(30.1\\)</td><td>\\(0.009\\)</td><td>\\(164.8\\)</td><td>\\(17.1\\)</td><td>\\(3.88\\)</td><td>\\(11.0\\)</td></tr>
+      </tbody>
+    </table>
+    <p class="lead" style="margin-top:.5rem">Check Kepler's 3rd law: for every planet \\(T^{2} \\approx a^{3}\\) (with \\(T\\) in years and \\(a\\) in AU).</p>`
+});
+Object.assign(I18N.pt,{
+  home_intro:`<h2>Da maçã à Lua: a gravitação</h2>
+    <p>Por que os planetas giram em torno do Sol? Por que a Lua não cai na Terra — ou será que está <em>caindo</em>? A <strong>gravitação</strong> é a força que governa o movimento dos corpos celestes e, ao mesmo tempo, faz uma maçã cair. Newton percebeu que é a <em>mesma</em> força.</p>
+    <p>Vamos seguir o percurso histórico: primeiro as três <strong>leis de Kepler</strong> (que <em>descrevem</em> como os planetas se movem), depois a <strong>lei da gravitação universal</strong> de Newton (que <em>explica</em> o porquê) e, por fim, a <strong>dinâmica</strong>: campo gravitacional, energia, satélites.</p>
+    <div class="tip">💡 Em cada seção há uma área <strong>"Experimente"</strong>: inicie a animação, mova os controles e observe órbitas e forças mudarem em tempo real. Depois teste-se com os quizzes.</div>`,
+  hc_kepler:`<span class="ico">🔭</span><strong>As leis de Kepler</strong><span>Órbitas, áreas, períodos</span>`,
+  hc_newton:`<span class="ico">🍎</span><strong>Lei de Newton</strong><span>\\(F = G\\,m_{1}m_{2}/r^{2}\\)</span>`,
+  hc_campo:`<span class="ico">🌍</span><strong>Campo gravitacional</strong><span>\\(g\\) e seu comportamento</span>`,
+  hc_energia:`<span class="ico">🚀</span><strong>Energia e velocidade de escape</strong><span>\\(U = -GMm/r\\)</span>`,
+  hc_satelliti:`<span class="ico">🛰️</span><strong>Satélites e órbitas</strong><span>Velocidade orbital e período</span>`,
+  home_const:`<h3>Constantes úteis</h3>
+    <div class="read">
+      <div class="it"><span class="l">Constante \\(G\\)</span><span class="v">\\(6{,}674\\cdot 10^{-11}\\)</span> \\(\\mathrm{N\\cdot m^{2}/kg^{2}}\\)</div>
+      <div class="it"><span class="l">Massa do Sol</span><span class="v">\\(1{,}99\\cdot 10^{30}\\)</span> \\(\\mathrm{kg}\\)</div>
+      <div class="it"><span class="l">Massa da Terra</span><span class="v">\\(5{,}97\\cdot 10^{24}\\)</span> \\(\\mathrm{kg}\\)</div>
+      <div class="it"><span class="l">Raio da Terra</span><span class="v">\\(6{,}37\\cdot 10^{6}\\)</span> \\(\\mathrm{m}\\)</div>
+      <div class="it"><span class="l">1 UA</span><span class="v">\\(1{,}50\\cdot 10^{11}\\)</span> \\(\\mathrm{m}\\)</div>
+      <div class="it"><span class="l">\\(g\\) na superfície</span><span class="v">\\(9{,}81\\)</span> \\(\\mathrm{m/s^{2}}\\)</div>
+    </div>`,
+  home_table:`<h3>Os planetas do Sistema Solar</h3>
+    <p class="lead">Carregue estes valores nas simulações com o menu "Carregar" presente em cada seção. \\(a\\) = semieixo orbital, \\(e\\) = excentricidade, \\(T\\) = período de revolução.</p>
+    <table class="pdata">
+      <thead><tr><th>Planeta</th><th>\\(a\\) (UA)</th><th>\\(e\\)</th><th>\\(T\\) (anos)</th><th>Massa (\\(M_{\\oplus}\\))</th><th>Raio (\\(R_{\\oplus}\\))</th><th>\\(g\\) (\\(\\mathrm{m/s^{2}}\\))</th></tr></thead>
+      <tbody>
+        <tr><td>Mercúrio</td><td>\\(0{,}39\\)</td><td>\\(0{,}206\\)</td><td>\\(0{,}24\\)</td><td>\\(0{,}055\\)</td><td>\\(0{,}38\\)</td><td>\\(3{,}7\\)</td></tr>
+        <tr><td>Vênus</td><td>\\(0{,}72\\)</td><td>\\(0{,}007\\)</td><td>\\(0{,}62\\)</td><td>\\(0{,}815\\)</td><td>\\(0{,}95\\)</td><td>\\(8{,}9\\)</td></tr>
+        <tr><td>Terra</td><td>\\(1{,}00\\)</td><td>\\(0{,}017\\)</td><td>\\(1{,}00\\)</td><td>\\(1{,}000\\)</td><td>\\(1{,}00\\)</td><td>\\(9{,}8\\)</td></tr>
+        <tr><td>Marte</td><td>\\(1{,}52\\)</td><td>\\(0{,}093\\)</td><td>\\(1{,}88\\)</td><td>\\(0{,}107\\)</td><td>\\(0{,}53\\)</td><td>\\(3{,}7\\)</td></tr>
+        <tr><td>Júpiter</td><td>\\(5{,}20\\)</td><td>\\(0{,}048\\)</td><td>\\(11{,}86\\)</td><td>\\(317{,}8\\)</td><td>\\(11{,}21\\)</td><td>\\(24{,}8\\)</td></tr>
+        <tr><td>Saturno</td><td>\\(9{,}54\\)</td><td>\\(0{,}054\\)</td><td>\\(29{,}4\\)</td><td>\\(95{,}2\\)</td><td>\\(9{,}45\\)</td><td>\\(10{,}4\\)</td></tr>
+        <tr><td>Urano</td><td>\\(19{,}2\\)</td><td>\\(0{,}047\\)</td><td>\\(84{,}0\\)</td><td>\\(14{,}5\\)</td><td>\\(4{,}01\\)</td><td>\\(8{,}7\\)</td></tr>
+        <tr><td>Netuno</td><td>\\(30{,}1\\)</td><td>\\(0{,}009\\)</td><td>\\(164{,}8\\)</td><td>\\(17{,}1\\)</td><td>\\(3{,}88\\)</td><td>\\(11{,}0\\)</td></tr>
+      </tbody>
+    </table>
+    <p class="lead" style="margin-top:.5rem">Verifique a 3ª lei de Kepler: para cada planeta \\(T^{2} \\approx a^{3}\\) (com \\(T\\) em anos e \\(a\\) em UA).</p>`
+});
+/* ---- TEORIA (EN) ---- */
+Object.assign(I18N.en,{
+  theory_kepler:`<h2>🔭 Kepler's three laws</h2>
+    <p>In the early 1600s Kepler, analysing Tycho Brahe's observations, derived three <em>empirical</em> laws on the motion of the planets around the Sun.</p>
+    <h3>1st law — law of orbits (1609)</h3>
+    <p>Every planet travels along an <strong>elliptical orbit</strong> with the <strong>Sun at one of the two foci</strong>.</p>
+    <p>The ellipse is described by the <em>semi-major axis</em> <b>\\(a\\)</b> and the <em>eccentricity</em> <b>\\(e\\)</b> (\\(0 \\le e &lt; 1\\)): with \\(e = 0\\) the ellipse is a circle. The notable points are the <strong>perihelion</strong> (closest to the Sun) and the <strong>aphelion</strong> (farthest):</p>
+    <div class="formula" data-tex="r_{\\text{perihelion}} = a\\,(1 - e) \\qquad r_{\\text{aphelion}} = a\\,(1 + e)">perihelion / aphelion</div>
+    <h3>2nd law — law of areas (1609)</h3>
+    <p>The <strong>radius vector</strong> Sun–planet sweeps <strong>equal areas in equal times</strong>: the <em>areal velocity</em> is constant.</p>
+    <div class="formula" data-tex="\\dfrac{\\Delta A}{\\Delta t} = \\text{constant}">ΔA / Δt = constant</div>
+    <p>Consequence: the planet is <strong>faster at perihelion</strong> and slower at aphelion. This is equivalent to conservation of angular momentum:</p>
+    <div class="formula" data-tex="v_{\\text{perihelion}} \\cdot r_{\\text{perihelion}} = v_{\\text{aphelion}} \\cdot r_{\\text{aphelion}}">v·r conserved</div>
+    <h3>3rd law — law of periods (1619)</h3>
+    <p>The <strong>square of the revolution period</strong> is proportional to the <strong>cube of the semi-major axis</strong>. For all planets in the same system the ratio is constant:</p>
+    <div class="formula" data-tex="\\dfrac{T^2}{a^3} = \\text{constant} \\quad\\Rightarrow\\quad T^2 = \\dfrac{4\\pi^2}{G\\,M}\\,a^3">T² / a³ = constant</div>
+    <div class="tip">📐 With <b>\\(a\\)</b> in astronomical units (AU) and <b>\\(T\\)</b> in years, the Solar System obeys the simple form <b>\\(T^{2} = a^{3}\\)</b>. E.g.: Mars has \\(a = 1.52\\,\\text{AU} \\Rightarrow T = \\sqrt{1.52^{3}} \\approx 1.88\\,\\text{years}\\).</div>`,
+  theory_newton:`<h2>🍎 The law of universal gravitation</h2>
+    <p>Newton (1687) understood that the force that makes an apple fall is the same one that keeps the Moon in orbit. Any two bodies of mass <em>\\(m_{1}\\)</em> and <em>\\(m_{2}\\)</em> attract each other with a force directed along the line joining them:</p>
+    <div class="formula" data-tex="F = G\\,\\dfrac{m_1 \\cdot m_2}{r^2}">F = G · m₁ m₂ / r²</div>
+    <p>where <b>\\(r\\)</b> is the distance between the centres and <b>\\(G\\)</b> is the <strong>universal gravitational constant</strong>:</p>
+    <div class="formula" data-tex="G = 6.674 \\cdot 10^{-11}\\ \\mathrm{N\\cdot m^2/kg^2}">G = 6.674 · 10⁻¹¹ N·m²/kg²</div>
+    <h3>Properties</h3>
+    <ul class="cl">
+      <li><strong>Always attractive</strong> and directed along the line joining the centres.</li>
+      <li><strong>Proportional to the product</strong> of the masses.</li>
+      <li><strong>Inversely proportional to the square</strong> of the distance: if <em>\\(r\\)</em> doubles, \\(F\\) becomes <em>one quarter</em>.</li>
+      <li>Obeys <strong>Newton's 3rd law</strong>: the two bodies attract with equal and opposite forces (Earth–apple too!).</li>
+    </ul>
+    <div class="tip">🌗 <strong>The Moon test.</strong> Newton checked that the Moon's acceleration towards the Earth is about \\(1/3600\\) of \\(g\\). Since the Moon is \\(\\approx 60\\) Earth radii away and \\(60^{2} = 3600\\), the \\(1/r^{2}\\) behaviour matched: proof it was the same force.</div>
+    <div class="warn">⚠️ The formula holds for point masses or spherically symmetric bodies (like stars and planets), treating the mass as concentrated at the centre.</div>`,
+  theory_campo:`<h2>🌍 The gravitational field and g</h2>
+    <p>Instead of thinking of a force "at a distance", we can say that a mass <em>\\(M\\)</em> creates a <strong>gravitational field</strong> around itself: every point of space gains a property, the <strong>field strength</strong> <b>\\(g\\)</b>, i.e. the force per unit mass a body would feel there:</p>
+    <div class="formula" data-tex="g = \\dfrac{F}{m} = G\\,\\dfrac{M}{r^2}">g = F / m = G · M / r²</div>
+    <p><b>\\(g\\)</b> is measured in \\(\\mathrm{N/kg}\\) (\\(= \\mathrm{m/s^{2}}\\)): it is also the <strong>gravitational acceleration</strong> of a body left free to fall. On the <strong>surface</strong> of a planet of radius \\(R\\):</p>
+    <div class="formula" data-tex="g_{\\text{sup}} = G\\,\\dfrac{M}{R^2}">g = G · M / R²</div>
+    <p>For the Earth: \\(g = G\\cdot M_{\\text{T}}/R_{\\text{T}}^{2} \\approx 9.81\\,\\text{m/s}^{2}\\). Note that it <strong>does not depend on the mass of the falling body</strong>: this is why all bodies fall with the same acceleration (Galileo).</p>
+    <h3>Variation with altitude</h3>
+    <p>Going up to altitude <em>\\(h\\)</em>, the distance from the centre becomes \\(R + h\\) and the field decreases as \\(1/r^{2}\\):</p>
+    <div class="formula" data-tex="g(h) = G\\,\\dfrac{M}{(R + h)^2}">g(h) = G · M / (R + h)²</div>
+    <div class="tip">🛰️ On the ISS (\\(h \\approx 400\\,\\text{km}\\)) \\(g\\) is still \\(\\approx 8.7\\,\\text{m/s}^{2}\\), about \\(89\\%\\) of the ground value! Astronauts are not "without gravity": they are in continuous <em>free fall</em> around the Earth.</div>`,
+  theory_energia:`<h2>🚀 Gravitational potential energy and escape velocity</h2>
+    <p>Lifting a body costs energy. Near the ground we use <em>\\(U = mgh\\)</em>, but it is only an <strong>approximation</strong> valid for small altitudes. The general formula, taking zero at infinity, is:</p>
+    <div class="formula" data-tex="U = -\\,G\\,\\dfrac{M\\,m}{r}">U = − G · M m / r</div>
+    <p>The potential energy is <strong>negative</strong>: the body is "bound" to the planet in a potential well, and to free it (take it to \\(r \\to \\infty\\), where \\(U = 0\\)) you must <em>supply</em> energy.</p>
+    <h3>Total mechanical energy</h3>
+    <div class="formula" data-tex="E = K + U = \\tfrac{1}{2}\\,m\\,v^2 - \\dfrac{G\\,M\\,m}{r}">E = K + U</div>
+    <ul class="cl">
+      <li><b>\\(E &lt; 0\\)</b> \\(\\to\\) <strong>bound</strong> orbit (elliptical/circular): the body does not escape.</li>
+      <li><b>\\(E = 0\\)</b> \\(\\to\\) <strong>parabolic</strong> trajectory: the escape limit case.</li>
+      <li><b>\\(E &gt; 0\\)</b> \\(\\to\\) <strong>hyperbolic</strong> trajectory: the body escapes with residual speed.</li>
+    </ul>
+    <h3>Escape velocity</h3>
+    <p>It is the minimum speed to move away indefinitely (\\(E = 0\\)) starting from the surface. From \\(\\tfrac12 m v^{2} = GMm/R\\):</p>
+    <div class="formula" data-tex="v_{\\text{esc}} = \\sqrt{\\dfrac{2\\,G\\,M}{R}}">v = √( 2 G M / R )</div>
+    <div class="tip">🌍 For the Earth \\(v_{\\text{esc}} \\approx 11.2\\,\\text{km/s}\\); for the Moon only \\(\\approx 2.4\\,\\text{km/s}\\) (which is why it keeps no atmosphere). Note: it <strong>does not depend on the mass of the launched body</strong>.</div>`,
+  theory_satelliti:`<h2>🛰️ Satellites and orbital motion</h2>
+    <p>A satellite in a <strong>circular orbit</strong> is a body in permanent free fall: gravity acts as the <strong>centripetal force</strong> that keeps it on the circle. Setting the two equal:</p>
+    <div class="formula" data-tex="\\dfrac{G\\,M\\,m}{r^2} = \\dfrac{m\\,v^2}{r}">G M m / r² = m v² / r</div>
+    <p>The satellite's mass <em>\\(m\\)</em> cancels and the <strong>orbital velocity</strong> follows:</p>
+    <div class="formula" data-tex="v_{\\text{orb}} = \\sqrt{\\dfrac{G\\,M}{r}}">v = √( G M / r )</div>
+    <p>The lower the orbit (\\(r\\) small), the faster the satellite must go. The <strong>period</strong> of revolution comes from \\(v = 2\\pi r/T\\):</p>
+    <div class="formula" data-tex="T = 2\\pi\\,\\sqrt{\\dfrac{r^3}{G\\,M}}">T = 2π √( r³ / G M )</div>
+    <p>which is exactly <strong>Kepler's 3rd law</strong> (\\(T^{2} \\propto r^{3}\\)): Newton's dynamics <em>explains</em> Kepler's empirical laws!</p>
+    <h3>Energy of a circular orbit</h3>
+    <div class="formula" data-tex="E = K + U = -\\,\\dfrac{G\\,M\\,m}{2\\,r}">E = − G M m / (2 r)</div>
+    <div class="tip">📡 The <strong>geostationary orbit</strong> has period \\(T = 24\\,\\text{h}\\): the satellite stays above the same point on the equator. It lies at \\(r \\approx 42\\,200\\,\\text{km}\\) from the centre (altitude \\(\\approx 35\\,800\\,\\text{km}\\)). The ISS, much lower (\\(\\approx 400\\,\\text{km}\\)), orbits in \\(\\approx 92\\,\\text{minutes}\\) at \\(\\approx 7.7\\,\\text{km/s}\\).</div>`
+});
+/* ---- TEORIA (PT-BR) ---- */
+Object.assign(I18N.pt,{
+  theory_kepler:`<h2>🔭 As três leis de Kepler</h2>
+    <p>No início do século XVII, Kepler, analisando as observações de Tycho Brahe, deduziu três leis <em>empíricas</em> sobre o movimento dos planetas ao redor do Sol.</p>
+    <h3>1ª lei — lei das órbitas (1609)</h3>
+    <p>Cada planeta percorre uma <strong>órbita elíptica</strong> na qual o <strong>Sol ocupa um dos dois focos</strong>.</p>
+    <p>A elipse é descrita pelo <em>semieixo maior</em> <b>\\(a\\)</b> e pela <em>excentricidade</em> <b>\\(e\\)</b> (\\(0 \\le e &lt; 1\\)): com \\(e = 0\\) a elipse é uma circunferência. Os pontos notáveis são o <strong>periélio</strong> (mais próximo do Sol) e o <strong>afélio</strong> (mais distante):</p>
+    <div class="formula" data-tex="r_{\\text{periélio}} = a\\,(1 - e) \\qquad r_{\\text{afélio}} = a\\,(1 + e)">periélio / afélio</div>
+    <h3>2ª lei — lei das áreas (1609)</h3>
+    <p>O <strong>raio vetor</strong> Sol–planeta varre <strong>áreas iguais em tempos iguais</strong>: a <em>velocidade areolar</em> é constante.</p>
+    <div class="formula" data-tex="\\dfrac{\\Delta A}{\\Delta t} = \\text{constante}">ΔA / Δt = constante</div>
+    <p>Consequência: o planeta é <strong>mais rápido no periélio</strong> e mais lento no afélio. Isso equivale à conservação do momento angular:</p>
+    <div class="formula" data-tex="v_{\\text{periélio}} \\cdot r_{\\text{periélio}} = v_{\\text{afélio}} \\cdot r_{\\text{afélio}}">v·r conservado</div>
+    <h3>3ª lei — lei dos períodos (1619)</h3>
+    <p>O <strong>quadrado do período</strong> de revolução é proporcional ao <strong>cubo do semieixo maior</strong>. Para todos os planetas do mesmo sistema a razão é constante:</p>
+    <div class="formula" data-tex="\\dfrac{T^2}{a^3} = \\text{constante} \\quad\\Rightarrow\\quad T^2 = \\dfrac{4\\pi^2}{G\\,M}\\,a^3">T² / a³ = constante</div>
+    <div class="tip">📐 Com <b>\\(a\\)</b> em unidades astronômicas (UA) e <b>\\(T\\)</b> em anos, o Sistema Solar obedece à forma simples <b>\\(T^{2} = a^{3}\\)</b>. Ex.: Marte tem \\(a = 1{,}52\\,\\text{UA} \\Rightarrow T = \\sqrt{1{,}52^{3}} \\approx 1{,}88\\,\\text{anos}\\).</div>`,
+  theory_newton:`<h2>🍎 A lei da gravitação universal</h2>
+    <p>Newton (1687) compreendeu que a força que faz uma maçã cair é a mesma que mantém a Lua em órbita. Dois corpos quaisquer de massa <em>\\(m_{1}\\)</em> e <em>\\(m_{2}\\)</em> se atraem com uma força dirigida ao longo da reta que os une:</p>
+    <div class="formula" data-tex="F = G\\,\\dfrac{m_1 \\cdot m_2}{r^2}">F = G · m₁ m₂ / r²</div>
+    <p>onde <b>\\(r\\)</b> é a distância entre os centros e <b>\\(G\\)</b> é a <strong>constante de gravitação universal</strong>:</p>
+    <div class="formula" data-tex="G = 6{,}674 \\cdot 10^{-11}\\ \\mathrm{N\\cdot m^2/kg^2}">G = 6,674 · 10⁻¹¹ N·m²/kg²</div>
+    <h3>Propriedades</h3>
+    <ul class="cl">
+      <li><strong>Sempre atrativa</strong> e dirigida ao longo da reta que une os centros.</li>
+      <li><strong>Proporcional ao produto</strong> das massas.</li>
+      <li><strong>Inversamente proporcional ao quadrado</strong> da distância: se <em>\\(r\\)</em> dobra, \\(F\\) vira <em>um quarto</em>.</li>
+      <li>Obedece à <strong>3ª lei de Newton</strong>: os dois corpos se atraem com forças iguais e opostas (Terra–maçã também!).</li>
+    </ul>
+    <div class="tip">🌗 <strong>O teste da Lua.</strong> Newton verificou que a aceleração da Lua em direção à Terra é cerca de \\(1/3600\\) de \\(g\\). Como a Lua está a \\(\\approx 60\\) raios terrestres e \\(60^{2} = 3600\\), o comportamento \\(1/r^{2}\\) batia: a prova de que era a mesma força.</div>
+    <div class="warn">⚠️ A fórmula vale para massas pontuais ou corpos de simetria esférica (como estrelas e planetas), tratando a massa como concentrada no centro.</div>`,
+  theory_campo:`<h2>🌍 O campo gravitacional e g</h2>
+    <p>Em vez de pensar em uma força "à distância", podemos dizer que uma massa <em>\\(M\\)</em> cria ao seu redor um <strong>campo gravitacional</strong>: cada ponto do espaço adquire uma propriedade, a <strong>intensidade do campo</strong> <b>\\(g\\)</b>, ou seja, a força por unidade de massa que um corpo sentiria ali:</p>
+    <div class="formula" data-tex="g = \\dfrac{F}{m} = G\\,\\dfrac{M}{r^2}">g = F / m = G · M / r²</div>
+    <p><b>\\(g\\)</b> mede-se em \\(\\mathrm{N/kg}\\) (\\(= \\mathrm{m/s^{2}}\\)): é também a <strong>aceleração da gravidade</strong> de um corpo deixado livre. Na <strong>superfície</strong> de um planeta de raio \\(R\\):</p>
+    <div class="formula" data-tex="g_{\\text{sup}} = G\\,\\dfrac{M}{R^2}">g = G · M / R²</div>
+    <p>Para a Terra: \\(g = G\\cdot M_{\\text{T}}/R_{\\text{T}}^{2} \\approx 9{,}81\\,\\text{m/s}^{2}\\). Note que <strong>não depende da massa do corpo</strong> que cai: por isso todos os corpos caem com a mesma aceleração (Galileu).</p>
+    <h3>Variação com a altitude</h3>
+    <p>Subindo à altitude <em>\\(h\\)</em>, a distância ao centro vira \\(R + h\\) e o campo diminui como \\(1/r^{2}\\):</p>
+    <div class="formula" data-tex="g(h) = G\\,\\dfrac{M}{(R + h)^2}">g(h) = G · M / (R + h)²</div>
+    <div class="tip">🛰️ Na ISS (\\(h \\approx 400\\,\\text{km}\\)) \\(g\\) ainda vale \\(\\approx 8{,}7\\,\\text{m/s}^{2}\\), cerca de \\(89\\%\\) do valor no solo! Os astronautas não estão "sem gravidade": estão em <em>queda livre</em> contínua ao redor da Terra.</div>`,
+  theory_energia:`<h2>🚀 Energia potencial gravitacional e velocidade de escape</h2>
+    <p>Levantar um corpo custa energia. Perto do solo usamos <em>\\(U = mgh\\)</em>, mas é só uma <strong>aproximação</strong> válida para pequenas altitudes. A fórmula geral, pondo o zero no infinito, é:</p>
+    <div class="formula" data-tex="U = -\\,G\\,\\dfrac{M\\,m}{r}">U = − G · M m / r</div>
+    <p>A energia potencial é <strong>negativa</strong>: o corpo está "ligado" ao planeta num poço de potencial e, para libertá-lo (levá-lo a \\(r \\to \\infty\\), onde \\(U = 0\\)), é preciso <em>fornecer</em> energia.</p>
+    <h3>Energia mecânica total</h3>
+    <div class="formula" data-tex="E = K + U = \\tfrac{1}{2}\\,m\\,v^2 - \\dfrac{G\\,M\\,m}{r}">E = K + U</div>
+    <ul class="cl">
+      <li><b>\\(E &lt; 0\\)</b> \\(\\to\\) órbita <strong>ligada</strong> (elíptica/circular): o corpo não escapa.</li>
+      <li><b>\\(E = 0\\)</b> \\(\\to\\) trajetória <strong>parabólica</strong>: caso limite de escape.</li>
+      <li><b>\\(E &gt; 0\\)</b> \\(\\to\\) trajetória <strong>hiperbólica</strong>: o corpo escapa com velocidade residual.</li>
+    </ul>
+    <h3>Velocidade de escape</h3>
+    <p>É a velocidade mínima para se afastar indefinidamente (\\(E = 0\\)) partindo da superfície. De \\(\\tfrac12 m v^{2} = GMm/R\\):</p>
+    <div class="formula" data-tex="v_{\\text{fuga}} = \\sqrt{\\dfrac{2\\,G\\,M}{R}}">v = √( 2 G M / R )</div>
+    <div class="tip">🌍 Para a Terra \\(v_{\\text{fuga}} \\approx 11{,}2\\,\\text{km/s}\\); para a Lua só \\(\\approx 2{,}4\\,\\text{km/s}\\) (por isso não retém atmosfera). Note: <strong>não depende da massa do corpo</strong> lançado.</div>`,
+  theory_satelliti:`<h2>🛰️ Satélites e movimento orbital</h2>
+    <p>Um satélite em <strong>órbita circular</strong> é um corpo em queda livre permanente: a gravidade age como <strong>força centrípeta</strong> que o mantém na circunferência. Igualando as duas:</p>
+    <div class="formula" data-tex="\\dfrac{G\\,M\\,m}{r^2} = \\dfrac{m\\,v^2}{r}">G M m / r² = m v² / r</div>
+    <p>A massa <em>\\(m\\)</em> do satélite se cancela e obtém-se a <strong>velocidade orbital</strong>:</p>
+    <div class="formula" data-tex="v_{\\text{orb}} = \\sqrt{\\dfrac{G\\,M}{r}}">v = √( G M / r )</div>
+    <p>Quanto mais baixa a órbita (\\(r\\) pequeno), mais rápido o satélite deve ir. O <strong>período</strong> de revolução vem de \\(v = 2\\pi r/T\\):</p>
+    <div class="formula" data-tex="T = 2\\pi\\,\\sqrt{\\dfrac{r^3}{G\\,M}}">T = 2π √( r³ / G M )</div>
+    <p>que é exatamente a <strong>3ª lei de Kepler</strong> (\\(T^{2} \\propto r^{3}\\)): a dinâmica de Newton <em>explica</em> as leis empíricas de Kepler!</p>
+    <h3>Energia de uma órbita circular</h3>
+    <div class="formula" data-tex="E = K + U = -\\,\\dfrac{G\\,M\\,m}{2\\,r}">E = − G M m / (2 r)</div>
+    <div class="tip">📡 A <strong>órbita geoestacionária</strong> tem período \\(T = 24\\,\\text{h}\\): o satélite fica sobre o mesmo ponto do equador. Está a \\(r \\approx 42\\,200\\,\\text{km}\\) do centro (altitude \\(\\approx 35\\,800\\,\\text{km}\\)). A ISS, bem mais baixa (\\(\\approx 400\\,\\text{km}\\)), orbita em \\(\\approx 92\\,\\text{minutos}\\) a \\(\\approx 7{,}7\\,\\text{km/s}\\).</div>`
 });
 /* INIT_I18N */
 captureIT();
