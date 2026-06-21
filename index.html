@@ -32,6 +32,13 @@ header h1{font-size:clamp(1.02rem,3.6vw,1.32rem);color:var(--text);
   color:var(--primary-d);border-radius:8px;padding:.4rem .8rem;font-size:.82em;
   cursor:pointer;font-family:inherit;font-weight:600;transition:background .15s,border-color .15s;white-space:nowrap}
 .btn-print:hover{background:var(--primary-l);border-color:var(--primary)}
+.hdr-right{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;justify-content:flex-end}
+.lang-switch{display:inline-flex;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.lang-switch button{background:var(--surface2);border:0;border-right:1px solid var(--border);
+  color:var(--muted);font:600 .78em inherit;padding:.36rem .52rem;cursor:pointer;transition:background .15s,color .15s}
+.lang-switch button:last-child{border-right:0}
+.lang-switch button.active{background:var(--primary);color:#fff}
+.lang-switch button:hover:not(.active){background:var(--primary-l);color:var(--text)}
 
 /* ===== Nav ===== */
 nav.main{background:var(--surface);border-bottom:1px solid var(--border);
@@ -231,28 +238,35 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 </head>
 <body>
 <header>
-  <h1>🪐 Gravitazione</h1>
-  <button class="btn-print" onclick="window.print()">🖨️ Stampa teoria</button>
+  <h1 data-i18n="brand">🪐 Gravitazione</h1>
+  <div class="hdr-right">
+    <div class="lang-switch" id="langSwitch" role="group" aria-label="Lingua / Language / Idioma">
+      <button type="button" data-lang="it">IT</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="pt">PT</button>
+    </div>
+    <button class="btn-print" onclick="window.print()" data-i18n="print">🖨️ Stampa teoria</button>
+  </div>
 </header>
 <nav class="main" id="mainNav">
-  <button data-tab="home" class="active">🏠 Home</button>
-  <button data-tab="kepler">🔭 Keplero</button>
-  <button data-tab="newton">🍎 Newton</button>
-  <button data-tab="campo">🌍 Campo g</button>
-  <button data-tab="energia">🚀 Energia & fuga</button>
-  <button data-tab="satelliti">🛰️ Satelliti</button>
+  <button data-tab="home" class="active" data-i18n="nav_home">🏠 Home</button>
+  <button data-tab="kepler" data-i18n="nav_kepler">🔭 Keplero</button>
+  <button data-tab="newton" data-i18n="nav_newton">🍎 Newton</button>
+  <button data-tab="campo" data-i18n="nav_campo">🌍 Campo g</button>
+  <button data-tab="energia" data-i18n="nav_energia">🚀 Energia & fuga</button>
+  <button data-tab="satelliti" data-i18n="nav_satelliti">🛰️ Satelliti</button>
 </nav>
 <main>
 
 <!-- ============ HOME ============ -->
-<section class="scene active" id="home" data-title="Gravitazione">
+<section class="scene active" id="home" data-ti="title_home" data-title="Gravitazione">
   <div class="card">
     <h2>Dalla mela alla Luna: la gravitazione</h2>
     <p>Perché i pianeti girano intorno al Sole? Perché la Luna non cade sulla Terra — o forse <em>sta</em> cadendo? La <strong>gravitazione</strong> è la forza che governa il moto dei corpi celesti e, allo stesso tempo, fa cadere una mela. Newton capì che è la <em>stessa</em> forza.</p>
     <p>Seguiremo il percorso storico: prima le tre <strong>leggi di Keplero</strong> (che <em>descrivono</em> come si muovono i pianeti), poi la <strong>legge di gravitazione universale</strong> di Newton (che <em>spiega</em> il perché), infine la <strong>dinamica</strong>: campo gravitazionale, energia, satelliti.</p>
     <div class="tip">💡 In ogni sezione trovi una zona <strong>"Prova tu"</strong>: avvia l'animazione, muovi i cursori e osserva orbite e forze cambiare in tempo reale. Poi mettiti alla prova con i quiz.</div>
   </div>
-  <p class="sec-label">Percorso</p>
+  <p class="sec-label" data-i18n="lbl_percorso">Percorso</p>
   <div class="home-grid">
     <button class="home-card" data-go="kepler"><span class="ico">🔭</span><strong>Le leggi di Keplero</strong><span>Orbite, aree, periodi</span></button>
     <button class="home-card" data-go="newton"><span class="ico">🍎</span><strong>Legge di Newton</strong><span>\(F = G\,m_{1}m_{2}/r^{2}\)</span></button>
@@ -271,7 +285,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
       <div class="it"><span class="l">\(g\) superficie</span><span class="v">\(9{,}81\)</span> \(\mathrm{m/s^{2}}\)</div>
     </div>
   </div>
-  <p class="sec-label">Dati reali dei pianeti</p>
+  <p class="sec-label" data-i18n="lbl_datireali">Dati reali dei pianeti</p>
   <div class="card">
     <h3>I pianeti del Sistema Solare</h3>
     <p class="lead">Carica questi valori nelle simulazioni con il menu “Carica” presente in ogni sezione. \(a\) = semiasse orbitale, \(e\) = eccentricità, \(T\) = periodo di rivoluzione.</p>
@@ -293,8 +307,8 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 </section>
 
 <!-- ============ KEPLERO ============ -->
-<section class="scene" id="kepler" data-title="Le tre leggi di Keplero">
-  <p class="sec-label">Teoria</p>
+<section class="scene" id="kepler" data-ti="title_kepler" data-title="Le tre leggi di Keplero">
+  <p class="sec-label" data-i18n="lbl_teoria">Teoria</p>
   <div class="card">
     <h2>🔭 Le tre leggi di Keplero</h2>
     <p>All'inizio del '600 Keplero, analizzando le osservazioni di Tycho Brahe, ricavò tre leggi <em>empiriche</em> sul moto dei pianeti attorno al Sole.</p>
@@ -313,7 +327,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
     <div class="tip">📐 Con <b>\(a\)</b> in unità astronomiche (UA) e <b>\(T\)</b> in anni, per il Sistema Solare vale la forma semplice <b>\(T^{2} = a^{3}\)</b>. Es.: Marte ha \(a = 1{,}52\,\text{UA} \Rightarrow T = \sqrt{1{,}52^{3}} \approx 1{,}88\,\text{anni}\).</div>
   </div>
 
-  <p class="sec-label">Prova tu</p>
+  <p class="sec-label" data-i18n="lbl_provatu">Prova tu</p>
   <div class="card sim-block">
     <h3>🪐 Un pianeta in orbita ellittica</h3>
     <p class="lead">Cambia il semiasse e l'eccentricità: osserva la forma dell'orbita e nota come il pianeta acceleri al perielio (settore azzurro = area spazzata in un tempo fisso, sempre uguale \(\to \) 2ª legge).</p>
@@ -366,8 +380,8 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 </section>
 
 <!-- ============ NEWTON ============ -->
-<section class="scene" id="newton" data-title="La legge di gravitazione universale">
-  <p class="sec-label">Teoria</p>
+<section class="scene" id="newton" data-ti="title_newton" data-title="La legge di gravitazione universale">
+  <p class="sec-label" data-i18n="lbl_teoria">Teoria</p>
   <div class="card">
     <h2>🍎 La legge di gravitazione universale</h2>
     <p>Newton (1687) capì che la forza che fa cadere una mela è la stessa che tiene la Luna in orbita. Due corpi qualsiasi di massa <em>\(m_{1}\)</em> e <em>\(m_{2}\)</em> si attraggono con una forza diretta lungo la loro congiungente:</p>
@@ -385,7 +399,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
     <div class="warn">⚠️ La formula vale per masse puntiformi o per corpi a simmetria sferica (come stelle e pianeti), considerando la massa concentrata nel centro.</div>
   </div>
 
-  <p class="sec-label">Prova tu</p>
+  <p class="sec-label" data-i18n="lbl_provatu">Prova tu</p>
   <div class="card sim-block">
     <h3>⚖️ Due masse che si attraggono</h3>
     <p class="lead">Imposta le masse e la distanza iniziale, poi guarda il corpo piccolo cadere verso quello grande: più si avvicina, più la forza (e quindi l'accelerazione) cresce — è l'effetto \(1/r^{2}\).</p>
@@ -421,8 +435,8 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 </section>
 
 <!-- ============ CAMPO ============ -->
-<section class="scene" id="campo" data-title="Il campo gravitazionale">
-  <p class="sec-label">Teoria</p>
+<section class="scene" id="campo" data-ti="title_campo" data-title="Il campo gravitazionale">
+  <p class="sec-label" data-i18n="lbl_teoria">Teoria</p>
   <div class="card">
     <h2>🌍 Il campo gravitazionale e g</h2>
     <p>Invece di pensare a una forza "a distanza", possiamo dire che una massa <em>\(M\)</em> crea attorno a sé un <strong>campo gravitazionale</strong>: ogni punto dello spazio acquista una proprietà, l'<strong>intensità del campo</strong> <b>\(g\)</b>, cioè la forza per unità di massa che vi sentirebbe un corpo:</p>
@@ -436,7 +450,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
     <div class="tip">🛰️ Sulla ISS (\(h \approx 400\,\text{km}\)) \(g\) vale ancora \(\approx 8{,}7\,\text{m/s}^{2}\), circa l'\(89\%\) del valore al suolo! Gli astronauti non sono "senza gravità": sono in <em>caduta libera</em> continua attorno alla Terra.</div>
   </div>
 
-  <p class="sec-label">Prova tu</p>
+  <p class="sec-label" data-i18n="lbl_provatu">Prova tu</p>
   <div class="card sim-block">
     <h3>📉 Come varia g</h3>
     <p class="lead">Costruisci un pianeta cambiandone massa e raggio, poi solleva il punto di prova: leggi \(g\) in superficie e in quota e osserva la curva \(g(r)\) decrescere come \(1/r^{2}\). Il puntino blu cade con l'accelerazione locale.</p>
@@ -486,8 +500,8 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 </section>
 
 <!-- ============ ENERGIA ============ -->
-<section class="scene" id="energia" data-title="Energia potenziale e velocità di fuga">
-  <p class="sec-label">Teoria</p>
+<section class="scene" id="energia" data-ti="title_energia" data-title="Energia potenziale e velocità di fuga">
+  <p class="sec-label" data-i18n="lbl_teoria">Teoria</p>
   <div class="card">
     <h2>🚀 Energia potenziale gravitazionale e velocità di fuga</h2>
     <p>Sollevare un corpo costa energia. Vicino al suolo usiamo <em>U = mgh</em>, ma è solo un'<strong>approssimazione</strong> valida per piccole quote. La formula generale, ponendo lo zero all'infinito, è:</p>
@@ -506,7 +520,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
     <div class="tip">🌍 Per la Terra \(v_{\text{fuga}} \approx 11{,}2\,\text{km/s}\); per la Luna solo \(\approx 2{,}4\,\text{km/s}\) (per questo non trattiene un'atmosfera). Notare: <strong>non dipende dalla massa del corpo</strong> lanciato.</div>
   </div>
 
-  <p class="sec-label">Prova tu</p>
+  <p class="sec-label" data-i18n="lbl_provatu">Prova tu</p>
   <div class="card sim-block">
     <h3>🎯 Sfuggi alla gravità</h3>
     <p class="lead">Lancia un proiettile verticalmente regolando la velocità iniziale. Se è minore di \(v_{\text{fuga}}\) ricade; se la raggiunge, sfugge. La curva mostra \(U(r)\) e la retta l'energia totale \(E\).</p>
@@ -557,8 +571,8 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 </section>
 
 <!-- ============ SATELLITI ============ -->
-<section class="scene" id="satelliti" data-title="Satelliti e moto orbitale">
-  <p class="sec-label">Teoria</p>
+<section class="scene" id="satelliti" data-ti="title_satelliti" data-title="Satelliti e moto orbitale">
+  <p class="sec-label" data-i18n="lbl_teoria">Teoria</p>
   <div class="card">
     <h2>🛰️ Satelliti e moto orbitale</h2>
     <p>Un satellite in <strong>orbita circolare</strong> è un corpo in caduta libera permanente: la forza di gravità fa da <strong>forza centripeta</strong> che lo mantiene sulla circonferenza. Uguagliando le due:</p>
@@ -573,7 +587,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
     <div class="tip">📡 L'<strong>orbita geostazionaria</strong> ha periodo \(T = 24\,\text{h}\): il satellite resta sopra lo stesso punto dell'equatore. Si trova a \(r \approx 42\,200\,\text{km}\) dal centro (quota \(\approx 35\,800\,\text{km}\)). La ISS, molto più bassa (\(\approx 400\,\text{km}\)), orbita in \(\approx 92\,\text{minuti}\) a \(\approx 7{,}7\,\text{km/s}\).</div>
   </div>
 
-  <p class="sec-label">Prova tu</p>
+  <p class="sec-label" data-i18n="lbl_provatu">Prova tu</p>
   <div class="card sim-block">
     <h3>🌐 Metti un satellite in orbita</h3>
     <p class="lead">Cambia la quota dell'orbita attorno alla Terra: leggi come variano velocità e periodo. Le orbite basse sono veloci e con periodo breve; cerca la quota geostazionaria (\(T \approx 24\,\text{h}\)).</p>
@@ -624,6 +638,47 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 "use strict";
 /* ===== Costanti fisiche ===== */
 const G=6.674e-11, Msun=1.989e30, Mearth=5.972e24, Rearth=6.371e6, AU=1.496e11, YR=3.156e7;
+
+/* ===================== i18n: italiano (base) · inglese · portoghese BR ===================== */
+const LANGS=['it','en','pt'];
+function detectLang(){ try{ const s=localStorage.getItem('grav-lang'); if(LANGS.includes(s)) return s; }catch(_){}
+  const n=(navigator.language||'it').toLowerCase(); return n.startsWith('pt')?'pt':n.startsWith('en')?'en':'it'; }
+let LANG=detectLang();
+function decSep(){ return LANG==='en'?'.':'{,}'; }          /* separatore decimale per la lingua */
+const UNI={ UA:{it:'UA',en:'AU',pt:'UA'}, anni:{it:'anni',en:'years',pt:'anos'}, anno:{it:'anno',en:'year',pt:'ano'},
+  ore:{it:'ore',en:'hours',pt:'horas'}, giorni:{it:'giorni',en:'days',pt:'dias'}, min:{it:'min',en:'min',pt:'min'} };
+function uTeX(k){ const m=UNI[k]; return '\\text{'+(m?(m[LANG]||m.it):k)+'}'; }
+/* stringhe UI generate via JS (quiz, badge, ecc.) */
+const STR={
+  docTitle:{it:'Gravitazione · Fisica',en:'Gravitation · Physics',pt:'Gravitação · Física'},
+  pausa:{it:'⏸️ Pausa',en:'⏸️ Pause',pt:'⏸️ Pausar'},
+  avvia:{it:'▶️ Avvia',en:'▶️ Play',pt:'▶️ Iniciar'},
+  qVerifica:{it:'🧩 Verifica',en:'🧩 Self-check',pt:'🧩 Autoteste'},
+  qTeorici:{it:'🧠 Quiz teorici',en:'🧠 Theory quiz',pt:'🧠 Quiz teórico'},
+  qCalcolo:{it:'🔢 Quiz di calcolo',en:'🔢 Calculation quiz',pt:'🔢 Quiz de cálculo'},
+  qPrep:{it:'Quiz in preparazione…',en:'Quiz coming soon…',pt:'Quiz em preparação…'},
+  qReview:{it:'↩️ Rivedi le domande',en:'↩️ Review the questions',pt:'↩️ Rever as perguntas'},
+  qRestart:{it:'🔄 Ricomincia',en:'🔄 Restart',pt:'🔄 Recomeçar'},
+  qCorrect:{it:'✓ Corretto!',en:'✓ Correct!',pt:'✓ Correto!'},
+  qWrong:{it:'✗ Sbagliato.',en:'✗ Wrong.',pt:'✗ Errado.'},
+  qSeeRes:{it:'Vedi risultato →',en:'See result →',pt:'Ver resultado →'},
+  qNext:{it:'Domanda successiva →',en:'Next question →',pt:'Próxima pergunta →'},
+  qPrev:{it:'← Domanda precedente',en:'← Previous question',pt:'← Pergunta anterior'},
+  qQuestion:{it:'Domanda',en:'Question',pt:'Pergunta'},
+  qAnswers:{it:'Risposte',en:'Answers',pt:'Respostas'},
+  qMsg:{ it:['Da rivedere — rileggi la teoria e riprova.','Sufficiente — qualche lacuna da colmare.','Buono — ci sei quasi!','Ottimo risultato!','Perfetto — nessun errore!'],
+    en:['Needs review — reread the theory and try again.','Pass — a few gaps to fill.','Good — almost there!','Great result!','Perfect — no mistakes!'],
+    pt:['Para revisar — releia a teoria e tente de novo.','Suficiente — algumas lacunas a preencher.','Bom — quase lá!','Ótimo resultado!','Perfeito — nenhum erro!'] },
+  enEscape:{it:'🚀 Sfugge!',en:'🚀 Escapes!',pt:'🚀 Escapa!'},
+  enFall:{it:'↩️ Ricade',en:'↩️ Falls back',pt:'↩️ Recai'},
+  badgeEsc:{it:'traiettoria di fuga',en:'escape trajectory',pt:'trajetória de escape'},
+  badgeBound:{it:'orbita legata, ricade',en:'bound orbit, falls back',pt:'órbita ligada, recai'},
+  badgeGeo:{it:'Geostazionaria',en:'Geostationary',pt:'Geoestacionária'},
+  satLEO:{it:'LEO (bassa)',en:'LEO (low)',pt:'LEO (baixa)'},
+  satMEO:{it:'MEO (media)',en:'MEO (medium)',pt:'MEO (média)'},
+  satHigh:{it:'alta / GEO',en:'high / GEO',pt:'alta / GEO'}
+};
+function tr(k){ const m=STR[k]; return m?(m[LANG]!=null?m[LANG]:m.it):k; }
 const COL={F:'#e53935',v:'#42a5f5',g:'#66bb6a',U:'#ba68c8',star:'#f9a825',
   planet:'#42a5f5',sat:'#ce93d8',orbit:'#3a4a72',grid:'#26365e',probe:'#90caf9',axis:'#5b6da3'};
 
@@ -668,17 +723,17 @@ function setMixed(el,html){
   el.innerHTML=html; if(window.renderMathInElement) typeset(el);
 }
 /* numero con virgola italiana (+unità TeX opzionale) */
-function texU(x,d,u){ if(!isFinite(x)) return '\\text{—}'; const s=x.toFixed(d).replace('.','{,}'); return u?s+'\\,'+u:s; }
+function texU(x,d,u){ if(!isFinite(x)) return '\\text{—}'; const s=x.toFixed(d).replace('.',decSep()); return u?s+'\\,'+u:s; }
 /* notazione scientifica TeX */
 function texSci(x,u){ if(!isFinite(x)) return '\\text{—}'; const a=Math.abs(x); let s;
-  if(a!==0&&(a<0.01||a>=1e5)){ const p=x.toExponential(2).split('e'); s=p[0].replace('.','{,}')+'\\times 10^{'+(+p[1])+'}'; }
-  else s=Number(x.toPrecision(3)).toString().replace('.','{,}');
+  if(a!==0&&(a<0.01||a>=1e5)){ const p=x.toExponential(2).split('e'); s=p[0].replace('.',decSep())+'\\times 10^{'+(+p[1])+'}'; }
+  else s=Number(x.toPrecision(3)).toString().replace('.',decSep());
   return u?s+'\\,'+u:s; }
 /* tempo TeX (min / h m / giorni) */
 function texT(s){ if(!isFinite(s)||s<=0) return '\\text{—}'; const h=s/3600;
-  if(h<1) return Math.round(s/60)+'\\,\\text{min}';
+  if(h<1) return Math.round(s/60)+'\\,'+uTeX('min');
   if(h<72){ const H=Math.floor(h),M=Math.round((h-H)*60); return H+'\\,\\text{h}\\;'+(M<10?'0':'')+M+'\\,\\text{m}'; }
-  return (s/86400).toFixed(1).replace('.','{,}')+'\\,\\text{giorni}'; }
+  return (s/86400).toFixed(1).replace('.',decSep())+'\\,'+uTeX('giorni'); }
 
 /* ===== Navigazione a schede ===== */
 const navBtns=document.querySelectorAll('#mainNav button');
@@ -716,9 +771,12 @@ function loop(now){
 function togglePlay(name,btn){
   const a=animators[name]; if(!a) return;
   a.playing=!a.playing;
-  btn.textContent=a.playing?'⏸️ Pausa':'▶️ Avvia';
+  btn.textContent=a.playing?tr('pausa'):tr('avvia');
   btn.classList.toggle('paused',!a.playing);
 }
+const BTN2SEC={btnKep:'kepler',btnNew:'newton',btnCmp:'campo',btnEn:'energia',btnSat:'satelliti'};
+function syncPlayButtons(){ Object.keys(BTN2SEC).forEach(id=>{ const b=document.getElementById(id),a=animators[BTN2SEC[id]];
+  if(b&&a) b.textContent=a.playing?tr('pausa'):tr('avvia'); }); }
 
 /* ============ KEPLERO ============ */
 /* ===== Effetti: scia a cometa, pulsazione, helper trail ===== */
@@ -825,9 +883,9 @@ function kepDraw(){
     +vArr
     +dot(planet.x,planet.y,6,COL.planet,'#bbdefb')
     +`<text x="${cx}" y="${cy+26}" fill="#ffe082" font-size="11" text-anchor="middle">Sole</text>`;
-  setMath(document.getElementById('kepRp'), texU(d.rp,2,'\\text{UA}'));
-  setMath(document.getElementById('kepRa'), texU(d.ra,2,'\\text{UA}'));
-  setMath(document.getElementById('kepT'),  texU(d.T,2,'\\text{anni}'));
+  setMath(document.getElementById('kepRp'), texU(d.rp,2,uTeX('UA')));
+  setMath(document.getElementById('kepRa'), texU(d.ra,2,uTeX('UA')));
+  setMath(document.getElementById('kepT'),  texU(d.T,2,uTeX('anni')));
   setMath(document.getElementById('kepVp'), texU(d.vp,1,'\\text{km/s}'));
   setMath(document.getElementById('kepVa'), texU(d.va,1,'\\text{km/s}'));
   setMath(document.getElementById('kepRatio'), texU(d.vp/d.va,2));
@@ -1015,8 +1073,8 @@ function enDraw(){
   setMath(document.getElementById('enU'), texU(d.u/1e6,1,'\\mathrm{MJ/kg}'));
   setMath(document.getElementById('enE'), texU(d.e/1e6,1,'\\mathrm{MJ/kg}'));
   const out=document.getElementById('enOut'), badge=document.getElementById('enBadge');
-  if(d.escape){ out.textContent='🚀 Sfugge!'; setMixed(badge,'\\(E \\ge 0\\) → traiettoria di fuga'); badge.className='eqs ok'; }
-  else{ out.textContent='↩️ Ricade'; setMixed(badge,'\\(E &lt; 0\\) → orbita legata, ricade'); badge.className='eqs no'; }
+  if(d.escape){ out.textContent=tr('enEscape'); setMixed(badge,'\\(E \\ge 0\\) → '+tr('badgeEsc')); badge.className='eqs ok'; }
+  else{ out.textContent=tr('enFall'); setMixed(badge,'\\(E &lt; 0\\) → '+tr('badgeBound')); badge.className='eqs no'; }
 }
 
 /* ============ SATELLITI ============ */
@@ -1062,10 +1120,10 @@ function satDraw(){
   setMath(document.getElementById('satR'), Math.round(d.r/1000).toLocaleString('it-IT').replace(/\./g,'\\,')+'\\,\\text{km}');
   setMath(document.getElementById('satV'), texU(d.v/1000,2,'\\text{km/s}'));
   setMath(document.getElementById('satT'), texT(d.T));
-  const type=d.h<2000e3?'LEO (bassa)':d.h<35000e3?'MEO (media)':'alta / GEO';
+  const type=d.h<2000e3?tr('satLEO'):d.h<35000e3?tr('satMEO'):tr('satHigh');
   document.getElementById('satType').textContent=type;
   const badge=document.getElementById('satBadge');
-  if(geo){ setMixed(badge,'📡 Geostazionaria! (\\(T \\approx 24\\,\\text{h}\\))'); badge.className='eqs ok'; }
+  if(geo){ setMixed(badge,'📡 '+tr('badgeGeo')+'! (\\(T \\approx 24\\,\\text{h}\\))'); badge.className='eqs ok'; }
   else{ setMixed(badge,'\\(v = \\sqrt{GM/r}\\) · \\(T = 2\\pi\\sqrt{r^{3}/GM}\\)'); badge.className='eqs lim'; }
 }
 
@@ -1085,7 +1143,9 @@ function bgStars(svg){
 }
 
 /* ============ MOTORE QUIZ ============ */
-const QUIZ = {
+const EN_QUIZ={};   /* riempito sotto (overlay inglese) */
+const PT_QUIZ={};   /* riempito sotto (overlay portoghese BR) */
+const QZ = { it: {
   kepler: { teoria:[
    {"q":"Cosa afferma la 1ª legge di Keplero sulla forma delle orbite dei pianeti?","opts":["Sono circonferenze perfette","Sono ellissi con il Sole in un fuoco","Sono parabole","Sono spirali che si stringono"],"ans":1,"exp":"1ª legge: ogni pianeta percorre un'orbita ellittica e il Sole occupa uno dei due fuochi."},
    {"q":"Dove si trova il Sole rispetto all'orbita ellittica di un pianeta?","opts":["Al centro dell'ellisse","In uno dei due fuochi","In un vertice dell'ellisse","Fuori dall'orbita"],"ans":1,"exp":"Il Sole sta in uno dei due fuochi, non al centro: per questo perielio e afelio sono a distanze diverse."},
@@ -1201,7 +1261,8 @@ const QUIZ = {
    {"q":"Un satellite raddoppia il raggio dell'orbita. Il modulo della sua energia totale |\\(-GMm/2r\\)|:","opts":["Raddoppia","Si dimezza","Resta uguale","Quadruplica"],"ans":1,"exp":"\\(|E| = GMm/(2r) \\propto 1/r\\): raddoppiando \\(r\\), \\(|E|\\) si dimezza (l'energia aumenta, diventa meno negativa)."},
    {"q":"La velocità orbitale 'rasente' la Terra (\\(r \\approx R\\)) è circa:","opts":["\\(\\approx 7{,}9\\,\\text{km/s}\\)","\\(\\approx 11{,}2\\,\\text{km/s}\\)","\\(\\approx 3{,}1\\,\\text{km/s}\\)","\\(\\approx 30\\,\\text{km/s}\\)"],"ans":0,"exp":"\\(v = \\sqrt{GM/R} \\approx \\sqrt{3{,}99\\times 10^{14}/6{,}37\\times 10^{6}} \\approx 7{,}9\\,\\text{km/s}\\) (prima velocità cosmica)."}
   ] }
-};
+}, en: EN_QUIZ, pt: PT_QUIZ };
+function getQ(sec,t){ const q=QZ[LANG]; return (q&&q[sec]&&q[sec][t])||QZ.it[sec][t]; }
 const QSECS=['kepler','newton','campo','energia','satelliti'];
 const qTab={}, qState={};
 function qKey(sec,t){return sec+'|'+t;}
@@ -1209,39 +1270,39 @@ function initQuiz(){
   QSECS.forEach(sec=>{
     qTab[sec]='teoria';
     ['teoria','calcolo'].forEach(t=>{
-      const n=(QUIZ[sec][t]||[]).length;
+      const n=(getQ(sec,t)||[]).length;
       qState[qKey(sec,t)]={idx:0,answers:Array(n).fill(null),done:false};
     });
   });
 }
 function setQTab(sec,t){ qTab[sec]=t; renderQuiz(sec); }
-function scoreOf(sec,t){ const qs=QUIZ[sec][t], st=qState[qKey(sec,t)];
+function scoreOf(sec,t){ const qs=getQ(sec,t), st=qState[qKey(sec,t)];
   return st.answers.reduce((s,a,i)=>s+(a===qs[i].ans?1:0),0); }
 function renderQuiz(sec){
   const el=document.getElementById('qz-'+sec); if(!el) return;
   const t=qTab[sec];
   const seg=`<div class="quiz-seg">
-    <button class="${t==='teoria'?'active':''}" onclick="setQTab('${sec}','teoria')">🧠 Quiz teorici</button>
-    <button class="${t==='calcolo'?'active':''}" onclick="setQTab('${sec}','calcolo')">🔢 Quiz di calcolo</button>
+    <button class="${t==='teoria'?'active':''}" onclick="setQTab('${sec}','teoria')">${tr('qTeorici')}</button>
+    <button class="${t==='calcolo'?'active':''}" onclick="setQTab('${sec}','calcolo')">${tr('qCalcolo')}</button>
   </div>`;
-  el.innerHTML=`<div class="card"><h2>🧩 Verifica</h2>${seg}${quizBody(sec,t)}</div>`;
+  el.innerHTML=`<div class="card"><h2>${tr('qVerifica')}</h2>${seg}${quizBody(sec,t)}</div>`;
   typeset(el);
 }
 function quizBody(sec,t){
-  const key=qKey(sec,t), st=qState[key], qs=QUIZ[sec][t]||[], total=qs.length;
-  if(!total) return '<p class="lead">Quiz in preparazione…</p>';
+  const key=qKey(sec,t), st=qState[key], qs=getQ(sec,t)||[], total=qs.length;
+  if(!total) return '<p class="lead">'+tr('qPrep')+'</p>';
   const answered=st.answers.filter(a=>a!==null).length;
   if(st.done){
     const score=scoreOf(sec,t), r=score/total;
     const mi=r<=0.3?0:r<=0.5?1:r<=0.8?2:r<=0.94?3:4;
     const icons=['😕','🙂','😊','🎉','🏆'];
-    const msgs=['Da rivedere — rileggi la teoria e riprova.','Sufficiente — qualche lacuna da colmare.','Buono — ci sei quasi!','Ottimo risultato!','Perfetto — nessun errore!'];
+    const msgs=tr('qMsg');
     return `<div class="quiz-done">
       <span class="quiz-score-big">${icons[mi]} ${score}/${total}</span>
       <p class="quiz-msg">${msgs[mi]}</p>
       <div class="quiz-nav">
-        <button class="quiz-prev" onclick="reviewQuiz('${sec}','${t}')">↩️ Rivedi le domande</button>
-        <button class="quiz-restart" onclick="restartQuiz('${sec}','${t}')">🔄 Ricomincia</button>
+        <button class="quiz-prev" onclick="reviewQuiz('${sec}','${t}')">${tr('qReview')}</button>
+        <button class="quiz-restart" onclick="restartQuiz('${sec}','${t}')">${tr('qRestart')}</button>
       </div>
     </div>`;
   }
@@ -1254,19 +1315,19 @@ function quizBody(sec,t){
     return `<button class="${cls}" ${isAns?'disabled':''} onclick="answerQuiz('${sec}','${t}',${i})">${'ABCD'[i]}) ${o}</button>`;
   }).join('');
   let exp='';
-  if(isAns) exp=`<div class="quiz-exp ${correct?'ok':'no'}"><strong>${correct?'✓ Corretto!':'✗ Sbagliato.'}</strong> ${q.exp}</div>`;
+  if(isAns) exp=`<div class="quiz-exp ${correct?'ok':'no'}"><strong>${correct?tr('qCorrect'):tr('qWrong')}</strong> ${q.exp}</div>`;
   const lastQ=st.idx+1>=total;
-  const nextLabel=lastQ?'Vedi risultato →':'Domanda successiva →';
+  const nextLabel=lastQ?tr('qSeeRes'):tr('qNext');
   return `<div class="quiz-hd">
-      <span style="color:var(--muted)">Domanda ${st.idx+1} / ${total}</span>
-      <span style="font-weight:700;color:var(--primary-d)">Risposte: ${answered}/${total}</span>
+      <span style="color:var(--muted)">${tr('qQuestion')} ${st.idx+1} / ${total}</span>
+      <span style="font-weight:700;color:var(--primary-d)">${tr('qAnswers')}: ${answered}/${total}</span>
     </div>
     <div class="quiz-bar-wrap"><div class="quiz-bar-fill" style="width:${pct}%"></div></div>
     <p class="quiz-q">${q.q}</p>
     <div class="quiz-opts">${opts}</div>
     ${exp}
     <div class="quiz-nav">
-      <button class="quiz-prev" ${st.idx===0?'disabled':''} onclick="prevQuiz('${sec}','${t}')">← Domanda precedente</button>
+      <button class="quiz-prev" ${st.idx===0?'disabled':''} onclick="prevQuiz('${sec}','${t}')">${tr('qPrev')}</button>
       <button class="quiz-next" ${isAns?'':'disabled'} onclick="nextQuiz('${sec}','${t}')">${nextLabel}</button>
     </div>`;
 }
@@ -1277,7 +1338,7 @@ function answerQuiz(sec,t,chosen){
   renderQuiz(sec);
 }
 function nextQuiz(sec,t){
-  const st=qState[qKey(sec,t)], total=QUIZ[sec][t].length;
+  const st=qState[qKey(sec,t)], total=getQ(sec,t).length;
   if(st.answers[st.idx]===null) return;
   if(st.idx+1>=total){ st.done=true; } else { st.idx++; }
   renderQuiz(sec);
@@ -1293,7 +1354,7 @@ function reviewQuiz(sec,t){
   st.done=false; st.idx=0; renderQuiz(sec);
 }
 function restartQuiz(sec,t){
-  const n=QUIZ[sec][t].length;
+  const n=getQ(sec,t).length;
   qState[qKey(sec,t)]={idx:0,answers:Array(n).fill(null),done:false};
   renderQuiz(sec);
 }
@@ -1311,18 +1372,18 @@ document.getElementById('btnCmp').addEventListener('click',e=>togglePlay('campo'
 document.getElementById('btnEn').addEventListener('click',e=>togglePlay('energia',e.target));
 document.getElementById('btnSat').addEventListener('click',e=>togglePlay('satelliti',e.target));
 
-bindRange('kepA','kepAv',v=>v.toFixed(2).replace('.','{,}')+'\\,\\text{UA}');
-bindRange('kepE','kepEv',v=>v.toFixed(2).replace('.','{,}'));
+bindRange('kepA','kepAv',v=>v.toFixed(2).replace('.',decSep())+'\\,'+uTeX('UA'));
+bindRange('kepE','kepEv',v=>v.toFixed(2).replace('.',decSep()));
 bindRange('newM1','newM1v',v=>v+'\\cdot 10^{24}\\,\\text{kg}');
 bindRange('newM2','newM2v',v=>v+'\\,\\text{kg}');
 bindRange('newR','newRv',v=>v+'\\cdot 10^{3}\\,\\text{km}');
-bindRange('cmpM','cmpMv',v=>(v<1?v.toFixed(3):v.toFixed(1)).replace('.','{,}')+'\\,M_{\\oplus}');
-bindRange('cmpR','cmpRv',v=>(v<1?v.toFixed(2):v.toFixed(1)).replace('.','{,}')+'\\,R_{\\oplus}');
-bindRange('cmpH','cmpHv',v=>v.toFixed(2).replace('.','{,}')+'\\,R');
-bindRange('enM','enMv',v=>(v<1?v.toFixed(3):v.toFixed(1)).replace('.','{,}')+'\\,M_{\\oplus}');
-bindRange('enR','enRv',v=>(v<1?v.toFixed(2):v.toFixed(1)).replace('.','{,}')+'\\,R_{\\oplus}');
-bindRange('enV','enVv',v=>v.toFixed(1).replace('.','{,}')+'\\,\\text{km/s}');
-bindRange('satH','satHv',v=>v.toLocaleString('it-IT').replace(/\./g,'\\,')+'\\,\\text{km}');
+bindRange('cmpM','cmpMv',v=>(v<1?v.toFixed(3):v.toFixed(1)).replace('.',decSep())+'\\,M_{\\oplus}');
+bindRange('cmpR','cmpRv',v=>(v<1?v.toFixed(2):v.toFixed(1)).replace('.',decSep())+'\\,R_{\\oplus}');
+bindRange('cmpH','cmpHv',v=>v.toFixed(2).replace('.',decSep())+'\\,R');
+bindRange('enM','enMv',v=>(v<1?v.toFixed(3):v.toFixed(1)).replace('.',decSep())+'\\,M_{\\oplus}');
+bindRange('enR','enRv',v=>(v<1?v.toFixed(2):v.toFixed(1)).replace('.',decSep())+'\\,R_{\\oplus}');
+bindRange('enV','enVv',v=>v.toFixed(1).replace('.',decSep())+'\\,\\text{km/s}');
+bindRange('satH','satHv',v=>v.toLocaleString(LANG==='it'?'it-IT':LANG==='pt'?'pt-BR':'en-US').replace(/[.,]/g,'\\,')+'\\,\\text{km}');
 
 ['kepA','kepE'].forEach(id=>document.getElementById(id).addEventListener('input',kepDraw));
 ['newM1','newM2','newR'].forEach(id=>document.getElementById(id).addEventListener('input',newDraw));
@@ -1353,6 +1414,45 @@ function refreshDynamic(){
 initQuiz();
 QSECS.forEach(renderQuiz);
 [kepDraw,newDraw,cmpDraw,enDraw,satDraw].forEach(f=>f());
+
+/* ===================== overlay traduzioni HTML (data-i18n) ===================== */
+const I18N={en:{},pt:{}};      /* le voci sono aggiunte via Object.assign nei blocchi sottostanti */
+const I18N_IT={};
+function captureIT(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.dataset.i18n; if(I18N_IT[k]==null) I18N_IT[k]=el.innerHTML; });
+  document.querySelectorAll('[data-ti]').forEach(el=>{ const k=el.dataset.ti; if(I18N_IT[k]==null) I18N_IT[k]=el.getAttribute('data-title'); });
+}
+function applyLang(lang){
+  if(!LANGS.includes(lang)) lang='it';
+  LANG=lang; try{ localStorage.setItem('grav-lang',lang); }catch(_){}
+  document.documentElement.lang=lang; document.title=tr('docTitle');
+  document.querySelectorAll('#langSwitch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+  const dict = lang==='it' ? I18N_IT : I18N[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const v=dict&&dict[el.dataset.i18n]; el.innerHTML = (v!=null?v:I18N_IT[el.dataset.i18n]); });
+  document.querySelectorAll('[data-ti]').forEach(el=>{ const v=dict&&dict[el.dataset.ti]; el.setAttribute('data-title', (v!=null?v:I18N_IT[el.dataset.ti])); });
+  QSECS.forEach(renderQuiz);
+  if(window.katex&&window.renderMathInElement) renderMath(); else if(typeof refreshDynamic==='function') refreshDynamic();
+  syncPlayButtons();
+}
+/* ---- guscio: header, nav, etichette, titoli sezione ---- */
+Object.assign(I18N.en,{
+  brand:'🪐 Gravitation', print:'🖨️ Print theory',
+  nav_home:'🏠 Home', nav_kepler:'🔭 Kepler', nav_newton:'🍎 Newton', nav_campo:'🌍 Field g', nav_energia:'🚀 Energy & escape', nav_satelliti:'🛰️ Satellites',
+  lbl_percorso:'Path', lbl_datireali:'Real planet data', lbl_teoria:'Theory', lbl_provatu:'Try it',
+  title_home:'Gravitation', title_kepler:"Kepler's three laws", title_newton:'The law of universal gravitation', title_campo:'The gravitational field', title_energia:'Potential energy and escape velocity', title_satelliti:'Satellites and orbital motion'
+});
+Object.assign(I18N.pt,{
+  brand:'🪐 Gravitação', print:'🖨️ Imprimir teoria',
+  nav_home:'🏠 Início', nav_kepler:'🔭 Kepler', nav_newton:'🍎 Newton', nav_campo:'🌍 Campo g', nav_energia:'🚀 Energia & escape', nav_satelliti:'🛰️ Satélites',
+  lbl_percorso:'Percurso', lbl_datireali:'Dados reais dos planetas', lbl_teoria:'Teoria', lbl_provatu:'Experimente',
+  title_home:'Gravitação', title_kepler:'As três leis de Kepler', title_newton:'A lei da gravitação universal', title_campo:'O campo gravitacional', title_energia:'Energia potencial e velocidade de escape', title_satelliti:'Satélites e movimento orbital'
+});
+/* INIT_I18N */
+captureIT();
+const langSwitch=document.getElementById('langSwitch');
+if(langSwitch){ langSwitch.querySelectorAll('button').forEach(b=>{ b.classList.toggle('active', b.dataset.lang===LANG);
+  b.addEventListener('click',()=>applyLang(b.dataset.lang)); }); }
+if(LANG!=='it') applyLang(LANG);
 
 /* ===== KaTeX: formule display (data-tex) + matematica inline \(...\) (auto-render) ===== */
 function renderFormulas(){
