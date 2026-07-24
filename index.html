@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>(function(){try{var k='grav-theme',t=localStorage.getItem(k);if(t!=='dark'&&t!=='light')t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';document.documentElement.setAttribute('data-theme',t);if(t==='dark'){var m=document.querySelector('meta[name=theme-color]');if(m)m.content='#0b0f17';}}catch(e){}})();</script>
 <style>
 :root{
   --bg:#f7f8fa;--surface:#fff;--surface2:#f9fafc;
@@ -16,6 +17,13 @@
   --radius:12px;
   --vF:#e53935;--vV:#1565c0;--vG:#2e7d32;--vR:#f57c00;--vU:#7b1fa2;--vK:#00897b;
   --star:#f9a825;--planet:#1565c0;--sat:#7b1fa2;
+}
+:root[data-theme="dark"]{
+  --bg:#0b0f17;--surface:#111827;--surface2:#1a2234;
+  --primary:#4d8ef0;--primary-d:#2563eb;--primary-l:#1e2d4a;
+  --text:#e8ecf4;--muted:#8b95a7;--border:#2a3347;
+  --vF:#ef5350;--vV:#4d8ef0;--vG:#4caf50;--vR:#ff9800;--vU:#ab47bc;--vK:#26a69a;
+  --star:#ffc107;--planet:#4d8ef0;--sat:#ab47bc;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg);color:var(--text);
@@ -39,6 +47,10 @@ header h1{font-size:clamp(1.02rem,3.6vw,1.32rem);color:var(--text);
 .lang-switch button:last-child{border-right:0}
 .lang-switch button.active{background:var(--primary);color:#fff}
 .lang-switch button:hover:not(.active){background:var(--primary-l);color:var(--text)}
+.btn-theme{background:var(--surface2);border:1px solid var(--border);color:var(--muted);
+  border-radius:8px;padding:.4rem .55rem;font-size:1em;cursor:pointer;line-height:1;
+  transition:background .15s,color .15s;flex-shrink:0}
+.btn-theme:hover{background:var(--primary-l);color:var(--text)}
 
 /* ===== Nav ===== */
 nav.main{background:var(--surface);border-bottom:1px solid var(--border);
@@ -216,6 +228,20 @@ table.pdata th:first-child,table.pdata td:first-child{text-align:left;position:s
 table.pdata thead th{color:var(--muted);font-weight:600;border-bottom:1.5px solid var(--border)}
 table.pdata tbody tr:hover td{background:var(--surface2)}
 
+/* ===== DARK: hardcoded colour overrides ===== */
+[data-theme="dark"] .tip{background:#0f2a14;border-left-color:#4caf50;color:#e8ecf4}
+[data-theme="dark"] .warn{background:#2a1a00;border-left-color:#ffc107;color:#e8ecf4}
+[data-theme="dark"] .eqs.ok{background:#0f2a14;color:#81c784}
+[data-theme="dark"] .eqs.no{background:#2d0c0c;color:#ef9a9a}
+[data-theme="dark"] .eqs.lim{background:#2a1a00;color:#ffcc80}
+[data-theme="dark"] .quiz-bar-wrap{background:#1a2234}
+[data-theme="dark"] .quiz-btn.correct{background:#0f2a14!important;border-color:#4caf50!important;color:#81c784!important}
+[data-theme="dark"] .quiz-btn.wrong{background:#2d0c0c!important;border-color:#c62828!important;color:#ef9a9a!important}
+[data-theme="dark"] .quiz-exp.ok{background:#0f2a14;border-left-color:#4caf50;color:#81c784}
+[data-theme="dark"] .quiz-exp.no{background:#2d0c0c;border-left-color:#c62828;color:#ef9a9a}
+[data-theme="dark"] table.pdata th:first-child,[data-theme="dark"] table.pdata td:first-child{background:var(--surface)}
+[data-theme="dark"] .formula{background:var(--primary-l)}
+
 /* ===== PRINT MODE ===== */
 .print-only{display:none}
 @media print{
@@ -245,6 +271,7 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
       <button type="button" data-lang="en">EN</button>
       <button type="button" data-lang="pt">PT</button>
     </div>
+    <button class="btn-theme" id="btnTheme" onclick="toggleTheme()" aria-label="Tema chiaro/scuro">🌙</button>
     <button class="btn-print" onclick="window.print()" data-i18n="print">🖨️ Stampa teoria</button>
   </div>
 </header>
@@ -1955,6 +1982,24 @@ const langSwitch=document.getElementById('langSwitch');
 if(langSwitch){ langSwitch.querySelectorAll('button').forEach(b=>{ b.classList.toggle('active', b.dataset.lang===LANG);
   b.addEventListener('click',()=>applyLang(b.dataset.lang)); }); }
 if(LANG!=='it') applyLang(LANG);
+
+/* ===== DARK THEME ===== */
+function applyTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  const m=document.querySelector('meta[name=theme-color]');
+  if(m) m.content=t==='dark'?'#0b0f17':'#ffffff';
+  const btn=document.getElementById('btnTheme');
+  if(btn) btn.textContent=t==='dark'?'☀️':'🌙';
+  try{localStorage.setItem('grav-theme',t);}catch(_){}
+}
+function toggleTheme(){
+  applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');
+}
+(function(){
+  var t=document.documentElement.getAttribute('data-theme')||'light';
+  var btn=document.getElementById('btnTheme');
+  if(btn) btn.textContent=t==='dark'?'☀️':'🌙';
+})();
 
 /* ===== KaTeX: formule display (data-tex) + matematica inline \(...\) (auto-render) ===== */
 function renderFormulas(){
