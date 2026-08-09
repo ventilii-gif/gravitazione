@@ -156,6 +156,20 @@ svg.sim{width:100%;height:auto;background:#0d1b3a;border:1px solid var(--border)
 .home-card strong{color:var(--primary-d);display:block;margin-bottom:.12rem;font-size:.97em}
 .home-card span{color:var(--muted);font-size:.85em}
 
+/* ===== Presentazione app (home) ===== */
+.app-steps{list-style:none;margin:.5rem 0 .4rem;padding:0;display:grid;gap:.35rem}
+.app-steps li{background:var(--surface2);border:1px solid var(--border);border-radius:8px;
+  padding:.45rem .7rem;font-size:.92em}
+.app-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.55rem;margin:.5rem 0 .4rem}
+.app-tab{display:flex;gap:.6rem;align-items:flex-start;background:var(--surface);
+  border:1px solid var(--border);border-radius:10px;padding:.6rem .7rem}
+.app-tab .att-ico{font-size:1.4em;line-height:1;flex-shrink:0}
+.app-tab div{min-width:0}
+.app-tab strong{display:block;color:var(--primary-d);font-size:.95em}
+.app-tab div span{display:block;color:var(--muted);font-size:.82em;line-height:1.35}
+.app-hints{margin:.4rem 0 .2rem;padding-left:1.2rem;display:grid;gap:.32rem}
+.app-hints li{font-size:.93em;line-height:1.45}
+
 /* ===== Quiz ===== */
 .quiz-seg{display:flex;gap:.4rem;margin:.3rem 0 .9rem}
 .quiz-seg button{flex:1;background:var(--surface2);border:1px solid var(--border);
@@ -365,45 +379,35 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
 <!-- ============ HOME ============ -->
 <section class="scene active" id="home" data-ti="title_home" data-title="Gravitazione">
   <div class="card">
-    <h2>📜 Breve storia della gravitazione</h2>
-    <p class="lead">Dalla Terra piatta ai buchi neri: duemila anni di domande sulla forza che governa l'Universo.</p>
-    <div class="timeline">
-      <div class="tl-item"><span class="tl-dot"></span>
-        <span class="tl-year">~ 350 a.C.</span>
-        <span class="tl-name">Aristotele</span>
-        <p class="tl-desc">Sostiene che i corpi pesanti cadono più velocemente di quelli leggeri. La Terra è immobile al centro dell'Universo. Domina il pensiero per quasi 2000 anni.</p>
-      </div>
-      <div class="tl-item"><span class="tl-dot"></span>
-        <span class="tl-year">1543</span>
-        <span class="tl-name">Niccolò Copernico</span>
-        <p class="tl-desc">Propone il modello <em>eliocentrico</em>: i pianeti orbitano intorno al Sole, non attorno alla Terra. Rivoluzione silenziosa — pubblica il De Revolutionibus in punto di morte.</p>
-      </div>
-      <div class="tl-item"><span class="tl-dot"></span>
-        <span class="tl-year">1604 – 1638</span>
-        <span class="tl-name">Galileo Galilei</span>
-        <p class="tl-desc">Con esperimenti sui piani inclinati e il cannocchiale, dimostra che tutti i corpi cadono con la stessa accelerazione (confutando Aristotele) e che i pianeti non sono perfetti — la Luna ha montagne. Scopre le lune di Giove.</p>
-      </div>
-      <div class="tl-item"><span class="tl-dot"></span>
-        <span class="tl-year">1609 – 1619</span>
-        <span class="tl-name">Giovanni Keplero</span>
-        <p class="tl-desc">Analizzando i dati precisi di Tycho Brahe, ricava le tre leggi empiriche: le orbite sono ellissi, il raggio vettore spazza aree uguali in tempi uguali, \(T^{2} \propto a^{3}\). La <em>descrizione</em> senza la spiegazione.</p>
-      </div>
-      <div class="tl-item"><span class="tl-dot"></span>
-        <span class="tl-year">1687</span>
-        <span class="tl-name">Isaac Newton</span>
-        <p class="tl-desc">Nei <em>Principia Mathematica</em> formula la legge di gravitazione universale \(F = Gm_1m_2/r^2\) e dimostra che <strong>spiega</strong> le leggi di Keplero. La stessa forza fa cadere la mela e tiene la Luna in orbita. Unificazione rivoluzionaria.</p>
-      </div>
-      <div class="tl-item"><span class="tl-dot"></span>
-        <span class="tl-year">1798</span>
-        <span class="tl-name">Henry Cavendish</span>
-        <p class="tl-desc">Misura per la prima volta la costante \(G = 6{,}674 \cdot 10^{-11}\,\text{N·m}^2/\text{kg}^2\) con una bilancia di torsione. "Pesa la Terra": calcola la massa del pianeta da \(G\) noto.</p>
-      </div>
-      <div class="tl-item"><span class="tl-dot"></span>
-        <span class="tl-year">1915</span>
-        <span class="tl-name">Albert Einstein</span>
-        <p class="tl-desc">La Relatività Generale descrive la gravità non come forza ma come <em>curvatura dello spazio-tempo</em> causata dalla massa. Predice: precessione di Mercurio ✓, deflessione della luce ✓ (1919), onde gravitazionali ✓ (rilevate nel 2015).</p>
-      </div>
+    <h2>👋 Benvenuto — come funziona questa app</h2>
+    <p class="lead">Un percorso interattivo per capire la <strong>gravitazione</strong>, dalle leggi di Keplero alla relatività di Einstein.</p>
+    <h3>🎯 A cosa serve</h3>
+    <p>Serve a imparare <em>facendo</em>: ogni concetto è accompagnato da un'animazione che puoi manipolare in tempo reale e da esercizi che ti guidano passo passo. Non devi installare nulla — funziona in qualsiasi browser.</p>
+    <h3>🧭 Com'è organizzata</h3>
+    <p>Nella barra in alto trovi cinque sezioni tematiche, pensate per essere seguite in ordine:</p>
+    <ol class="app-steps">
+      <li>🔭 <strong>Keplero</strong> — le tre leggi che descrivono le orbite</li>
+      <li>🍎 <strong>Newton</strong> — la legge di gravitazione universale</li>
+      <li>🌍 <strong>Campo g</strong> — il campo gravitazionale e il suo andamento</li>
+      <li>🚀 <strong>Energia &amp; fuga</strong> — energia potenziale e velocità di fuga</li>
+      <li>🛰️ <strong>Satelliti</strong> — velocità orbitale e periodo</li>
+    </ol>
+    <p>Ogni sezione è divisa in quattro <strong>sotto-schede</strong>:</p>
+    <div class="app-tabs">
+      <div class="app-tab"><span class="att-ico">📖</span><div><strong>Teoria</strong><span>spiegazioni, formule ed esempi</span></div></div>
+      <div class="app-tab"><span class="att-ico">🔬</span><div><strong>Simulazione</strong><span>animazioni interattive "Prova tu"</span></div></div>
+      <div class="app-tab"><span class="att-ico">✏️</span><div><strong>Esercizi</strong><span>problemi guidati con suggerimenti</span></div></div>
+      <div class="app-tab"><span class="att-ico">❓</span><div><strong>Quiz</strong><span>domande con risposta immediata</span></div></div>
     </div>
+    <p>Alla fine, la scheda <strong>🏆 Quiz Finale</strong> raccoglie 20 domande da tutti gli argomenti: le risposte e le correzioni compaiono solo al termine.</p>
+    <h3>💡 Come usarla al meglio</h3>
+    <ul class="app-hints">
+      <li>Segui l'ordine delle sezioni: ognuna prepara alla successiva.</li>
+      <li>In ciascuna: leggi la <em>Teoria</em>, apri la <em>Simulazione</em> e muovi i cursori, poi consolida con <em>Esercizi</em> e <em>Quiz</em>.</li>
+      <li>Usa il menu <strong>“Carica”</strong> nelle simulazioni per inserire i dati reali dei pianeti (li trovi in fondo a questa pagina).</li>
+      <li>Attiva il tema scuro con 🌙 in alto a destra: riposa gli occhi di sera e risparmia energia sugli schermi OLED.</li>
+      <li>Chiudi con il <strong>Quiz Finale</strong> per una verifica complessiva di ciò che hai imparato.</li>
+    </ul>
   </div>
   <div class="card" data-i18n="home_intro">
     <h2>Dalla mela alla Luna: la gravitazione</h2>
@@ -448,6 +452,47 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
       </tbody>
     </table>
     <p class="lead" style="margin-top:.5rem">Verifica la 3ª legge di Keplero: per ogni pianeta \(T^{2} \approx a^{3}\) (con \(T\) in anni e \(a\) in UA).</p>
+  </div>
+  <div class="card">
+    <h2>📜 Breve storia della gravitazione</h2>
+    <p class="lead">Dalla Terra piatta ai buchi neri: duemila anni di domande sulla forza che governa l'Universo.</p>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-dot"></span>
+        <span class="tl-year">~ 350 a.C.</span>
+        <span class="tl-name">Aristotele</span>
+        <p class="tl-desc">Sostiene che i corpi pesanti cadono più velocemente di quelli leggeri. La Terra è immobile al centro dell'Universo. Domina il pensiero per quasi 2000 anni.</p>
+      </div>
+      <div class="tl-item"><span class="tl-dot"></span>
+        <span class="tl-year">1543</span>
+        <span class="tl-name">Niccolò Copernico</span>
+        <p class="tl-desc">Propone il modello <em>eliocentrico</em>: i pianeti orbitano intorno al Sole, non attorno alla Terra. Rivoluzione silenziosa — pubblica il De Revolutionibus in punto di morte.</p>
+      </div>
+      <div class="tl-item"><span class="tl-dot"></span>
+        <span class="tl-year">1604 – 1638</span>
+        <span class="tl-name">Galileo Galilei</span>
+        <p class="tl-desc">Con esperimenti sui piani inclinati e il cannocchiale, dimostra che tutti i corpi cadono con la stessa accelerazione (confutando Aristotele) e che i pianeti non sono perfetti — la Luna ha montagne. Scopre le lune di Giove.</p>
+      </div>
+      <div class="tl-item"><span class="tl-dot"></span>
+        <span class="tl-year">1609 – 1619</span>
+        <span class="tl-name">Giovanni Keplero</span>
+        <p class="tl-desc">Analizzando i dati precisi di Tycho Brahe, ricava le tre leggi empiriche: le orbite sono ellissi, il raggio vettore spazza aree uguali in tempi uguali, \(T^{2} \propto a^{3}\). La <em>descrizione</em> senza la spiegazione.</p>
+      </div>
+      <div class="tl-item"><span class="tl-dot"></span>
+        <span class="tl-year">1687</span>
+        <span class="tl-name">Isaac Newton</span>
+        <p class="tl-desc">Nei <em>Principia Mathematica</em> formula la legge di gravitazione universale \(F = Gm_1m_2/r^2\) e dimostra che <strong>spiega</strong> le leggi di Keplero. La stessa forza fa cadere la mela e tiene la Luna in orbita. Unificazione rivoluzionaria.</p>
+      </div>
+      <div class="tl-item"><span class="tl-dot"></span>
+        <span class="tl-year">1798</span>
+        <span class="tl-name">Henry Cavendish</span>
+        <p class="tl-desc">Misura per la prima volta la costante \(G = 6{,}674 \cdot 10^{-11}\,\text{N·m}^2/\text{kg}^2\) con una bilancia di torsione. "Pesa la Terra": calcola la massa del pianeta da \(G\) noto.</p>
+      </div>
+      <div class="tl-item"><span class="tl-dot"></span>
+        <span class="tl-year">1915</span>
+        <span class="tl-name">Albert Einstein</span>
+        <p class="tl-desc">La Relatività Generale descrive la gravità non come forza ma come <em>curvatura dello spazio-tempo</em> causata dalla massa. Predice: precessione di Mercurio ✓, deflessione della luce ✓ (1919), onde gravitazionali ✓ (rilevate nel 2015).</p>
+      </div>
+    </div>
   </div>
 </section>
 
