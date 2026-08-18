@@ -828,7 +828,14 @@ table.pdata tbody tr:hover td{background:var(--surface2)}
     <div class="formula" data-tex="T = 2\pi\,\sqrt{\dfrac{r^3}{G\,M}}">T = 2π · √( r³ / G M )</div>
     <p>che è esattamente la <strong>3ª legge di Keplero</strong> (\(T^{2} \propto  r^{3}\)): la dinamica di Newton <em>spiega</em> le leggi empiriche di Keplero!</p>
     <h3>Energia di un'orbita circolare</h3>
-    <div class="formula" data-tex="E = K + U = -\,\dfrac{G\,M\,m}{2\,r}">E = K + U = − G M m / (2 r)</div>
+    <p>L'energia meccanica totale è la somma di quella <strong>cinetica</strong> \(K\) e <strong>potenziale</strong> \(U\): \(E = K + U\). Ricaviamo i due termini.</p>
+    <p><strong>1.</strong> L'energia cinetica è \(K = \tfrac{1}{2}m v^{2}\); ma per l'orbita circolare abbiamo appena trovato \(v^{2} = GM/r\), quindi:</p>
+    <div class="formula" data-tex="K = \tfrac{1}{2}\,m\,v^2 = \tfrac{1}{2}\,m\cdot\dfrac{G\,M}{r} = \dfrac{G\,M\,m}{2\,r}">K = ½ m v² = ½ m · (G M / r) = G M m / (2 r)</div>
+    <p><strong>2.</strong> L'energia potenziale gravitazionale (con lo zero all'infinito) è:</p>
+    <div class="formula" data-tex="U = -\,\dfrac{G\,M\,m}{r}">U = − G M m / r</div>
+    <p><strong>3.</strong> Sommando e riducendo a denominatore comune \(2r\):</p>
+    <div class="formula" data-tex="E = K + U = \dfrac{G\,M\,m}{2\,r} - \dfrac{G\,M\,m}{r} = \dfrac{G\,M\,m}{2\,r} - \dfrac{2\,G\,M\,m}{2\,r} = -\,\dfrac{G\,M\,m}{2\,r}">E = K + U = G M m/(2r) − G M m/r = G M m/(2r) − 2 G M m/(2r) = − G M m / (2 r)</div>
+    <div class="tip">💡 Relazioni notevoli: \(K = -E\) (positiva) e \(U = 2E\) (negativa), cioè \(E = -K = \tfrac{1}{2}U\). L'energia totale è <strong>negativa</strong>: l'orbita è <em>legata</em>, e per liberare il satellite (portarlo a \(E = 0\)) occorre fornirgli energia.</div>
     <div class="tip">📡 L'<strong>orbita geostazionaria</strong> ha periodo \(T = 24\,\text{h}\): il satellite resta sopra lo stesso punto dell'equatore. Si trova a \(r \approx 42\,200\,\text{km}\) dal centro (quota \(\approx 35\,800\,\text{km}\)). La ISS, molto più bassa (\(\approx 400\,\text{km}\)), orbita in \(\approx 92\,\text{minuti}\) a \(\approx 7{,}7\,\text{km/s}\).</div>
   </div>
   </div><!-- /sub-panel teoria -->
